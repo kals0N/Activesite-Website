@@ -49,7 +49,10 @@ const copy = {
 export type SendResult = { sent: boolean };
 
 /** Sends the lead to the team and a branded auto-reply in the visitor's language. */
-export async function sendContactEmails(input: ContactInput & { locale: 'en' | 'fr' }, serviceName?: string): Promise<SendResult> {
+export async function sendContactEmails(
+  input: ContactInput & { locale: 'en' | 'fr' },
+  serviceName?: string,
+): Promise<SendResult> {
   if (!transport) return { sent: false };
   const c = copy[input.locale];
   const rows: [string, string | undefined][] = [
@@ -64,7 +67,10 @@ export async function sendContactEmails(input: ContactInput & { locale: 'en' | '
   ];
   const table = rows
     .filter(([, v]) => v)
-    .map(([k, v]) => `<tr><td style="padding:6px 12px 6px 0;color:#4A5170;font-size:14px">${k}</td><td style="padding:6px 0;font-size:14px">${esc(v!)}</td></tr>`)
+    .map(
+      ([k, v]) =>
+        `<tr><td style="padding:6px 12px 6px 0;color:#4A5170;font-size:14px">${k}</td><td style="padding:6px 0;font-size:14px">${esc(v!)}</td></tr>`,
+    )
     .join('');
 
   await transport.sendMail({
@@ -72,8 +78,13 @@ export async function sendContactEmails(input: ContactInput & { locale: 'en' | '
     to: env.CONTACT_TO,
     replyTo: input.email,
     subject: `New lead: ${input.name}${serviceName ? ` · ${serviceName}` : ''}`,
-    text: `${rows.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n')}\n\n${input.message}`,
-    html: layout(`<table>${table}</table><p style="margin:24px 0 0;font-size:15px;line-height:1.6;white-space:pre-wrap">${esc(input.message)}</p>`),
+    text: `${rows
+      .filter(([, v]) => v)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join('\n')}\n\n${input.message}`,
+    html: layout(
+      `<table>${table}</table><p style="margin:24px 0 0;font-size:15px;line-height:1.6;white-space:pre-wrap">${esc(input.message)}</p>`,
+    ),
   });
 
   await transport.sendMail({

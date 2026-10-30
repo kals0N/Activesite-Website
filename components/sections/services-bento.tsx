@@ -27,15 +27,17 @@ export async function ServicesBento({ headingLevel = 'h3' }: { headingLevel?: 'h
           data-reveal
           style={{ '--i': gi } as React.CSSProperties}
           className={cn(
-            'rounded-panel border border-border p-6 sm:p-8',
+            'rounded-panel border-border border p-6 sm:p-8',
             group === 'build' && 'bg-surface lg:col-span-7',
             group === 'design' && 'bg-surface-warm lg:col-span-5',
             group === 'grow' && 'bg-surface-warm lg:col-span-12',
           )}
         >
           <div className="flex items-baseline justify-between gap-4">
-            <H className="font-display text-h3 !font-normal tracking-[-0.02em]">{t(`groups.${group}`)}</H>
-            <p className="text-right text-small text-ink-muted">{t(`groupLines.${group}`)}</p>
+            <H className="font-display text-h3 !font-normal tracking-[-0.02em]">
+              {t(`groups.${group}`)}
+            </H>
+            <p className="text-small text-ink-muted text-right">{t(`groupLines.${group}`)}</p>
           </div>
           <ul
             className={cn(
@@ -48,16 +50,22 @@ export async function ServicesBento({ headingLevel = 'h3' }: { headingLevel?: 'h
               <li key={s.key}>
                 <NextLink
                   href={servicePaths(s.key)[locale]}
-                  className="group/svc flex h-full items-start gap-4 rounded-card border border-transparent bg-canvas/60 p-4 transition-[transform,box-shadow,border-color] duration-(--duration-base) ease-(--ease-out) hover:-translate-y-1 hover:border-border hover:bg-surface hover:shadow-lift"
+                  className="group/svc rounded-card bg-canvas/60 hover:border-border hover:bg-surface hover:shadow-lift flex h-full items-start gap-4 border border-transparent p-4 transition-[transform,box-shadow,border-color] duration-(--duration-base) ease-(--ease-out) hover:-translate-y-1"
                 >
-                  <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary-tint text-primary">
+                  <span className="bg-primary-tint text-primary inline-flex size-10 shrink-0 items-center justify-center rounded-full">
                     <ServiceIcon name={s.icon} size={18} />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-small font-medium text-ink-muted">{s.name}</span>
-                    <span className="mt-1 block text-body font-semibold tracking-[-0.02em] text-ink">{s.outcome}</span>
+                    <span className="text-small text-ink-muted block font-medium">{s.name}</span>
+                    <span className="text-body text-ink mt-1 block font-semibold tracking-[-0.02em]">
+                      {s.outcome}
+                    </span>
                   </span>
-                  <ArrowUpRight aria-hidden size={18} className="mt-1 shrink-0 text-ink-muted transition-colors group-hover/svc:text-primary" />
+                  <ArrowUpRight
+                    aria-hidden
+                    size={18}
+                    className="text-ink-muted group-hover/svc:text-primary mt-1 shrink-0 transition-colors"
+                  />
                 </NextLink>
               </li>
             ))}

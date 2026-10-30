@@ -6,7 +6,15 @@ import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { Mdx } from '@/components/ui/mdx';
 import { CtaBand } from './cta-band';
 
-export async function LegalPage({ locale, docKey, pathname }: { locale: Locale; docKey: LegalDoc['key']; pathname: '/privacy' | '/terms' | '/cookies' }) {
+export async function LegalPage({
+  locale,
+  docKey,
+  pathname,
+}: {
+  locale: Locale;
+  docKey: LegalDoc['key'];
+  pathname: '/privacy' | '/terms' | '/cookies';
+}) {
   const doc = getLegal(locale, docKey);
   const t = await getTranslations();
   const format = await getFormatter();
@@ -20,9 +28,11 @@ export async function LegalPage({ locale, docKey, pathname }: { locale: Locale; 
               { name: doc.title, href: pathFor(locale, pathname) },
             ]}
           />
-          <h1 className="mt-10 font-display text-h1">{doc.title}</h1>
-          <p className="mt-4 text-small text-ink-muted">
-            <time dateTime={doc.updated}>{format.dateTime(new Date(doc.updated), { dateStyle: 'long' })}</time>
+          <h1 className="font-display text-h1 mt-10">{doc.title}</h1>
+          <p className="text-small text-ink-muted mt-4">
+            <time dateTime={doc.updated}>
+              {format.dateTime(new Date(doc.updated), { dateStyle: 'long' })}
+            </time>
           </p>
           <div className="prose-site mt-12">
             <Mdx source={doc.body} />

@@ -19,7 +19,9 @@ export async function POST(req: Request) {
     if (json && typeof json === 'object' && 'website' in json && json.website) {
       return NextResponse.json({ ok: true });
     }
-    const fields = Object.fromEntries(parsed.error.issues.map((i) => [i.path.join('.'), i.message]));
+    const fields = Object.fromEntries(
+      parsed.error.issues.map((i) => [i.path.join('.'), i.message]),
+    );
     return NextResponse.json({ error: 'validation', fields }, { status: 422 });
   }
 
@@ -39,8 +41,8 @@ export async function POST(req: Request) {
   try {
     const { sent } = await sendContactEmails(input, serviceName);
     if (input.marketing) {
-      await subscribe({ email: input.email, locale: input.locale, source: 'contact_form' }).catch((e) =>
-        console.error('[contact] brevo', e),
+      await subscribe({ email: input.email, locale: input.locale, source: 'contact_form' }).catch(
+        (e) => console.error('[contact] brevo', e),
       );
     }
     return NextResponse.json({ ok: true, delivered: sent });

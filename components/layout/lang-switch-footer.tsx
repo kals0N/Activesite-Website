@@ -3,5 +3,7 @@ import { allLocalizedPaths } from '@/lib/routes';
 import { LangSwitch } from './lang-switch';
 
 export function LangSwitchFooter({ locale }: { locale: Locale }) {
-  return <LangSwitch locale={locale} alternates={allLocalizedPaths()} variant="inline" tone="ink" />;
+  return (
+    <LangSwitch locale={locale} alternates={allLocalizedPaths()} variant="inline" tone="ink" />
+  );
 }

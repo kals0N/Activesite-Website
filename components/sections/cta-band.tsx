@@ -27,12 +27,20 @@ export async function CtaBand({
 }) {
   const ink = tone === 'ink';
   const t = await getTranslations();
-  const objections = [t('objections.free'), t('objections.response'), t('objections.launch'), t('objections.guarantee')];
+  const objections = [
+    t('objections.free'),
+    t('objections.response'),
+    t('objections.launch'),
+    t('objections.guarantee'),
+  ];
 
   return (
     <section
       aria-labelledby={`cta-${location}`}
-      className={cn('relative overflow-hidden', ink ? 'on-ink bg-ink text-white' : 'bg-surface-warm text-ink')}
+      className={cn(
+        'relative overflow-hidden',
+        ink ? 'on-ink bg-ink text-white' : 'bg-surface-warm text-ink',
+      )}
     >
       <ArcField
         tone={ink ? 'ink' : 'light'}
@@ -47,15 +55,32 @@ export async function CtaBand({
             <h2 id={`cta-${location}`} className="font-display text-h1">
               {title ?? t('home.final.title')}
             </h2>
-            <p className={cn('mt-6 max-w-xl text-body-lg', ink ? 'text-ink-soft' : 'text-ink-muted')}>{body ?? t('home.final.body')}</p>
+            <p
+              className={cn('text-body-lg mt-6 max-w-xl', ink ? 'text-ink-soft' : 'text-ink-muted')}
+            >
+              {body ?? t('home.final.body')}
+            </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <BookButton location={location} variant={ink ? 'inverse' : 'primary'} label={buttonLabel ?? t('cta.bookLong')} />
+              <BookButton
+                location={location}
+                variant={ink ? 'inverse' : 'primary'}
+                label={buttonLabel ?? t('cta.bookLong')}
+              />
               <WhatsAppButton location={location} variant="whatsapp" topic={topic} />
             </div>
-            <ul className={cn('mt-10 grid gap-3 text-small sm:grid-cols-2', ink ? 'text-ink-soft' : 'text-ink-muted')}>
+            <ul
+              className={cn(
+                'text-small mt-10 grid gap-3 sm:grid-cols-2',
+                ink ? 'text-ink-soft' : 'text-ink-muted',
+              )}
+            >
               {objections.map((o) => (
                 <li key={o} className="flex items-start gap-2.5">
-                  <Check aria-hidden size={18} className={cn('mt-px shrink-0', ink ? 'text-accent' : 'text-success')} />
+                  <Check
+                    aria-hidden
+                    size={18}
+                    className={cn('mt-px shrink-0', ink ? 'text-accent' : 'text-success')}
+                  />
                   <span>
                     <Ph>{o}</Ph>
                   </span>
@@ -64,10 +89,14 @@ export async function CtaBand({
             </ul>
           </div>
           {newsletter && (
-            <div data-reveal style={{ '--i': 2 } as React.CSSProperties} className="col-span-4 self-end md:col-span-6 lg:col-span-4 lg:col-start-9">
-              <div className="rounded-panel border border-border-ink bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8">
+            <div
+              data-reveal
+              style={{ '--i': 2 } as React.CSSProperties}
+              className="col-span-4 self-end md:col-span-6 lg:col-span-4 lg:col-start-9"
+            >
+              <div className="rounded-panel border-border-ink border bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8">
                 <p className="text-h4 font-semibold">{t('newsletter.title')}</p>
-                <p className="mt-2 text-small text-ink-soft">
+                <p className="text-small text-ink-soft mt-2">
                   <Ph>{t('newsletter.body')}</Ph>
                 </p>
                 <NewsletterForm location={`${location}_band`} tone="ink" />

@@ -7,16 +7,21 @@ export async function LocalSeo() {
   return (
     <section aria-labelledby="local-title" className="pb-[clamp(64px,10vw,160px)]">
       <div className="container-site">
-        <div data-reveal className="grid-site items-center gap-y-6 rounded-panel border border-border bg-surface p-6 sm:p-10">
+        <div
+          data-reveal
+          className="grid-site rounded-panel border-border bg-surface items-center gap-y-6 border p-6 sm:p-10"
+        >
           <div className="col-span-4 md:col-span-8 lg:col-span-5">
-            <span className="inline-flex size-12 items-center justify-center rounded-full bg-surface-warm text-ink">
+            <span className="bg-surface-warm text-ink inline-flex size-12 items-center justify-center rounded-full">
               <MapPin aria-hidden size={22} />
             </span>
-            <h2 id="local-title" className="mt-5 text-h3 font-semibold">
+            <h2 id="local-title" className="text-h3 mt-5 font-semibold">
               {t('title')}
             </h2>
           </div>
-          <p className="col-span-4 text-body-lg text-ink-muted md:col-span-8 lg:col-span-6 lg:col-start-7">{t('body')}</p>
+          <p className="text-body-lg text-ink-muted col-span-4 md:col-span-8 lg:col-span-6 lg:col-start-7">
+            {t('body')}
+          </p>
         </div>
       </div>
     </section>

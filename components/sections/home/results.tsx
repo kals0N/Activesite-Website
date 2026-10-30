@@ -19,20 +19,34 @@ export async function Results() {
             <h2 id="results-title" className="font-display text-h2">
               {t('home.results.title')}
             </h2>
-            <p className="mt-5 text-body-lg text-ink-soft">{t('home.results.sub')}</p>
+            <p className="text-body-lg text-ink-soft mt-5">{t('home.results.sub')}</p>
           </div>
-          <Button href={pathFor(locale, '/work')} variant="inverse" size="md" className="shrink-0 max-md:hidden">
+          <Button
+            href={pathFor(locale, '/work')}
+            variant="inverse"
+            size="md"
+            className="shrink-0 max-md:hidden"
+          >
             {t('cta.allWork')}
           </Button>
         </div>
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-12">
           {studies.map((s, i) => (
-            <div key={s.key} className={i === 0 ? 'md:col-span-2 lg:col-span-7 lg:row-span-2' : 'lg:col-span-5'}>
-              <CaseStudyCard study={s} href={caseStudyPaths(s.key)[locale]} readLabel={t('cta.readStory')} size={i === 0 ? 'lg' : 'md'} index={i} />
+            <div
+              key={s.key}
+              className={i === 0 ? 'md:col-span-2 lg:col-span-7 lg:row-span-2' : 'lg:col-span-5'}
+            >
+              <CaseStudyCard
+                study={s}
+                href={caseStudyPaths(s.key)[locale]}
+                readLabel={t('cta.readStory')}
+                size={i === 0 ? 'lg' : 'md'}
+                index={i}
+              />
             </div>
           ))}
         </div>
-        <p className="mt-8 text-small text-ink-soft">{t('home.results.placeholderNote')}</p>
+        <p className="text-small text-ink-soft mt-8">{t('home.results.placeholderNote')}</p>
       </div>
     </section>
   );

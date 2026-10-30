@@ -1,4 +1,16 @@
-import { BadgeCheck, Boxes, Filter, LayoutTemplate, Megaphone, Monitor, Palette, Search, ShieldCheck, ShoppingBag, UserRound } from 'lucide-react';
+import {
+  BadgeCheck,
+  Boxes,
+  Filter,
+  LayoutTemplate,
+  Megaphone,
+  Monitor,
+  Palette,
+  Search,
+  ShieldCheck,
+  ShoppingBag,
+  UserRound,
+} from 'lucide-react';
 import type { ServiceIcon as Name } from '@/lib/services';
 
 const map = {
@@ -15,7 +27,15 @@ const map = {
   shield: ShieldCheck,
 } satisfies Record<Name, unknown>;
 
-export function ServiceIcon({ name, size = 20, className }: { name: Name; size?: number; className?: string }) {
+export function ServiceIcon({
+  name,
+  size = 20,
+  className,
+}: {
+  name: Name;
+  size?: number;
+  className?: string;
+}) {
   const Icon = map[name];
   return <Icon aria-hidden size={size} className={className} />;
 }

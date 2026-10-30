@@ -8,7 +8,11 @@ export function generateStaticParams() {
   return [{ file: 'en.xml' }, { file: 'fr.xml' }];
 }
 
-const esc = (s: string) => s.replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c]!);
+const esc = (s: string) =>
+  s.replace(
+    /[<>&'"]/g,
+    (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c]!,
+  );
 
 /** RSS feed per language: /feed/en.xml and /feed/fr.xml */
 export async function GET(_req: Request, { params }: { params: Promise<{ file: string }> }) {

@@ -32,7 +32,11 @@ export function buildMetadata({
     description,
     alternates: {
       canonical: url,
-      languages: { en: absolute(paths.en), fr: absolute(paths.fr), 'x-default': absolute(paths.en) },
+      languages: {
+        en: absolute(paths.en),
+        fr: absolute(paths.fr),
+        'x-default': absolute(paths.en),
+      },
     },
     openGraph: {
       type,

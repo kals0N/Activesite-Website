@@ -42,7 +42,10 @@ export function LangSwitch({
   useEffect(() => {
     if (!open) return;
     const close = (e: Event) => {
-      if (e instanceof KeyboardEvent ? e.key === 'Escape' : !ref.current?.contains(e.target as Node)) setOpen(false);
+      if (
+        e instanceof KeyboardEvent ? e.key === 'Escape' : !ref.current?.contains(e.target as Node)
+      )
+        setOpen(false);
     };
     document.addEventListener('keydown', close);
     document.addEventListener('click', close);
@@ -65,7 +68,11 @@ export function LangSwitch({
   if (variant === 'inline') {
     return (
       <div role="group" aria-label={t('language')} className="flex items-center gap-2">
-        <Globe aria-hidden size={18} className={tone === 'ink' ? 'text-ink-soft' : 'text-ink-muted'} />
+        <Globe
+          aria-hidden
+          size={18}
+          className={tone === 'ink' ? 'text-ink-soft' : 'text-ink-muted'}
+        />
         {options.map((o) => (
           // Full navigation so the <html lang> and every server-rendered string update.
           <a
@@ -76,10 +83,14 @@ export function LangSwitch({
             aria-current={o.locale === locale ? 'true' : undefined}
             onClick={() => onSwitch(o.locale)}
             className={cn(
-              'inline-flex h-11 items-center rounded-full px-4 text-small font-medium',
+              'text-small inline-flex h-11 items-center rounded-full px-4 font-medium',
               o.locale === locale
-                ? tone === 'ink' ? 'bg-white text-ink' : 'bg-ink text-white'
-                : tone === 'ink' ? 'border border-border-ink hover:border-white/60' : 'border border-border hover:border-ink/40',
+                ? tone === 'ink'
+                  ? 'text-ink bg-white'
+                  : 'bg-ink text-white'
+                : tone === 'ink'
+                  ? 'border-border-ink border hover:border-white/60'
+                  : 'border-border hover:border-ink/40 border',
             )}
           >
             {names[o.locale]}
@@ -97,16 +108,20 @@ export function LangSwitch({
         aria-controls={id}
         aria-label={`${t('language')}: ${names[locale]}`}
         onClick={() => setOpen((o) => !o)}
-        className="inline-flex h-11 items-center gap-1.5 rounded-full px-3 text-small font-medium uppercase hover:bg-ink/5"
+        className="text-small hover:bg-ink/5 inline-flex h-11 items-center gap-1.5 rounded-full px-3 font-medium uppercase"
       >
         <Globe aria-hidden size={18} />
         {locale}
-        <ChevronDown aria-hidden size={14} className={cn('transition-transform', open && 'rotate-180')} />
+        <ChevronDown
+          aria-hidden
+          size={14}
+          className={cn('transition-transform', open && 'rotate-180')}
+        />
       </button>
       <ul
         id={id}
         className={cn(
-          'absolute right-0 mt-2 min-w-44 rounded-card border border-border bg-surface p-1.5 shadow-lift transition-[opacity,transform,visibility] duration-200 ease-(--ease-out)',
+          'rounded-card border-border bg-surface shadow-lift absolute right-0 mt-2 min-w-44 border p-1.5 transition-[opacity,transform,visibility] duration-200 ease-(--ease-out)',
           open ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-2 opacity-0',
         )}
       >
@@ -118,7 +133,7 @@ export function LangSwitch({
               lang={o.locale}
               aria-current={o.locale === locale ? 'true' : undefined}
               onClick={() => onSwitch(o.locale)}
-              className="flex h-11 items-center justify-between gap-4 rounded-xl px-3 text-small hover:bg-primary-tint"
+              className="text-small hover:bg-primary-tint flex h-11 items-center justify-between gap-4 rounded-xl px-3"
             >
               {names[o.locale]}
               {o.locale === locale && <Check aria-hidden size={16} className="text-primary" />}

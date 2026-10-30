@@ -93,7 +93,8 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
     hoverTimer.current = window.setTimeout(() => setMegaOpen(open), open ? 80 : 160);
   };
 
-  const isActive = (href: string) => pathname === href || (href !== data.home && pathname.startsWith(href + '/'));
+  const isActive = (href: string) =>
+    pathname === href || (href !== data.home && pathname.startsWith(href + '/'));
 
   return (
     <>
@@ -107,13 +108,20 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
         )}
       >
         <div className="container-site flex h-16 items-center gap-6 lg:h-20" ref={megaRef}>
-          <NextLink href={data.home} className="-ml-1 shrink-0 rounded-md p-1" aria-label={t('a11y.logoHome')}>
+          <NextLink
+            href={data.home}
+            className="-ml-1 shrink-0 rounded-md p-1"
+            aria-label={t('a11y.logoHome')}
+          >
             <Logo className="h-11 w-auto lg:h-12" />
           </NextLink>
 
           <nav aria-label={t('a11y.mainNav')} className="hidden flex-1 lg:block">
             <ul className="flex items-center gap-1">
-              <li onPointerEnter={(e) => e.pointerType === 'mouse' && hover(true)} onPointerLeave={(e) => e.pointerType === 'mouse' && hover(false)}>
+              <li
+                onPointerEnter={(e) => e.pointerType === 'mouse' && hover(true)}
+                onPointerLeave={(e) => e.pointerType === 'mouse' && hover(false)}
+              >
                 <button
                   id="mega-trigger"
                   type="button"
@@ -121,7 +129,7 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
                   aria-controls="mega-menu"
                   onClick={() => setMegaOpen((o) => !o)}
                   className={cn(
-                    'inline-flex h-11 items-center gap-1 rounded-full px-4 text-[0.9375rem] font-medium transition-colors hover:bg-ink/5',
+                    'hover:bg-ink/5 inline-flex h-11 items-center gap-1 rounded-full px-4 text-[0.9375rem] font-medium transition-colors',
                     (megaOpen || isActive(data.servicesHref)) && 'bg-ink/5',
                   )}
                 >
@@ -129,7 +137,10 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
                   <ChevronDown
                     aria-hidden
                     size={16}
-                    className={cn('transition-transform duration-(--duration-base)', megaOpen && 'rotate-180')}
+                    className={cn(
+                      'transition-transform duration-(--duration-base)',
+                      megaOpen && 'rotate-180',
+                    )}
                   />
                 </button>
                 <MegaMenu data={data} open={megaOpen} onNavigate={() => setMegaOpen(false)} />
@@ -140,7 +151,7 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
                     href={l.href}
                     aria-current={isActive(l.href) ? 'page' : undefined}
                     className={cn(
-                      'inline-flex h-11 items-center rounded-full px-4 text-[0.9375rem] font-medium transition-colors hover:bg-ink/5',
+                      'hover:bg-ink/5 inline-flex h-11 items-center rounded-full px-4 text-[0.9375rem] font-medium transition-colors',
                       isActive(l.href) && 'bg-ink/5',
                     )}
                   >
@@ -163,11 +174,15 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
               className={cn(buttonClasses('primary', 'sm'), 'px-4 lg:h-11 lg:px-5')}
             >
               <span>{t('cta.book')}</span>
-              <ArrowRight aria-hidden size={16} className="hidden transition-transform group-hover/btn:translate-x-1 lg:block" />
+              <ArrowRight
+                aria-hidden
+                size={16}
+                className="hidden transition-transform group-hover/btn:translate-x-1 lg:block"
+              />
             </a>
             <button
               type="button"
-              className="inline-flex size-11 items-center justify-center rounded-full hover:bg-ink/5 lg:hidden"
+              className="hover:bg-ink/5 inline-flex size-11 items-center justify-center rounded-full lg:hidden"
               aria-label={t('a11y.openMenu')}
               aria-haspopup="dialog"
               onClick={() => dialogRef.current?.showModal()}
@@ -183,7 +198,15 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
   );
 }
 
-function MegaMenu({ data, open, onNavigate }: { data: NavData; open: boolean; onNavigate: () => void }) {
+function MegaMenu({
+  data,
+  open,
+  onNavigate,
+}: {
+  data: NavData;
+  open: boolean;
+  onNavigate: () => void;
+}) {
   const t = useTranslations();
   return (
     <div
@@ -194,22 +217,24 @@ function MegaMenu({ data, open, onNavigate }: { data: NavData; open: boolean; on
       )}
     >
       <div className="container-site pt-2">
-        <div className="rounded-panel border border-border bg-surface p-3 shadow-float">
+        <div className="rounded-panel border-border bg-surface shadow-float border p-3">
           <div className="grid grid-cols-3 gap-2">
             {data.groups.map((g) => (
               <div key={g.key} className="rounded-card p-5">
                 <p className="text-h4 font-semibold">{g.label}</p>
-                <p className="mt-1 text-small text-ink-muted">{g.line}</p>
+                <p className="text-small text-ink-muted mt-1">{g.line}</p>
                 <ul className="mt-4 space-y-1">
                   {g.items.map((s) => (
                     <li key={s.key}>
                       <NextLink
                         href={s.href}
                         onClick={onNavigate}
-                        className="group/item -mx-3 block rounded-xl px-3 py-2.5 transition-colors hover:bg-primary-tint"
+                        className="group/item hover:bg-primary-tint -mx-3 block rounded-xl px-3 py-2.5 transition-colors"
                       >
-                        <span className="block text-[0.9375rem] font-medium group-hover/item:text-primary">{s.label}</span>
-                        <span className="mt-0.5 block text-small text-ink-muted">{s.line}</span>
+                        <span className="group-hover/item:text-primary block text-[0.9375rem] font-medium">
+                          {s.label}
+                        </span>
+                        <span className="text-small text-ink-muted mt-0.5 block">{s.line}</span>
                       </NextLink>
                     </li>
                   ))}
@@ -217,9 +242,13 @@ function MegaMenu({ data, open, onNavigate }: { data: NavData; open: boolean; on
               </div>
             ))}
           </div>
-          <div className="mt-2 flex items-center justify-between gap-4 rounded-card bg-surface-warm px-5 py-4">
+          <div className="rounded-card bg-surface-warm mt-2 flex items-center justify-between gap-4 px-5 py-4">
             <p className="text-small text-ink-muted">{t('nav.menuFoot')}</p>
-            <NextLink href={data.servicesHref} onClick={onNavigate} className="link-draw text-small font-medium text-primary">
+            <NextLink
+              href={data.servicesHref}
+              onClick={onNavigate}
+              className="link-draw text-small text-primary font-medium"
+            >
               {t('nav.allServices')}
             </NextLink>
           </div>
@@ -244,37 +273,50 @@ function MobileSheet({
     <dialog
       ref={ref}
       aria-label={t('a11y.mainNav')}
-      className="m-0 ml-auto h-dvh max-h-none w-full max-w-md bg-canvas p-0 text-ink backdrop:bg-ink/40 backdrop:backdrop-blur-sm open:animate-none lg:hidden"
+      className="bg-canvas text-ink backdrop:bg-ink/40 m-0 ml-auto h-dvh max-h-none w-full max-w-md p-0 backdrop:backdrop-blur-sm open:animate-none lg:hidden"
       onClick={(e) => e.target === ref.current && close()}
     >
       <div className="flex h-full flex-col">
         <div className="flex h-16 items-center justify-between px-4">
-          <NextLink href={data.home} onClick={close} aria-label={t('a11y.logoHome')} className="rounded-md p-1">
+          <NextLink
+            href={data.home}
+            onClick={close}
+            aria-label={t('a11y.logoHome')}
+            className="rounded-md p-1"
+          >
             <Logo className="h-11 w-auto" />
           </NextLink>
           <button
             type="button"
             onClick={close}
             aria-label={t('a11y.closeMenu')}
-            className="inline-flex size-11 items-center justify-center rounded-full hover:bg-ink/5"
+            className="hover:bg-ink/5 inline-flex size-11 items-center justify-center rounded-full"
           >
             <X aria-hidden size={22} />
           </button>
         </div>
         <nav className="flex-1 overflow-y-auto px-4 pb-6">
-          <p className="pt-2 pb-2 text-small font-medium text-ink-muted">{t('nav.services')}</p>
-          <ul className="divide-y divide-border border-y border-border">
+          <p className="text-small text-ink-muted pt-2 pb-2 font-medium">{t('nav.services')}</p>
+          <ul className="divide-border border-border divide-y border-y">
             {data.groups.map((g) => (
               <li key={g.key}>
                 <details className="group/acc">
-                  <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between text-h4 font-semibold [&::-webkit-details-marker]:hidden">
+                  <summary className="text-h4 flex min-h-14 cursor-pointer list-none items-center justify-between font-semibold [&::-webkit-details-marker]:hidden">
                     {g.label}
-                    <ChevronDown aria-hidden size={18} className="transition-transform group-open/acc:rotate-180" />
+                    <ChevronDown
+                      aria-hidden
+                      size={18}
+                      className="transition-transform group-open/acc:rotate-180"
+                    />
                   </summary>
                   <ul className="pb-4">
                     {g.items.map((s) => (
                       <li key={s.key}>
-                        <NextLink href={s.href} onClick={close} className="block rounded-xl py-2.5 pr-2 text-body">
+                        <NextLink
+                          href={s.href}
+                          onClick={close}
+                          className="text-body block rounded-xl py-2.5 pr-2"
+                        >
                           {s.label}
                         </NextLink>
                       </li>
@@ -284,13 +326,21 @@ function MobileSheet({
               </li>
             ))}
             <li>
-              <NextLink href={data.servicesHref} onClick={close} className="flex min-h-14 items-center text-h4 font-semibold">
+              <NextLink
+                href={data.servicesHref}
+                onClick={close}
+                className="text-h4 flex min-h-14 items-center font-semibold"
+              >
                 {t('nav.allServices')}
               </NextLink>
             </li>
             {data.links.map((l) => (
               <li key={l.href}>
-                <NextLink href={l.href} onClick={close} className="flex min-h-14 items-center text-h4 font-semibold">
+                <NextLink
+                  href={l.href}
+                  onClick={close}
+                  className="text-h4 flex min-h-14 items-center font-semibold"
+                >
                   {l.label}
                 </NextLink>
               </li>
@@ -300,7 +350,7 @@ function MobileSheet({
             <LangSwitch locale={locale} alternates={data.alternates} variant="inline" />
           </div>
         </nav>
-        <div className="border-t border-border p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+        <div className="border-border border-t p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <a
             href={data.contactHref}
             data-book=""

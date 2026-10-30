@@ -122,5 +122,11 @@ export function getCaseStudyByKey(locale: Locale, key: string) {
 export const getLegal = cache((locale: Locale, key: LegalDoc['key']): LegalDoc => {
   const file = path.join(ROOT, 'legal', locale, `${key}.mdx`);
   const { data, content } = matter(fs.readFileSync(file, 'utf8'));
-  return { key, title: data.title, description: data.description, updated: String(data.updated), body: content };
+  return {
+    key,
+    title: data.title,
+    description: data.description,
+    updated: String(data.updated),
+    body: content,
+  };
 });

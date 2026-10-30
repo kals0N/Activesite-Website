@@ -1,5 +1,11 @@
 /** Rehype plugin: wraps [[PLACEHOLDER…]] tokens in MDX text in <span class="ph"> so they stay visible. */
-type Node = { type: string; value?: string; children?: Node[]; tagName?: string; properties?: Record<string, unknown> };
+type Node = {
+  type: string;
+  value?: string;
+  children?: Node[];
+  tagName?: string;
+  properties?: Record<string, unknown>;
+};
 
 const SPLIT = /(\[\[[^\]]+\]\])/g;
 const IS_TOKEN = /^\[\[[^\]]+\]\]$/;
@@ -14,7 +20,12 @@ export function rehypePlaceholders() {
           .filter(Boolean)
           .map((part): Node =>
             IS_TOKEN.test(part)
-              ? { type: 'element', tagName: 'span', properties: { className: ['ph'], dataPlaceholder: '' }, children: [{ type: 'text', value: part }] }
+              ? {
+                  type: 'element',
+                  tagName: 'span',
+                  properties: { className: ['ph'], dataPlaceholder: '' },
+                  children: [{ type: 'text', value: part }],
+                }
               : { type: 'text', value: part },
           );
       }

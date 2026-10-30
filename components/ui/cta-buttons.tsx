@@ -80,5 +80,5 @@ export async function WhatsAppButton({
 }
 
 function WaDot() {
-  return <span aria-hidden className="size-2 rounded-full bg-whatsapp" />;
+  return <span aria-hidden className="bg-whatsapp size-2 rounded-full" />;
 }

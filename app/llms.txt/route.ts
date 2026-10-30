@@ -36,11 +36,15 @@ ${services.map((s) => `- [${s.name}](${absolute(servicePaths(s.key).en)}): ${s.o
 
 ## Case studies
 
-${getCaseStudies('en').map((c) => `- [${c.title}](${absolute(caseStudyPaths(c.key).en)})`).join('\n')}
+${getCaseStudies('en')
+  .map((c) => `- [${c.title}](${absolute(caseStudyPaths(c.key).en)})`)
+  .join('\n')}
 
 ## Articles
 
-${getPosts('en').map((p) => `- [${p.title}](${absolute(postPaths(p.key).en)}): ${p.description}`).join('\n')}
+${getPosts('en')
+  .map((p) => `- [${p.title}](${absolute(postPaths(p.key).en)}): ${p.description}`)
+  .join('\n')}
 
 ## Profiles
 

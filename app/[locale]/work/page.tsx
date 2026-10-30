@@ -13,7 +13,12 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'work' });
-  return buildMetadata({ locale, paths: localized(() => '/work'), title: t('metaTitle'), description: t('metaDescription') });
+  return buildMetadata({
+    locale,
+    paths: localized(() => '/work'),
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  });
 }
 
 export default async function WorkPage({ params }: Props) {
@@ -38,14 +43,26 @@ export default async function WorkPage({ params }: Props) {
           <ul className="grid gap-5 md:grid-cols-2">
             {studies.map((s, i) => (
               <li key={s.key} className={i === 0 ? 'md:col-span-2' : ''}>
-                <CaseStudyCard study={s} href={caseStudyPaths(s.key)[locale]} readLabel={t('cta.readStory')} tone="light" size={i === 0 ? 'lg' : 'md'} index={i} />
+                <CaseStudyCard
+                  study={s}
+                  href={caseStudyPaths(s.key)[locale]}
+                  readLabel={t('cta.readStory')}
+                  tone="light"
+                  size={i === 0 ? 'lg' : 'md'}
+                  index={i}
+                />
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-small text-ink-muted">{t('home.results.placeholderNote')}</p>
+          <p className="text-small text-ink-muted mt-8">{t('home.results.placeholderNote')}</p>
         </div>
       </section>
-      <CtaBand location="work_final" title={t('work.ctaTitle')} body={t('work.ctaBody')} buttonLabel={t('cta.resultsLike')} />
+      <CtaBand
+        location="work_final"
+        title={t('work.ctaTitle')}
+        body={t('work.ctaBody')}
+        buttonLabel={t('cta.resultsLike')}
+      />
     </>
   );
 }

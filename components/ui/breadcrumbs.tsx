@@ -12,7 +12,7 @@ export async function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (
     <>
       <nav aria-label={t('breadcrumb')}>
-        <ol className="flex flex-wrap items-center gap-1.5 text-small text-ink-muted">
+        <ol className="text-small text-ink-muted flex flex-wrap items-center gap-1.5">
           {items.map((c, i) => {
             const last = i === items.length - 1;
             return (

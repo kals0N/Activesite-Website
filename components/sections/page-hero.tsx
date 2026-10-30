@@ -43,21 +43,37 @@ export async function PageHero({
       <div className="container-site relative">
         <Breadcrumbs items={crumbs} />
         <div className="mt-8 max-w-4xl lg:mt-10" data-wa-topic={topic}>
-          <h1 className="hero-word font-display text-h1" style={{ '--w': 0 } as React.CSSProperties}>
+          <h1
+            className="hero-word font-display text-h1"
+            style={{ '--w': 0 } as React.CSSProperties}
+          >
             <Ph>{title}</Ph>
           </h1>
           {sub && (
-            <p className="hero-follow mt-6 max-w-2xl text-body-lg text-ink-muted" style={{ '--d': 0 } as React.CSSProperties}>
+            <p
+              className="hero-follow text-body-lg text-ink-muted mt-6 max-w-2xl"
+              style={{ '--d': 0 } as React.CSSProperties}
+            >
               <Ph>{sub}</Ph>
             </p>
           )}
           {ctas && (
-            <div className={cn('hero-follow mt-8 flex flex-col gap-3 sm:flex-row')} style={{ '--d': 1 } as React.CSSProperties}>
+            <div
+              className={cn('hero-follow mt-8 flex flex-col gap-3 sm:flex-row')}
+              style={{ '--d': 1 } as React.CSSProperties}
+            >
               <BookButton location={location} label={bookLabel} />
               <WhatsAppButton location={location} topic={topic} />
             </div>
           )}
-          {ctas && <p className="hero-follow mt-5 text-small text-ink-muted" style={{ '--d': 2 } as React.CSSProperties}>{t('free')}</p>}
+          {ctas && (
+            <p
+              className="hero-follow text-small text-ink-muted mt-5"
+              style={{ '--d': 2 } as React.CSSProperties}
+            >
+              {t('free')}
+            </p>
+          )}
           {children}
         </div>
       </div>

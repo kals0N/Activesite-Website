@@ -8,7 +8,13 @@ import { cn } from '@/lib/cn';
  * Mobile: a vertical timeline with simple reveals, no pinning. Works fully without JS
  * (every step is visible; only the "active" emphasis needs JS).
  */
-export function ProcessSteps({ steps, heading }: { steps: { name: string; body: string }[]; heading: ReactNode }) {
+export function ProcessSteps({
+  steps,
+  heading,
+}: {
+  steps: { name: string; body: string }[];
+  heading: ReactNode;
+}) {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLLIElement | null)[]>([]);
 
@@ -34,12 +40,14 @@ export function ProcessSteps({ steps, heading }: { steps: { name: string; body: 
           {heading}
           <div className="mt-12 hidden lg:block" aria-hidden>
             <div className="flex items-baseline gap-4">
-              <span className="font-display text-[7rem] leading-none text-primary tabular">{String(active + 1).padStart(2, '0')}</span>
+              <span className="font-display text-primary tabular text-[7rem] leading-none">
+                {String(active + 1).padStart(2, '0')}
+              </span>
               <span className="text-h3 font-semibold">{steps[active].name}</span>
             </div>
-            <div className="mt-6 h-px w-full max-w-sm bg-border">
+            <div className="bg-border mt-6 h-px w-full max-w-sm">
               <div
-                className="h-px origin-left bg-ink transition-transform duration-(--duration-slow) ease-(--ease-out)"
+                className="bg-ink h-px origin-left transition-transform duration-(--duration-slow) ease-(--ease-out)"
                 style={{ transform: `scaleX(${progress})` }}
               />
             </div>
@@ -48,7 +56,10 @@ export function ProcessSteps({ steps, heading }: { steps: { name: string; body: 
       </div>
 
       <ol className="relative col-span-4 md:col-span-8 lg:col-span-6 lg:col-start-7">
-        <span aria-hidden className="absolute top-2 bottom-2 left-[19px] w-px bg-border lg:hidden" />
+        <span
+          aria-hidden
+          className="bg-border absolute top-2 bottom-2 left-[19px] w-px lg:hidden"
+        />
         {steps.map((s, i) => (
           <li
             key={s.name}
@@ -61,8 +72,10 @@ export function ProcessSteps({ steps, heading }: { steps: { name: string; body: 
           >
             <span
               className={cn(
-                'relative z-10 inline-flex size-10 shrink-0 items-center justify-center rounded-full border text-small font-semibold tabular transition-colors duration-(--duration-base)',
-                i <= active ? 'border-ink bg-ink text-white' : 'border-border bg-surface text-ink-muted',
+                'text-small tabular relative z-10 inline-flex size-10 shrink-0 items-center justify-center rounded-full border font-semibold transition-colors duration-(--duration-base)',
+                i <= active
+                  ? 'border-ink bg-ink text-white'
+                  : 'border-border bg-surface text-ink-muted',
               )}
             >
               {i + 1}
@@ -76,7 +89,7 @@ export function ProcessSteps({ steps, heading }: { steps: { name: string; body: 
               >
                 {s.name}
               </h3>
-              <p className="mt-2 text-body-lg text-ink-muted">{s.body}</p>
+              <p className="text-body-lg text-ink-muted mt-2">{s.body}</p>
             </div>
           </li>
         ))}

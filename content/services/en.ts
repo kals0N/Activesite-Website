@@ -24,7 +24,10 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'You compete on price because nothing signals premium value.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. +X% enquiries after rebrand]]', label: 'More enquiries from a brand that looks the part' },
+      {
+        metric: '[[PLACEHOLDER: e.g. +X% enquiries after rebrand]]',
+        label: 'More enquiries from a brand that looks the part',
+      },
       { metric: '[[PLACEHOLDER: e.g. X weeks]]', label: 'From brief to a complete brand kit' },
       { metric: '1', label: 'Consistent look across web, social and print' },
     ],
@@ -36,12 +39,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Social media and business document templates',
       'All source files, yours to keep',
     ],
-    processNote: 'We define what you stand for first, then design the identity to say it at a glance.',
+    processNote:
+      'We define what you stand for first, then design the identity to say it at a glance.',
     faqs: [
-      { q: 'How many logo concepts will I see?', a: 'You see [[PLACEHOLDER: number of concepts]] distinct directions. We refine your favourite until it is right, within the agreed revision rounds.' },
-      { q: 'Do I own the final logo?', a: 'Yes. Once the project is paid, you own the full rights and receive every source file.' },
-      { q: 'Can you refresh my current logo instead of replacing it?', a: 'Yes. If your logo has recognition worth keeping, we modernise it rather than start over.' },
-      { q: 'How long does a brand identity take?', a: `Most identities take ${PH_TIME}. We agree a fixed timeline on the free strategy call.` },
+      {
+        q: 'How many logo concepts will I see?',
+        a: 'You see [[PLACEHOLDER: number of concepts]] distinct directions. We refine your favourite until it is right, within the agreed revision rounds.',
+      },
+      {
+        q: 'Do I own the final logo?',
+        a: 'Yes. Once the project is paid, you own the full rights and receive every source file.',
+      },
+      {
+        q: 'Can you refresh my current logo instead of replacing it?',
+        a: 'Yes. If your logo has recognition worth keeping, we modernise it rather than start over.',
+      },
+      {
+        q: 'How long does a brand identity take?',
+        a: `Most identities take ${PH_TIME}. We agree a fixed timeline on the free strategy call.`,
+      },
     ],
   },
   'graphic-design': {
@@ -65,8 +81,14 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Inconsistent visuals weaken the brand you paid to build.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. +X% engagement]]', label: 'More people stopping on your content' },
-      { metric: '[[PLACEHOLDER: e.g. X-day turnaround]]', label: 'Fast turnaround on new creatives' },
+      {
+        metric: '[[PLACEHOLDER: e.g. +X% engagement]]',
+        label: 'More people stopping on your content',
+      },
+      {
+        metric: '[[PLACEHOLDER: e.g. X-day turnaround]]',
+        label: 'Fast turnaround on new creatives',
+      },
       { metric: '100%', label: 'On-brand, every time' },
     ],
     deliverables: [
@@ -77,12 +99,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Presentation and document design',
       'Editable source files',
     ],
-    processNote: 'Every visual starts from the action you want people to take, then the design earns it.',
+    processNote:
+      'Every visual starts from the action you want people to take, then the design earns it.',
     faqs: [
-      { q: 'Can you work with my existing brand guidelines?', a: 'Yes. We follow your guidelines exactly, or suggest improvements if they hold your visuals back.' },
-      { q: 'Do you offer monthly design support?', a: 'Yes. Many clients book a monthly scope for social and ad creatives. We tailor it on a free call.' },
-      { q: 'Which formats do you deliver?', a: 'We deliver web, social, print and motion formats, plus the editable source files.' },
-      { q: 'How fast can you deliver?', a: 'Small requests usually take [[PLACEHOLDER: turnaround for small requests]]. Larger projects follow an agreed timeline.' },
+      {
+        q: 'Can you work with my existing brand guidelines?',
+        a: 'Yes. We follow your guidelines exactly, or suggest improvements if they hold your visuals back.',
+      },
+      {
+        q: 'Do you offer monthly design support?',
+        a: 'Yes. Many clients book a monthly scope for social and ad creatives. We tailor it on a free call.',
+      },
+      {
+        q: 'Which formats do you deliver?',
+        a: 'We deliver web, social, print and motion formats, plus the editable source files.',
+      },
+      {
+        q: 'How fast can you deliver?',
+        a: 'Small requests usually take [[PLACEHOLDER: turnaround for small requests]]. Larger projects follow an agreed timeline.',
+      },
     ],
   },
   'ui-ux-design': {
@@ -106,7 +141,10 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'You cannot show investors or clients how the product will work.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. +X% sign-up completion]]', label: 'More users finishing key tasks' },
+      {
+        metric: '[[PLACEHOLDER: e.g. +X% sign-up completion]]',
+        label: 'More users finishing key tasks',
+      },
       { metric: '[[PLACEHOLDER: e.g. X weeks]]', label: 'To a clickable, testable prototype' },
       { metric: '0', label: 'Guesswork handed to developers' },
     ],
@@ -118,19 +156,33 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'High-fidelity UI and interactive prototype',
       'Developer-ready design files and specs',
     ],
-    processNote: 'We map the journey to your business goal, test it as a prototype, then hand over a clear build plan.',
+    processNote:
+      'We map the journey to your business goal, test it as a prototype, then hand over a clear build plan.',
     faqs: [
-      { q: 'Which tools do you design in?', a: 'We design in Figma. You get full access to the files and the prototype link.' },
-      { q: 'Can you design for a product another team will build?', a: 'Yes. We deliver specs and assets any competent developer can build from.' },
-      { q: 'Do you test the designs with real users?', a: 'Yes. We run quick usability checks on the prototype and fix issues before development starts.' },
-      { q: 'Is UX design worth it for a small website?', a: 'Yes. A clear structure is what turns visitors into enquiries. We size the work to your project.' },
+      {
+        q: 'Which tools do you design in?',
+        a: 'We design in Figma. You get full access to the files and the prototype link.',
+      },
+      {
+        q: 'Can you design for a product another team will build?',
+        a: 'Yes. We deliver specs and assets any competent developer can build from.',
+      },
+      {
+        q: 'Do you test the designs with real users?',
+        a: 'Yes. We run quick usability checks on the prototype and fix issues before development starts.',
+      },
+      {
+        q: 'Is UX design worth it for a small website?',
+        a: 'Yes. A clear structure is what turns visitors into enquiries. We size the work to your project.',
+      },
     ],
   },
   'website-development': {
     slug: 'website-development',
     name: 'Business websites',
     outcome: 'A website that brings in qualified leads every week',
-    promise: 'A fast, professional business website built around one job: turning visitors into clients.',
+    promise:
+      'A fast, professional business website built around one job: turning visitors into clients.',
     card: 'Corporate websites built to turn visitors into qualified leads.',
     metaTitle: 'Business website development that brings leads | Activesite',
     metaDescription:
@@ -147,7 +199,10 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Visitors do not know what to do next, so they never contact you.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. +X% leads in Y days]]', label: 'More qualified enquiries from the same traffic' },
+      {
+        metric: '[[PLACEHOLDER: e.g. +X% leads in Y days]]',
+        label: 'More qualified enquiries from the same traffic',
+      },
       { metric: '≤ 2.5 s', label: 'Load time on mobile, our build standard' },
       { metric: PH_TIME, label: 'From kickoff to launch' },
     ],
@@ -159,12 +214,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'On-page SEO, analytics and conversion tracking',
       'Training to update your content',
     ],
-    processNote: 'We start from the leads you need each month, then design every page to produce them.',
+    processNote:
+      'We start from the leads you need each month, then design every page to produce them.',
     faqs: [
-      { q: 'How much does a business website cost?', a: 'Every project is scoped to your goals. Get a tailored plan on a free call.' },
-      { q: 'Will I be able to edit the website myself?', a: 'Yes. We set up the content you change often so you can edit it, and train you to do it.' },
-      { q: 'Will my website work well on phones?', a: 'Yes. We design for phones first, then scale up to tablet and desktop.' },
-      { q: 'Do you write the website copy?', a: 'Yes. Conversion copy is included. We interview you, then write pages that speak to your clients.' },
+      {
+        q: 'How much does a business website cost?',
+        a: 'Every project is scoped to your goals. Get a tailored plan on a free call.',
+      },
+      {
+        q: 'Will I be able to edit the website myself?',
+        a: 'Yes. We set up the content you change often so you can edit it, and train you to do it.',
+      },
+      {
+        q: 'Will my website work well on phones?',
+        a: 'Yes. We design for phones first, then scale up to tablet and desktop.',
+      },
+      {
+        q: 'Do you write the website copy?',
+        a: 'Yes. Conversion copy is included. We interview you, then write pages that speak to your clients.',
+      },
     ],
   },
   'ecommerce-development': {
@@ -188,8 +256,14 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Your store is slow on mobile data, so customers give up.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. X in sales in Y weeks]]', label: 'Revenue from your own store' },
-      { metric: '[[PLACEHOLDER: e.g. +X% conversion rate]]', label: 'More visitors completing checkout' },
+      {
+        metric: '[[PLACEHOLDER: e.g. X in sales in Y weeks]]',
+        label: 'Revenue from your own store',
+      },
+      {
+        metric: '[[PLACEHOLDER: e.g. +X% conversion rate]]',
+        label: 'More visitors completing checkout',
+      },
       { metric: '24/7', label: 'Your store takes orders while you rest' },
     ],
     deliverables: [
@@ -200,12 +274,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Analytics, Meta and TikTok pixel tracking',
       'Training to manage products and orders',
     ],
-    processNote: 'We design the path from product page to paid order first, then build everything around it.',
+    processNote:
+      'We design the path from product page to paid order first, then build everything around it.',
     faqs: [
-      { q: 'Shopify or WooCommerce: which is right for me?', a: 'Shopify suits most owners who want simple management. WooCommerce suits those who need full control. We recommend one on the call.' },
-      { q: 'Can customers pay with Mobile Money?', a: 'In many cases, yes, through supported payment providers. We confirm the best option for your market.' },
-      { q: 'Can you move my products from another platform?', a: 'Yes. We migrate products, customers and orders where the platforms allow it.' },
-      { q: 'How much does an online store cost?', a: 'Every project is scoped to your goals. Get a tailored plan on a free call.' },
+      {
+        q: 'Shopify or WooCommerce: which is right for me?',
+        a: 'Shopify suits most owners who want simple management. WooCommerce suits those who need full control. We recommend one on the call.',
+      },
+      {
+        q: 'Can customers pay with Mobile Money?',
+        a: 'In many cases, yes, through supported payment providers. We confirm the best option for your market.',
+      },
+      {
+        q: 'Can you move my products from another platform?',
+        a: 'Yes. We migrate products, customers and orders where the platforms allow it.',
+      },
+      {
+        q: 'How much does an online store cost?',
+        a: 'Every project is scoped to your goals. Get a tailored plan on a free call.',
+      },
     ],
   },
   'saas-development': {
@@ -229,8 +316,14 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'You cannot judge technical choices, so you fear costly mistakes.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. MVP live in X weeks]]', label: 'From idea to a working product' },
-      { metric: '[[PLACEHOLDER: e.g. X paying users at launch]]', label: 'Early customers validating the product' },
+      {
+        metric: '[[PLACEHOLDER: e.g. MVP live in X weeks]]',
+        label: 'From idea to a working product',
+      },
+      {
+        metric: '[[PLACEHOLDER: e.g. X paying users at launch]]',
+        label: 'Early customers validating the product',
+      },
       { metric: '100%', label: 'Code and IP owned by you' },
     ],
     deliverables: [
@@ -241,19 +334,33 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Admin dashboard and analytics',
       'Hosting, monitoring and launch support',
     ],
-    processNote: 'We cut the idea to the smallest product customers will pay for, ship it, then grow it.',
+    processNote:
+      'We cut the idea to the smallest product customers will pay for, ship it, then grow it.',
     faqs: [
-      { q: 'Do I own the code?', a: 'Yes. You own the code, the designs and the intellectual property once the project is paid.' },
-      { q: 'Can you sign an NDA?', a: 'Yes. We sign an NDA before you share sensitive product details.' },
-      { q: 'Which technologies do you use?', a: 'We use proven, widely supported tools such as Next.js, React and Node.js, chosen to fit your product.' },
-      { q: 'Do you support the product after launch?', a: 'Yes. We offer ongoing development, hosting and maintenance so the product keeps improving.' },
+      {
+        q: 'Do I own the code?',
+        a: 'Yes. You own the code, the designs and the intellectual property once the project is paid.',
+      },
+      {
+        q: 'Can you sign an NDA?',
+        a: 'Yes. We sign an NDA before you share sensitive product details.',
+      },
+      {
+        q: 'Which technologies do you use?',
+        a: 'We use proven, widely supported tools such as Next.js, React and Node.js, chosen to fit your product.',
+      },
+      {
+        q: 'Do you support the product after launch?',
+        a: 'Yes. We offer ongoing development, hosting and maintenance so the product keeps improving.',
+      },
     ],
   },
   'portfolio-websites': {
     slug: 'portfolio-websites',
     name: 'Portfolio websites',
     outcome: 'A portfolio that wins you better clients',
-    promise: 'Portfolio websites for creators and experts who want premium clients, not just likes.',
+    promise:
+      'Portfolio websites for creators and experts who want premium clients, not just likes.',
     card: 'Portfolios for creators and experts that attract premium clients.',
     metaTitle: 'Portfolio website for creators and experts | Activesite',
     metaDescription:
@@ -270,7 +377,10 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Your social profiles can disappear; your own site cannot.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. +X enquiries per month]]', label: 'Collaboration and client requests' },
+      {
+        metric: '[[PLACEHOLDER: e.g. +X enquiries per month]]',
+        label: 'Collaboration and client requests',
+      },
       { metric: PH_TIME, label: 'To a live personal brand site' },
       { metric: '1', label: 'Home for your work, offers and audience' },
     ],
@@ -282,12 +392,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Media kit or services page',
       'Easy content updates',
     ],
-    processNote: 'We decide which clients you want, then curate and present your work to attract them.',
+    processNote:
+      'We decide which clients you want, then curate and present your work to attract them.',
     faqs: [
-      { q: 'Can I sell products or services from my portfolio?', a: 'Yes. We can add bookings, digital products or a small shop.' },
-      { q: 'Will it connect to my social media?', a: 'Yes. We link your profiles and can display selected posts without slowing the site.' },
-      { q: 'Can I add new projects myself?', a: 'Yes. Adding a project takes a few minutes, and we show you how.' },
-      { q: 'I am just starting out. Is a portfolio worth it?', a: 'Yes. A professional site makes a small body of work look credible and helps you raise your rates.' },
+      {
+        q: 'Can I sell products or services from my portfolio?',
+        a: 'Yes. We can add bookings, digital products or a small shop.',
+      },
+      {
+        q: 'Will it connect to my social media?',
+        a: 'Yes. We link your profiles and can display selected posts without slowing the site.',
+      },
+      {
+        q: 'Can I add new projects myself?',
+        a: 'Yes. Adding a project takes a few minutes, and we show you how.',
+      },
+      {
+        q: 'I am just starting out. Is a portfolio worth it?',
+        a: 'Yes. A professional site makes a small body of work look credible and helps you raise your rates.',
+      },
     ],
   },
   'sales-funnels': {
@@ -323,12 +446,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Payment and booking integration',
       'Conversion tracking on every step',
     ],
-    processNote: 'We map each step from first click to payment, then automate the follow-up between them.',
+    processNote:
+      'We map each step from first click to payment, then automate the follow-up between them.',
     faqs: [
-      { q: 'HighLevel or systeme.io: which should I use?', a: 'systeme.io suits creators starting out. HighLevel suits businesses that need a full CRM. We help you choose.' },
-      { q: 'Do you write the funnel copy and emails?', a: 'Yes. Copy for pages and follow-up messages is included.' },
-      { q: 'Can you fix a funnel I already have?', a: 'Yes. We audit your funnel, find where people drop off and fix those steps first.' },
-      { q: 'Do I need to run ads for a funnel to work?', a: 'No. Funnels also work with organic social, email lists and referrals. Ads simply scale them.' },
+      {
+        q: 'HighLevel or systeme.io: which should I use?',
+        a: 'systeme.io suits creators starting out. HighLevel suits businesses that need a full CRM. We help you choose.',
+      },
+      {
+        q: 'Do you write the funnel copy and emails?',
+        a: 'Yes. Copy for pages and follow-up messages is included.',
+      },
+      {
+        q: 'Can you fix a funnel I already have?',
+        a: 'Yes. We audit your funnel, find where people drop off and fix those steps first.',
+      },
+      {
+        q: 'Do I need to run ads for a funnel to work?',
+        a: 'No. Funnels also work with organic social, email lists and referrals. Ads simply scale them.',
+      },
     ],
   },
   'seo-aeo-geo': {
@@ -352,8 +488,14 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Ad costs rise every month because you have no organic traffic.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. +X% organic traffic in Y months]]', label: 'More visitors from search' },
-      { metric: '[[PLACEHOLDER: e.g. X keywords on page one]]', label: 'Rankings for the terms that bring clients' },
+      {
+        metric: '[[PLACEHOLDER: e.g. +X% organic traffic in Y months]]',
+        label: 'More visitors from search',
+      },
+      {
+        metric: '[[PLACEHOLDER: e.g. X keywords on page one]]',
+        label: 'Rankings for the terms that bring clients',
+      },
       { metric: '3', label: 'Channels covered: Google, AI answers, AI chat' },
     ],
     deliverables: [
@@ -364,12 +506,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Google Business Profile and local SEO',
       'Monthly ranking and traffic report',
     ],
-    processNote: 'We find the searches your clients make, then build pages that answer them better than anyone.',
+    processNote:
+      'We find the searches your clients make, then build pages that answer them better than anyone.',
     faqs: [
-      { q: 'What are AEO and GEO?', a: 'AEO means answer engine optimisation: appearing in direct answers like Google AI Overviews. GEO means generative engine optimisation: getting cited by AI chat tools.' },
-      { q: 'How long does SEO take to work?', a: 'Early movement often shows in [[PLACEHOLDER: typical time to first results]]. Strong rankings build over several months.' },
-      { q: 'Can you guarantee first place on Google?', a: 'No honest agency can. We commit to clear work, monthly reporting and the outcome terms agreed on your call.' },
-      { q: 'Do you do local SEO in Douala and Cameroon?', a: 'Yes. We optimise your Google Business Profile, local pages and listings in English and French.' },
+      {
+        q: 'What are AEO and GEO?',
+        a: 'AEO means answer engine optimisation: appearing in direct answers like Google AI Overviews. GEO means generative engine optimisation: getting cited by AI chat tools.',
+      },
+      {
+        q: 'How long does SEO take to work?',
+        a: 'Early movement often shows in [[PLACEHOLDER: typical time to first results]]. Strong rankings build over several months.',
+      },
+      {
+        q: 'Can you guarantee first place on Google?',
+        a: 'No honest agency can. We commit to clear work, monthly reporting and the outcome terms agreed on your call.',
+      },
+      {
+        q: 'Do you do local SEO in Douala and Cameroon?',
+        a: 'Yes. We optimise your Google Business Profile, local pages and listings in English and French.',
+      },
     ],
   },
   'digital-marketing': {
@@ -393,7 +548,10 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Ad accounts get restricted because of avoidable mistakes.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. X× return on ad spend]]', label: 'Revenue from every unit spent on ads' },
+      {
+        metric: '[[PLACEHOLDER: e.g. X× return on ad spend]]',
+        label: 'Revenue from every unit spent on ads',
+      },
       { metric: '[[PLACEHOLDER: e.g. −X% cost per lead]]', label: 'Lower cost for each new lead' },
       { metric: 'Monthly', label: 'Plain-language results report' },
     ],
@@ -405,12 +563,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Weekly optimisation and budget management',
       'Monthly report with next steps',
     ],
-    processNote: 'We set the cost per customer you can afford first, then build and tune campaigns to beat it.',
+    processNote:
+      'We set the cost per customer you can afford first, then build and tune campaigns to beat it.',
     faqs: [
-      { q: 'What ad budget do I need?', a: 'It depends on your goals and market. We recommend a starting budget on your free call.' },
-      { q: 'Is the ad spend included in your fee?', a: 'No. Ad spend is paid directly to Meta or TikTok, so you keep full control of the account.' },
-      { q: 'Do you make the ad creatives?', a: 'Yes. Our design team produces and tests creatives for every campaign.' },
-      { q: 'How soon will I see results?', a: 'Campaigns usually need [[PLACEHOLDER: typical learning period]] to learn. We report from week one.' },
+      {
+        q: 'What ad budget do I need?',
+        a: 'It depends on your goals and market. We recommend a starting budget on your free call.',
+      },
+      {
+        q: 'Is the ad spend included in your fee?',
+        a: 'No. Ad spend is paid directly to Meta or TikTok, so you keep full control of the account.',
+      },
+      {
+        q: 'Do you make the ad creatives?',
+        a: 'Yes. Our design team produces and tests creatives for every campaign.',
+      },
+      {
+        q: 'How soon will I see results?',
+        a: 'Campaigns usually need [[PLACEHOLDER: typical learning period]] to learn. We report from week one.',
+      },
     ],
   },
   'hosting-maintenance': {
@@ -435,7 +606,10 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
     ],
     outcomes: [
       { metric: '[[PLACEHOLDER: e.g. 99.9% uptime target]]', label: 'Your site stays online' },
-      { metric: '[[PLACEHOLDER: e.g. response within X hours]]', label: 'Support when you need it' },
+      {
+        metric: '[[PLACEHOLDER: e.g. response within X hours]]',
+        label: 'Support when you need it',
+      },
       { metric: 'Daily', label: 'Automatic backups' },
     ],
     deliverables: [
@@ -446,12 +620,25 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Speed and security checks',
       'Content updates and fixes on request',
     ],
-    processNote: 'We audit what you have, move it safely, then keep it fast and secure every month.',
+    processNote:
+      'We audit what you have, move it safely, then keep it fast and secure every month.',
     faqs: [
-      { q: 'Will my site go offline during migration?', a: 'We plan migrations to avoid downtime and protect your rankings with proper redirects.' },
-      { q: 'Can you maintain a site built by someone else?', a: 'Yes. We audit it first, then take over updates and support.' },
-      { q: 'Where do you host websites?', a: 'We use reliable providers such as Hostinger, chosen for speed and support in your markets.' },
-      { q: 'What happens if my site gets hacked?', a: 'We restore it from a clean backup, fix the cause and harden security.' },
+      {
+        q: 'Will my site go offline during migration?',
+        a: 'We plan migrations to avoid downtime and protect your rankings with proper redirects.',
+      },
+      {
+        q: 'Can you maintain a site built by someone else?',
+        a: 'Yes. We audit it first, then take over updates and support.',
+      },
+      {
+        q: 'Where do you host websites?',
+        a: 'We use reliable providers such as Hostinger, chosen for speed and support in your markets.',
+      },
+      {
+        q: 'What happens if my site gets hacked?',
+        a: 'We restore it from a clean backup, fix the cause and harden security.',
+      },
     ],
   },
 };

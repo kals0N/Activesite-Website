@@ -36,7 +36,7 @@ export function WhatsAppFab() {
       data-track="whatsapp_click"
       data-track-label="floating"
       className={cn(
-        'group/wa fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex size-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-float',
+        'group/wa bg-whatsapp shadow-float fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex size-14 items-center justify-center rounded-full text-white',
         'motion-safe:animate-wa-pulse transition-transform duration-(--duration-fast) hover:scale-105 active:scale-95 sm:right-6 sm:bottom-6',
         // Stay out of the way while the cookie banner is open on small screens.
         bannerOpen && 'max-sm:hidden',
@@ -45,7 +45,7 @@ export function WhatsAppFab() {
       <WhatsAppIcon size={28} />
       <span
         role="tooltip"
-        className="pointer-events-none absolute right-full mr-3 rounded-full bg-ink px-3 py-1.5 text-small whitespace-nowrap text-white opacity-0 transition-opacity duration-(--duration-fast) group-hover/wa:opacity-100 group-focus-visible/wa:opacity-100"
+        className="bg-ink text-small pointer-events-none absolute right-full mr-3 rounded-full px-3 py-1.5 whitespace-nowrap text-white opacity-0 transition-opacity duration-(--duration-fast) group-hover/wa:opacity-100 group-focus-visible/wa:opacity-100"
       >
         {t('tooltip')}
       </span>

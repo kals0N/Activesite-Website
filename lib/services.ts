@@ -68,17 +68,72 @@ const meta: Record<
   ServiceKey,
   { group: ServiceGroup; related: ServiceKey[]; caseStudy: string; icon: ServiceIcon }
 > = {
-  'brand-identity': { group: 'design', related: ['graphic-design', 'website-development', 'portfolio-websites'], caseStudy: 'brand-launch', icon: 'badge' },
-  'graphic-design': { group: 'design', related: ['brand-identity', 'digital-marketing', 'sales-funnels'], caseStudy: 'brand-launch', icon: 'palette' },
-  'ui-ux-design': { group: 'design', related: ['saas-development', 'website-development', 'ecommerce-development'], caseStudy: 'saas-mvp', icon: 'layout' },
-  'website-development': { group: 'build', related: ['seo-aeo-geo', 'hosting-maintenance', 'brand-identity'], caseStudy: 'lead-gen-website', icon: 'monitor' },
-  'ecommerce-development': { group: 'build', related: ['digital-marketing', 'seo-aeo-geo', 'hosting-maintenance'], caseStudy: 'lead-gen-website', icon: 'cart' },
-  'saas-development': { group: 'build', related: ['ui-ux-design', 'hosting-maintenance', 'sales-funnels'], caseStudy: 'saas-mvp', icon: 'boxes' },
-  'portfolio-websites': { group: 'build', related: ['brand-identity', 'seo-aeo-geo', 'sales-funnels'], caseStudy: 'brand-launch', icon: 'user' },
-  'sales-funnels': { group: 'grow', related: ['digital-marketing', 'website-development', 'graphic-design'], caseStudy: 'lead-gen-website', icon: 'funnel' },
-  'seo-aeo-geo': { group: 'grow', related: ['website-development', 'hosting-maintenance', 'digital-marketing'], caseStudy: 'lead-gen-website', icon: 'search' },
-  'digital-marketing': { group: 'grow', related: ['sales-funnels', 'graphic-design', 'ecommerce-development'], caseStudy: 'lead-gen-website', icon: 'megaphone' },
-  'hosting-maintenance': { group: 'grow', related: ['website-development', 'seo-aeo-geo', 'ecommerce-development'], caseStudy: 'saas-mvp', icon: 'shield' },
+  'brand-identity': {
+    group: 'design',
+    related: ['graphic-design', 'website-development', 'portfolio-websites'],
+    caseStudy: 'brand-launch',
+    icon: 'badge',
+  },
+  'graphic-design': {
+    group: 'design',
+    related: ['brand-identity', 'digital-marketing', 'sales-funnels'],
+    caseStudy: 'brand-launch',
+    icon: 'palette',
+  },
+  'ui-ux-design': {
+    group: 'design',
+    related: ['saas-development', 'website-development', 'ecommerce-development'],
+    caseStudy: 'saas-mvp',
+    icon: 'layout',
+  },
+  'website-development': {
+    group: 'build',
+    related: ['seo-aeo-geo', 'hosting-maintenance', 'brand-identity'],
+    caseStudy: 'lead-gen-website',
+    icon: 'monitor',
+  },
+  'ecommerce-development': {
+    group: 'build',
+    related: ['digital-marketing', 'seo-aeo-geo', 'hosting-maintenance'],
+    caseStudy: 'lead-gen-website',
+    icon: 'cart',
+  },
+  'saas-development': {
+    group: 'build',
+    related: ['ui-ux-design', 'hosting-maintenance', 'sales-funnels'],
+    caseStudy: 'saas-mvp',
+    icon: 'boxes',
+  },
+  'portfolio-websites': {
+    group: 'build',
+    related: ['brand-identity', 'seo-aeo-geo', 'sales-funnels'],
+    caseStudy: 'brand-launch',
+    icon: 'user',
+  },
+  'sales-funnels': {
+    group: 'grow',
+    related: ['digital-marketing', 'website-development', 'graphic-design'],
+    caseStudy: 'lead-gen-website',
+    icon: 'funnel',
+  },
+  'seo-aeo-geo': {
+    group: 'grow',
+    related: ['website-development', 'hosting-maintenance', 'digital-marketing'],
+    caseStudy: 'lead-gen-website',
+    icon: 'search',
+  },
+  'digital-marketing': {
+    group: 'grow',
+    related: ['sales-funnels', 'graphic-design', 'ecommerce-development'],
+    caseStudy: 'lead-gen-website',
+    icon: 'megaphone',
+  },
+  'hosting-maintenance': {
+    group: 'grow',
+    related: ['website-development', 'seo-aeo-geo', 'ecommerce-development'],
+    caseStudy: 'saas-mvp',
+    icon: 'shield',
+  },
 };
 
 const byLocale: Record<Locale, Record<ServiceKey, ServiceContent>> = {

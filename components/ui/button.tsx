@@ -19,11 +19,12 @@ type ButtonProps = {
   /** Analytics: delegated listener reads these (see components/integrations/analytics.tsx) */
   track?: 'cta_click' | 'whatsapp_click';
   trackLabel?: string;
-} & (
+} &
   /** Internal, already-localized path (use pathFor) or an external URL with `external` */
-  | { href: string; external?: boolean; book?: boolean }
-  | { href?: undefined; type?: 'button' | 'submit'; onClick?: () => void; disabled?: boolean }
-);
+  (
+    | { href: string; external?: boolean; book?: boolean }
+    | { href?: undefined; type?: 'button' | 'submit'; onClick?: () => void; disabled?: boolean }
+  );
 
 const variants: Record<Variant, string> = {
   primary: 'bg-primary text-white hover:bg-primary-hover shadow-soft',
@@ -39,7 +40,11 @@ const sizes: Record<Size, string> = {
   lg: 'h-14 px-7 text-base',
 };
 
-export function buttonClasses(variant: Variant = 'primary', size: Size = 'md', fullOnMobile = false) {
+export function buttonClasses(
+  variant: Variant = 'primary',
+  size: Size = 'md',
+  fullOnMobile = false,
+) {
   return cn(
     'group/btn relative inline-flex min-w-11 select-none items-center justify-center gap-2 rounded-full font-medium tracking-[-0.01em] whitespace-nowrap',
     'transition-[background-color,border-color,color,transform,filter] duration-(--duration-fast) ease-(--ease-out) active:scale-[0.98]',
@@ -50,7 +55,15 @@ export function buttonClasses(variant: Variant = 'primary', size: Size = 'md', f
   );
 }
 
-function Inner({ children, arrow, variant }: { children: ReactNode; arrow?: boolean; variant: Variant }) {
+function Inner({
+  children,
+  arrow,
+  variant,
+}: {
+  children: ReactNode;
+  arrow?: boolean;
+  variant: Variant;
+}) {
   return (
     <>
       {variant === 'whatsapp' && <WhatsAppIcon size={18} />}
@@ -67,7 +80,16 @@ function Inner({ children, arrow, variant }: { children: ReactNode; arrow?: bool
 }
 
 export function Button(props: ButtonProps) {
-  const { children, variant = 'primary', size = 'md', arrow, fullOnMobile, className, track, trackLabel } = props;
+  const {
+    children,
+    variant = 'primary',
+    size = 'md',
+    arrow,
+    fullOnMobile,
+    className,
+    track,
+    trackLabel,
+  } = props;
   const cls = cn(buttonClasses(variant, size, fullOnMobile), className);
   const data = {
     'data-track': track,
@@ -76,7 +98,13 @@ export function Button(props: ButtonProps) {
 
   if (props.href === undefined) {
     return (
-      <button type={props.type ?? 'button'} onClick={props.onClick} disabled={props.disabled} className={cls} {...data}>
+      <button
+        type={props.type ?? 'button'}
+        onClick={props.onClick}
+        disabled={props.disabled}
+        className={cls}
+        {...data}
+      >
         <Inner arrow={arrow} variant={variant}>
           {children}
         </Inner>

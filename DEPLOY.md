@@ -40,14 +40,14 @@ The site runs as a **Node.js Web App** on Hostinger (Business Web Hosting or a C
 
 ## 4. Integrations checklist
 
-| Integration | What to set | How to verify |
-| --- | --- | --- |
-| Cal.com | Create the event "Free 30-minute strategy call", set `NEXT_PUBLIC_CAL_LINK` | Any "Book a free call" button opens the popup; `/contact` shows the calendar; a test booking lands on `/thank-you` |
-| Brevo | API key, list IDs and double opt-in template IDs per language | Subscribe from the footer → confirmation email arrives → contact appears in the right list |
-| Turnstile | Site key + secret for `activesite.cc` | Widget appears when you start typing in the contact form |
-| GA4 | `NEXT_PUBLIC_GA4_ID` | GA4 DebugView shows events only **after** accepting cookies |
-| Meta / TikTok pixels | Pixel IDs | Meta Pixel Helper / TikTok Pixel Helper fire only after accepting marketing cookies |
-| Search Console | Verify by DNS TXT (recommended) or `NEXT_PUBLIC_GSC_VERIFICATION` | Submit `https://activesite.cc/sitemap.xml` |
+| Integration          | What to set                                                                 | How to verify                                                                                                      |
+| -------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Cal.com              | Create the event "Free 30-minute strategy call", set `NEXT_PUBLIC_CAL_LINK` | Any "Book a free call" button opens the popup; `/contact` shows the calendar; a test booking lands on `/thank-you` |
+| Brevo                | API key, list IDs and double opt-in template IDs per language               | Subscribe from the footer → confirmation email arrives → contact appears in the right list                         |
+| Turnstile            | Site key + secret for `activesite.cc`                                       | Widget appears when you start typing in the contact form                                                           |
+| GA4                  | `NEXT_PUBLIC_GA4_ID`                                                        | GA4 DebugView shows events only **after** accepting cookies                                                        |
+| Meta / TikTok pixels | Pixel IDs                                                                   | Meta Pixel Helper / TikTok Pixel Helper fire only after accepting marketing cookies                                |
+| Search Console       | Verify by DNS TXT (recommended) or `NEXT_PUBLIC_GSC_VERIFICATION`           | Submit `https://activesite.cc/sitemap.xml`                                                                         |
 
 ## 5. After every deploy
 
@@ -76,6 +76,6 @@ Keep the Node.js setup if at all possible: it keeps English at the root URL, whi
 
 ## Local SEO tasks (outside the code)
 
-- Create and verify the **Google Business Profile**: "Activesite", Douala, categories *Website designer*, *Marketing agency*, *Software company*. Use exactly the same name, location, email and WhatsApp number as the site.
+- Create and verify the **Google Business Profile**: "Activesite", Douala, categories _Website designer_, _Marketing agency_, _Software company_. Use exactly the same name, location, email and WhatsApp number as the site.
 - List the business on Maligah, Sortlist, Clutch, GoodFirms and DesignRush with identical details.
 - After every project, ask the client for a Google review.

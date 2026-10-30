@@ -15,8 +15,8 @@ export async function Process() {
               <h2 id="process-title" className="font-display text-h2">
                 {t('title')}
               </h2>
-              <p className="mt-5 max-w-md text-body-lg text-ink-muted">{t('sub')}</p>
-              <p className="mt-6 inline-flex rounded-full border border-border bg-surface px-4 py-2 text-small">
+              <p className="text-body-lg text-ink-muted mt-5 max-w-md">{t('sub')}</p>
+              <p className="border-border bg-surface text-small mt-6 inline-flex rounded-full border px-4 py-2">
                 <Ph>{t('time')}</Ph>
               </p>
             </div>

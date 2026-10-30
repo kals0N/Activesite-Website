@@ -24,20 +24,20 @@ export async function Problem() {
                   key={item.title}
                   data-reveal
                   style={{ '--i': i } as React.CSSProperties}
-                  className="flex gap-5 rounded-card border border-border bg-surface p-6 sm:p-8"
+                  className="rounded-card border-border bg-surface flex gap-5 border p-6 sm:p-8"
                 >
-                  <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-surface-warm text-ink">
+                  <span className="bg-surface-warm text-ink inline-flex size-11 shrink-0 items-center justify-center rounded-full">
                     <Icon aria-hidden size={20} />
                   </span>
                   <div>
                     <h3 className="text-h4 font-semibold">{item.title}</h3>
-                    <p className="mt-2 text-ink-muted">{item.body}</p>
+                    <p className="text-ink-muted mt-2">{item.body}</p>
                   </div>
                 </li>
               );
             })}
           </ul>
-          <p data-reveal className="mt-10 border-l-2 border-primary pl-6 text-h3 font-semibold">
+          <p data-reveal className="border-primary text-h3 mt-10 border-l-2 pl-6 font-semibold">
             {t('solution')}
           </p>
         </div>

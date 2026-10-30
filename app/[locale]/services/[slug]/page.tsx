@@ -28,7 +28,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const s = getServiceBySlug(locale, slug);
   if (!s) return {};
-  return buildMetadata({ locale, paths: servicePaths(s.key), title: s.metaTitle, description: s.metaDescription });
+  return buildMetadata({
+    locale,
+    paths: servicePaths(s.key),
+    title: s.metaTitle,
+    description: s.metaDescription,
+  });
 }
 
 export default async function ServicePage({ params }: Props) {
@@ -59,25 +64,32 @@ export default async function ServicePage({ params }: Props) {
       {/* Who it is for → problems it solves */}
       <section aria-labelledby="who-title" className="pb-[clamp(64px,10vw,160px)]">
         <div className="container-site grid gap-4 lg:grid-cols-12">
-          <div data-reveal className="rounded-panel border border-border bg-surface p-6 sm:p-10 lg:col-span-5">
+          <div
+            data-reveal
+            className="rounded-panel border-border bg-surface border p-6 sm:p-10 lg:col-span-5"
+          >
             <h2 id="who-title" className="font-display text-h2">
               {ts('whoFor')}
             </h2>
             <ul className="mt-8 space-y-4">
               {service.whoFor.map((w) => (
-                <li key={w} className="flex gap-3 text-body-lg">
-                  <Check aria-hidden size={20} className="mt-1 shrink-0 text-success" />
+                <li key={w} className="text-body-lg flex gap-3">
+                  <Check aria-hidden size={20} className="text-success mt-1 shrink-0" />
                   {w}
                 </li>
               ))}
             </ul>
           </div>
-          <div data-reveal style={{ '--i': 1 } as React.CSSProperties} className="rounded-panel bg-surface-warm p-6 sm:p-10 lg:col-span-7">
+          <div
+            data-reveal
+            style={{ '--i': 1 } as React.CSSProperties}
+            className="rounded-panel bg-surface-warm p-6 sm:p-10 lg:col-span-7"
+          >
             <h2 className="font-display text-h2">{ts('problems')}</h2>
-            <ul className="mt-8 divide-y divide-border">
+            <ul className="divide-border mt-8 divide-y">
               {service.problems.map((p) => (
-                <li key={p} className="flex gap-4 py-4 text-body-lg first:pt-0 last:pb-0">
-                  <span className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-surface">
+                <li key={p} className="text-body-lg flex gap-4 py-4 first:pt-0 last:pb-0">
+                  <span className="border-border bg-surface mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full border">
                     <X aria-hidden size={14} />
                   </span>
                   {p}
@@ -94,18 +106,29 @@ export default async function ServicePage({ params }: Props) {
           <h2 id="outcomes-title" data-reveal className="font-display text-h2">
             {ts('outcomes')}
           </h2>
-          <dl className="mt-10 grid gap-px overflow-hidden rounded-panel border border-border bg-border md:grid-cols-3">
+          <dl className="rounded-panel border-border bg-border mt-10 grid gap-px overflow-hidden border md:grid-cols-3">
             {service.outcomes.map((o, i) => (
-              <div key={o.label} data-reveal style={{ '--i': i } as React.CSSProperties} className="bg-surface p-7 sm:p-8">
+              <div
+                key={o.label}
+                data-reveal
+                style={{ '--i': i } as React.CSSProperties}
+                className="bg-surface p-7 sm:p-8"
+              >
                 <dt className="text-body text-ink-muted">{o.label}</dt>
-                <dd className={o.metric.includes('[[') ? 'mt-3 text-h4 font-semibold' : 'mt-3 text-stat font-semibold tabular'}>
+                <dd
+                  className={
+                    o.metric.includes('[[')
+                      ? 'text-h4 mt-3 font-semibold'
+                      : 'text-stat tabular mt-3 font-semibold'
+                  }
+                >
                   <Ph>{o.metric}</Ph>
                 </dd>
               </div>
             ))}
           </dl>
           {service.outcomes.some((o) => o.metric.includes('[[')) && (
-            <p className="mt-4 text-small text-ink-muted">{ts('outcomesNote')}</p>
+            <p className="text-small text-ink-muted mt-4">{ts('outcomesNote')}</p>
           )}
         </div>
       </section>
@@ -119,32 +142,45 @@ export default async function ServicePage({ params }: Props) {
             </h2>
             <ul className="mt-8 grid gap-3">
               {service.deliverables.map((d, i) => (
-                <li key={d} data-reveal style={{ '--i': i } as React.CSSProperties} className="flex items-start gap-4 rounded-card bg-surface p-5">
-                  <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-ink text-white">
+                <li
+                  key={d}
+                  data-reveal
+                  style={{ '--i': i } as React.CSSProperties}
+                  className="rounded-card bg-surface flex items-start gap-4 p-5"
+                >
+                  <span className="bg-ink inline-flex size-8 shrink-0 items-center justify-center rounded-full text-white">
                     <Check aria-hidden size={16} />
                   </span>
-                  <span className="pt-1 text-body-lg">{d}</span>
+                  <span className="text-body-lg pt-1">{d}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-small text-ink-muted">{t('pricing')}</p>
+            <p className="text-small text-ink-muted mt-6">{t('pricing')}</p>
           </div>
           <div className="col-span-4 md:col-span-8 lg:col-span-5 lg:col-start-8">
             <h2 data-reveal className="font-display text-h2">
               {ts('process')}
             </h2>
-            <p data-reveal className="mt-5 text-body-lg text-ink-muted">
+            <p data-reveal className="text-body-lg text-ink-muted mt-5">
               {service.processNote}
             </p>
-            <ol className="mt-8 space-y-5 border-l border-border pl-6">
+            <ol className="border-border mt-8 space-y-5 border-l pl-6">
               {steps.map((s, i) => (
-                <li key={s.name} data-reveal style={{ '--i': i } as React.CSSProperties} className="relative">
-                  <span aria-hidden className="absolute top-2 -left-[29px] size-2.5 rounded-full border-2 border-surface-warm bg-ink" />
+                <li
+                  key={s.name}
+                  data-reveal
+                  style={{ '--i': i } as React.CSSProperties}
+                  className="relative"
+                >
+                  <span
+                    aria-hidden
+                    className="border-surface-warm bg-ink absolute top-2 -left-[29px] size-2.5 rounded-full border-2"
+                  />
                   <h3 className="text-h4 font-semibold">
-                    <span className="mr-2 text-ink-muted tabular">{i + 1}.</span>
+                    <span className="text-ink-muted tabular mr-2">{i + 1}.</span>
                     {s.name}
                   </h3>
-                  <p className="mt-1 text-ink-muted">{s.body}</p>
+                  <p className="text-ink-muted mt-1">{s.body}</p>
                 </li>
               ))}
             </ol>
@@ -160,12 +196,17 @@ export default async function ServicePage({ params }: Props) {
               <h2 id="study-title" data-reveal className="font-display text-h2">
                 {ts('caseStudy')}
               </h2>
-              <p data-reveal className="mt-5 text-body-lg text-ink-muted">
+              <p data-reveal className="text-body-lg text-ink-muted mt-5">
                 <Ph>{study.summary}</Ph>
               </p>
             </div>
             <div className="col-span-4 md:col-span-8 lg:col-span-6 lg:col-start-7">
-              <CaseStudyCard study={study} href={caseStudyPaths(study.key)[locale]} readLabel={t('cta.readStory')} tone="light" />
+              <CaseStudyCard
+                study={study}
+                href={caseStudyPaths(study.key)[locale]}
+                readLabel={t('cta.readStory')}
+                tone="light"
+              />
             </div>
           </div>
         </section>
@@ -174,7 +215,11 @@ export default async function ServicePage({ params }: Props) {
       {/* FAQ */}
       <section aria-labelledby="faq-title" className="pb-[clamp(64px,10vw,160px)]">
         <div className="container-site grid-site gap-y-10">
-          <h2 id="faq-title" data-reveal className="col-span-4 font-display text-h2 md:col-span-8 lg:col-span-4">
+          <h2
+            id="faq-title"
+            data-reveal
+            className="font-display text-h2 col-span-4 md:col-span-8 lg:col-span-4"
+          >
             {ts('faq', { service: service.name })}
           </h2>
           <div className="col-span-4 md:col-span-8">
@@ -204,14 +249,18 @@ export default async function ServicePage({ params }: Props) {
                 <li key={key}>
                   <NextLink
                     href={servicePaths(key)[locale]}
-                    className="group/rel flex h-full flex-col rounded-card border border-border bg-surface p-6 transition-[transform,box-shadow] duration-(--duration-base) ease-(--ease-out) hover:-translate-y-1 hover:shadow-lift"
+                    className="group/rel rounded-card border-border bg-surface hover:shadow-lift flex h-full flex-col border p-6 transition-[transform,box-shadow] duration-(--duration-base) ease-(--ease-out) hover:-translate-y-1"
                   >
-                    <span className="inline-flex size-10 items-center justify-center rounded-full bg-primary-tint text-primary">
+                    <span className="bg-primary-tint text-primary inline-flex size-10 items-center justify-center rounded-full">
                       <ServiceIcon name={r.icon} size={18} />
                     </span>
-                    <span className="mt-5 text-small font-medium text-ink-muted">{r.name}</span>
-                    <span className="mt-1 text-h4 font-semibold">{r.outcome}</span>
-                    <ArrowUpRight aria-hidden size={18} className="mt-auto self-end pt-4 text-ink-muted group-hover/rel:text-primary" />
+                    <span className="text-small text-ink-muted mt-5 font-medium">{r.name}</span>
+                    <span className="text-h4 mt-1 font-semibold">{r.outcome}</span>
+                    <ArrowUpRight
+                      aria-hidden
+                      size={18}
+                      className="text-ink-muted group-hover/rel:text-primary mt-auto self-end pt-4"
+                    />
                   </NextLink>
                 </li>
               );
@@ -220,7 +269,9 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <JsonLd data={serviceLd({ name: service.name, description: service.metaDescription, path, locale })} />
+      <JsonLd
+        data={serviceLd({ name: service.name, description: service.metaDescription, path, locale })}
+      />
     </>
   );
 }

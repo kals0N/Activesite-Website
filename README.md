@@ -14,14 +14,14 @@ cp .env.example .env.local   # all values optional for local work
 npm run dev                  # http://localhost:3000
 ```
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | Development server |
-| `npm run build` / `npm run start` | Production build and server |
-| `npm run lint` / `npm run typecheck` | ESLint and TypeScript |
-| `npm run placeholders` | Regenerate `content/PLACEHOLDERS.md` from every `[[PLACEHOLDER]]` token |
-| `npm run check` | Lint + typecheck + placeholder list up to date (run before every push) |
-| `npm run test:e2e` | Playwright smoke tests (builds and starts the site) |
+| Command                              | What it does                                                            |
+| ------------------------------------ | ----------------------------------------------------------------------- |
+| `npm run dev`                        | Development server                                                      |
+| `npm run build` / `npm run start`    | Production build and server                                             |
+| `npm run lint` / `npm run typecheck` | ESLint and TypeScript                                                   |
+| `npm run placeholders`               | Regenerate `content/PLACEHOLDERS.md` from every `[[PLACEHOLDER]]` token |
+| `npm run check`                      | Lint + typecheck + placeholder list up to date (run before every push)  |
+| `npm run test:e2e`                   | Playwright smoke tests (builds and starts the site)                     |
 
 ## Project map
 
@@ -52,15 +52,15 @@ See [CONTENT-GUIDE.md](./CONTENT-GUIDE.md) for adding a case study, blog post or
 
 All events go through `track()` in `lib/analytics.ts` and reach GA4, Meta and TikTok only after consent.
 
-| Event | Fires when |
-| --- | --- |
-| `cta_click` | Any "Book a call" button is clicked (`location` param) |
-| `booking_opened` | The Cal.com popup or inline calendar opens |
+| Event               | Fires when                                                |
+| ------------------- | --------------------------------------------------------- |
+| `cta_click`         | Any "Book a call" button is clicked (`location` param)    |
+| `booking_opened`    | The Cal.com popup or inline calendar opens                |
 | `booking_completed` | A Cal.com booking succeeds (then redirects to /thank-you) |
-| `form_submit` | The contact form is sent |
-| `whatsapp_click` | Any WhatsApp link or button is clicked |
-| `newsletter_signup` | A Brevo signup succeeds |
-| `case_study_view` | A case study page is viewed |
-| `language_switch` | The visitor changes language |
+| `form_submit`       | The contact form is sent                                  |
+| `whatsapp_click`    | Any WhatsApp link or button is clicked                    |
+| `newsletter_signup` | A Brevo signup succeeds                                   |
+| `case_study_view`   | A case study page is viewed                               |
+| `language_switch`   | The visitor changes language                              |
 
 For QA, every event is also pushed to `window.__asEvents` in the browser (never sent anywhere).

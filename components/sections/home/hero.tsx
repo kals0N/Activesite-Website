@@ -8,7 +8,10 @@ export async function Hero() {
   const words = t('titleStart').split(' ');
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-44 lg:pb-28" aria-labelledby="hero-title">
+    <section
+      className="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-44 lg:pb-28"
+      aria-labelledby="hero-title"
+    >
       <div className="container-site relative">
         <div className="grid-site items-end gap-y-10">
           <div className="relative z-10 col-span-4 md:col-span-8 lg:col-span-9">
@@ -18,18 +21,30 @@ export async function Hero() {
                   {w}&nbsp;
                 </span>
               ))}
-              <em className="hero-word font-display italic" style={{ '--w': words.length } as React.CSSProperties}>
+              <em
+                className="hero-word font-display italic"
+                style={{ '--w': words.length } as React.CSSProperties}
+              >
                 {t('titleEmphasis')}
               </em>
             </h1>
-            <p className="hero-follow mt-7 max-w-[38ch] text-body-lg text-ink-muted lg:mt-9" style={{ '--d': 0 } as React.CSSProperties}>
+            <p
+              className="hero-follow text-body-lg text-ink-muted mt-7 max-w-[38ch] lg:mt-9"
+              style={{ '--d': 0 } as React.CSSProperties}
+            >
               {t('sub')}
             </p>
-            <div className="hero-follow mt-8 flex flex-col gap-3 sm:flex-row lg:mt-10" style={{ '--d': 1 } as React.CSSProperties}>
+            <div
+              className="hero-follow mt-8 flex flex-col gap-3 sm:flex-row lg:mt-10"
+              style={{ '--d': 1 } as React.CSSProperties}
+            >
               <BookButton location="hero" />
               <WhatsAppButton location="hero" />
             </div>
-            <p className="hero-follow mt-6 text-small text-ink-muted" style={{ '--d': 2 } as React.CSSProperties}>
+            <p
+              className="hero-follow text-small text-ink-muted mt-6"
+              style={{ '--d': 2 } as React.CSSProperties}
+            >
               <Ph>{t('trust')}</Ph>
             </p>
           </div>

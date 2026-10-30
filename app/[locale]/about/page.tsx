@@ -18,7 +18,12 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'about' });
-  return buildMetadata({ locale, paths: localized(() => '/about'), title: t('metaTitle'), description: t('metaDescription') });
+  return buildMetadata({
+    locale,
+    paths: localized(() => '/about'),
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  });
 }
 
 const howIcons = [Target, Zap, Gauge];
@@ -52,7 +57,7 @@ export default async function AboutPage({ params }: Props) {
 
       <section className="pb-[clamp(64px,10vw,160px)]">
         <div className="container-site grid-site gap-y-12">
-          <p data-reveal className="col-span-4 text-h3 font-semibold md:col-span-8 lg:col-span-7">
+          <p data-reveal className="text-h3 col-span-4 font-semibold md:col-span-8 lg:col-span-7">
             {ta('partner')}
           </p>
         </div>
@@ -67,10 +72,15 @@ export default async function AboutPage({ params }: Props) {
             {how.map((h, i) => {
               const Icon = howIcons[i];
               return (
-                <li key={h.title} data-reveal style={{ '--i': i } as React.CSSProperties} className="rounded-panel bg-surface p-7 sm:p-8">
+                <li
+                  key={h.title}
+                  data-reveal
+                  style={{ '--i': i } as React.CSSProperties}
+                  className="rounded-panel bg-surface p-7 sm:p-8"
+                >
                   <Icon aria-hidden size={24} />
-                  <h3 className="mt-6 text-h3 font-semibold">{h.title}</h3>
-                  <p className="mt-3 text-body-lg text-ink-muted">{h.body}</p>
+                  <h3 className="text-h3 mt-6 font-semibold">{h.title}</h3>
+                  <p className="text-body-lg text-ink-muted mt-3">{h.body}</p>
                 </li>
               );
             })}
@@ -80,10 +90,13 @@ export default async function AboutPage({ params }: Props) {
 
       {/* Founder message */}
       <section aria-labelledby="founder-title" className="section-y relative overflow-hidden">
-        <ArcField tone="light" className="pointer-events-none absolute -top-40 -left-56 w-[40rem] opacity-[0.08]" />
-        <div className="container-site relative grid-site gap-y-12">
+        <ArcField
+          tone="light"
+          className="pointer-events-none absolute -top-40 -left-56 w-[40rem] opacity-[0.08]"
+        />
+        <div className="container-site grid-site relative gap-y-12">
           <div className="col-span-4 md:col-span-3 lg:col-span-4">
-            <div className="aspect-[4/5] max-w-xs overflow-hidden rounded-panel border border-dashed border-border bg-surface p-6 text-small text-ink-muted">
+            <div className="rounded-panel border-border bg-surface text-small text-ink-muted aspect-[4/5] max-w-xs overflow-hidden border border-dashed p-6">
               <Ph>{ta('portrait')}</Ph>
             </div>
           </div>
@@ -91,12 +104,12 @@ export default async function AboutPage({ params }: Props) {
             <h2 id="founder-title" className="font-display text-h2">
               {ta('founderTitle')}
             </h2>
-            <div className="mt-8 space-y-5 font-display text-[1.375rem] leading-[1.5] text-ink sm:text-[1.5rem]">
+            <div className="font-display text-ink mt-8 space-y-5 text-[1.375rem] leading-[1.5] sm:text-[1.5rem]">
               {founderBody.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
             </div>
-            <p className="mt-10 font-display text-h3 italic">{ta('founderSign')}</p>
+            <p className="font-display text-h3 mt-10 italic">{ta('founderSign')}</p>
             <p className="text-small text-ink-muted">{ta('founderRole')}</p>
           </div>
         </div>
@@ -104,14 +117,23 @@ export default async function AboutPage({ params }: Props) {
 
       <section aria-labelledby="values-title" className="section-y">
         <div className="container-site grid-site gap-y-12">
-          <h2 id="values-title" data-reveal className="col-span-4 font-display text-h2 md:col-span-8 lg:col-span-4">
+          <h2
+            id="values-title"
+            data-reveal
+            className="font-display text-h2 col-span-4 md:col-span-8 lg:col-span-4"
+          >
             {ta('valuesTitle')}
           </h2>
           <ul className="col-span-4 grid gap-x-8 gap-y-10 sm:grid-cols-2 md:col-span-8">
             {values.map((v, i) => (
-              <li key={v.title} data-reveal style={{ '--i': i } as React.CSSProperties} className="border-t border-ink pt-6">
+              <li
+                key={v.title}
+                data-reveal
+                style={{ '--i': i } as React.CSSProperties}
+                className="border-ink border-t pt-6"
+              >
                 <h3 className="text-h4 font-semibold">{v.title}</h3>
-                <p className="mt-2 text-ink-muted">{v.body}</p>
+                <p className="text-ink-muted mt-2">{v.body}</p>
               </li>
             ))}
           </ul>
@@ -120,22 +142,28 @@ export default async function AboutPage({ params }: Props) {
 
       <section aria-labelledby="markets-title" className="pb-[clamp(64px,10vw,160px)]">
         <div className="container-site">
-          <div data-reveal className="grid gap-10 rounded-panel border border-border bg-surface p-6 sm:p-10 lg:grid-cols-12">
+          <div
+            data-reveal
+            className="rounded-panel border-border bg-surface grid gap-10 border p-6 sm:p-10 lg:grid-cols-12"
+          >
             <div className="lg:col-span-6">
               <h2 id="markets-title" className="text-h3 font-semibold">
                 {ta('marketsTitle')}
               </h2>
-              <p className="mt-4 text-body-lg text-ink-muted">{ta('marketsBody')}</p>
+              <p className="text-body-lg text-ink-muted mt-4">{ta('marketsBody')}</p>
             </div>
             <div className="lg:col-span-5 lg:col-start-8">
               <ul className="flex flex-wrap gap-2">
                 {markets.map((m) => (
-                  <li key={m} className="inline-flex h-11 items-center rounded-full bg-surface-warm px-5 text-small font-medium">
+                  <li
+                    key={m}
+                    className="bg-surface-warm text-small inline-flex h-11 items-center rounded-full px-5 font-medium"
+                  >
                     {m}
                   </li>
                 ))}
               </ul>
-              <h3 className="mt-8 text-small font-medium text-ink-muted">{ta('socialTitle')}</h3>
+              <h3 className="text-small text-ink-muted mt-8 font-medium">{ta('socialTitle')}</h3>
               <ul className="mt-3 flex gap-2">
                 {social.map(({ label, href, Icon }) => (
                   <li key={label}>
@@ -144,7 +172,7 @@ export default async function AboutPage({ params }: Props) {
                       target="_blank"
                       rel="noopener"
                       aria-label={`${label} ${t('a11y.newTab')}`}
-                      className="inline-flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
+                      className="border-border hover:border-primary hover:text-primary inline-flex size-11 items-center justify-center rounded-full border transition-colors"
                     >
                       <Icon size={18} />
                     </a>

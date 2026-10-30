@@ -57,28 +57,33 @@ export default async function Styleguide({ params }: { params: Promise<{ locale:
   return (
     <div className="container-site pt-32 pb-24">
       <h1 className="font-display text-h1">Activesite styleguide</h1>
-      <p className="mt-4 max-w-2xl text-body-lg text-ink-muted">
-        Design tokens live in <code>app/globals.css</code> (Tailwind v4 <code>@theme</code>). Components use semantic names only. This page is not indexed.
+      <p className="text-body-lg text-ink-muted mt-4 max-w-2xl">
+        Design tokens live in <code>app/globals.css</code> (Tailwind v4 <code>@theme</code>).
+        Components use semantic names only. This page is not indexed.
       </p>
 
       <Block title="Brand">
         <div className="flex flex-wrap items-center gap-10">
           <Logo className="h-24 w-auto" />
-          <div className="rounded-card bg-ink p-6"><Logo tone="white" className="h-24 w-auto" /></div>
+          <div className="rounded-card bg-ink p-6">
+            <Logo tone="white" className="h-24 w-auto" />
+          </div>
           <Mark size={64} />
         </div>
       </Block>
 
       <Block title="Colour">
-        <p className="mb-6 text-ink-muted">60-30-10: canvas and surfaces 60%, ink 30%, primary blue 10%. Gold under 5%.</p>
+        <p className="text-ink-muted mb-6">
+          60-30-10: canvas and surfaces 60%, ink 30%, primary blue 10%. Gold under 5%.
+        </p>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {colors.map(([name, hex, role]) => (
-            <li key={name} className="overflow-hidden rounded-card border border-border bg-surface">
+            <li key={name} className="rounded-card border-border bg-surface overflow-hidden border">
               <div className="h-20" style={{ background: hex }} />
-              <div className="p-4 text-small">
+              <div className="text-small p-4">
                 <p className="font-semibold">--color-{name}</p>
                 <p className="text-ink-muted tabular">{hex}</p>
-                <p className="mt-1 text-ink-muted">{role}</p>
+                <p className="text-ink-muted mt-1">{role}</p>
               </div>
             </li>
           ))}
@@ -88,7 +93,7 @@ export default async function Styleguide({ params }: { params: Promise<{ locale:
       <Block title="Typography">
         <div className="space-y-6">
           {type.map(([cls, label]) => (
-            <div key={label} className="border-b border-border pb-6">
+            <div key={label} className="border-border border-b pb-6">
               <p className="text-small text-ink-muted">{label}</p>
               <p className={cls}>Websites that sell</p>
             </div>
@@ -99,28 +104,30 @@ export default async function Styleguide({ params }: { params: Promise<{ locale:
       <Block title="Spacing and radius">
         <div className="flex flex-wrap items-end gap-4">
           {[4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 160].map((s) => (
-            <div key={s} className="text-center text-small text-ink-muted">
+            <div key={s} className="text-small text-ink-muted text-center">
               <div className="bg-primary-tint" style={{ width: s, height: s }} />
               {s}
             </div>
           ))}
         </div>
-        <div className="mt-8 flex flex-wrap gap-4 text-small">
-          <div className="rounded-input border border-border bg-surface p-6">8px input</div>
-          <div className="rounded-card border border-border bg-surface p-6">16px card</div>
-          <div className="rounded-panel border border-border bg-surface p-6">28px panel</div>
-          <div className="rounded-full border border-border bg-surface px-6 py-3">full button/chip</div>
+        <div className="text-small mt-8 flex flex-wrap gap-4">
+          <div className="rounded-input border-border bg-surface border p-6">8px input</div>
+          <div className="rounded-card border-border bg-surface border p-6">16px card</div>
+          <div className="rounded-panel border-border bg-surface border p-6">28px panel</div>
+          <div className="border-border bg-surface rounded-full border px-6 py-3">
+            full button/chip
+          </div>
         </div>
       </Block>
 
       <Block title="Motion">
-        <table className="w-full text-left text-small">
+        <table className="text-small w-full text-left">
           <tbody>
             {motion.map(([n, v, u]) => (
-              <tr key={n} className="border-b border-border">
+              <tr key={n} className="border-border border-b">
                 <td className="py-3 pr-4 font-semibold">{n}</td>
-                <td className="py-3 pr-4 tabular">{v}</td>
-                <td className="py-3 text-ink-muted">{u}</td>
+                <td className="tabular py-3 pr-4">{v}</td>
+                <td className="text-ink-muted py-3">{u}</td>
               </tr>
             ))}
           </tbody>
@@ -132,9 +139,17 @@ export default async function Styleguide({ params }: { params: Promise<{ locale:
           <BookButton location="styleguide" fullOnMobile={false} />
           <WhatsAppButton location="styleguide" fullOnMobile={false} />
           <WhatsAppButton location="styleguide" variant="whatsapp" fullOnMobile={false} />
-          <Button href="#" variant="secondary">Secondary</Button>
-          <Button href="#" variant="ghost">Ghost</Button>
-          <span className="rounded-full bg-ink p-3"><Button href="#" variant="inverse">Inverse</Button></span>
+          <Button href="#" variant="secondary">
+            Secondary
+          </Button>
+          <Button href="#" variant="ghost">
+            Ghost
+          </Button>
+          <span className="bg-ink rounded-full p-3">
+            <Button href="#" variant="inverse">
+              Inverse
+            </Button>
+          </span>
         </div>
       </Block>
 
@@ -142,7 +157,12 @@ export default async function Styleguide({ params }: { params: Promise<{ locale:
         <div className="grid gap-8 lg:grid-cols-3">
           <Stat value="120+" label="Counts up when in view" />
           <div className="lg:col-span-2">
-            <Faq schema={false} items={[{ q: 'Accordion question', a: 'Answer text. Icon rotates 45°, height animates.' }]} />
+            <Faq
+              schema={false}
+              items={[
+                { q: 'Accordion question', a: 'Answer text. Icon rotates 45°, height animates.' },
+              ]}
+            />
           </div>
         </div>
         <div className="mt-8 max-w-lg">
@@ -156,7 +176,7 @@ export default async function Styleguide({ params }: { params: Promise<{ locale:
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-20">
-      <h2 className="mb-8 font-display text-h2">{title}</h2>
+      <h2 className="font-display text-h2 mb-8">{title}</h2>
       {children}
     </section>
   );

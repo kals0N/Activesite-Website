@@ -66,7 +66,7 @@ export default async function CaseStudyPage({ params }: Props) {
               { name: strip(study.title), href: path },
             ]}
           />
-          <div className="mt-10 grid-site gap-y-10">
+          <div className="grid-site mt-10 gap-y-10">
             <div className="col-span-4 md:col-span-8 lg:col-span-7">
               <p
                 className={`hero-word font-display ${study.metric.includes('[[') ? 'text-h1' : 'text-display'}`}
@@ -74,18 +74,27 @@ export default async function CaseStudyPage({ params }: Props) {
               >
                 <Ph>{study.metric}</Ph>
               </p>
-              <p className="hero-follow mt-4 text-body-lg text-ink-muted" style={{ '--d': 0 } as React.CSSProperties}>
+              <p
+                className="hero-follow text-body-lg text-ink-muted mt-4"
+                style={{ '--d': 0 } as React.CSSProperties}
+              >
                 <Ph>{study.metricLabel}</Ph>
               </p>
-              <h1 className="hero-follow mt-8 max-w-2xl text-h3 font-semibold" style={{ '--d': 1 } as React.CSSProperties}>
+              <h1
+                className="hero-follow text-h3 mt-8 max-w-2xl font-semibold"
+                style={{ '--d': 1 } as React.CSSProperties}
+              >
                 {study.title}
               </h1>
-              <div className="hero-follow mt-8 flex flex-col gap-3 sm:flex-row" style={{ '--d': 2 } as React.CSSProperties}>
+              <div
+                className="hero-follow mt-8 flex flex-col gap-3 sm:flex-row"
+                style={{ '--d': 2 } as React.CSSProperties}
+              >
                 <BookButton location={`case_${study.key}_hero`} label={t('cta.resultsLike')} />
                 <WhatsAppButton location={`case_${study.key}_hero`} />
               </div>
             </div>
-            <dl className="col-span-4 grid content-start gap-5 self-end rounded-panel border border-border bg-surface p-6 md:col-span-8 md:grid-cols-2 lg:col-span-4 lg:col-start-9 lg:grid-cols-1">
+            <dl className="rounded-panel border-border bg-surface col-span-4 grid content-start gap-5 self-end border p-6 md:col-span-8 md:grid-cols-2 lg:col-span-4 lg:col-start-9 lg:grid-cols-1">
               {meta.map((m) => (
                 <div key={m.label}>
                   <dt className="text-small text-ink-muted">{m.label}</dt>
@@ -98,7 +107,11 @@ export default async function CaseStudyPage({ params }: Props) {
                 <dt className="text-small text-ink-muted">{tw('services')}</dt>
                 <dd className="mt-1 flex flex-wrap gap-2">
                   {study.services.map((k) => (
-                    <NextLink key={k} href={servicePaths(k)[locale]} className="inline-flex h-9 items-center rounded-full border border-border px-3 text-small hover:border-primary hover:text-primary">
+                    <NextLink
+                      key={k}
+                      href={servicePaths(k)[locale]}
+                      className="border-border text-small hover:border-primary hover:text-primary inline-flex h-9 items-center rounded-full border px-3"
+                    >
                       {getService(locale, k).name}
                     </NextLink>
                   ))}
@@ -106,7 +119,10 @@ export default async function CaseStudyPage({ params }: Props) {
               </div>
             </dl>
           </div>
-          <div className="mt-14 aspect-[4/3] overflow-hidden rounded-panel sm:aspect-[16/9]" style={{ viewTransitionName: `case-${study.key}` }}>
+          <div
+            className="rounded-panel mt-14 aspect-[4/3] overflow-hidden sm:aspect-[16/9]"
+            style={{ viewTransitionName: `case-${study.key}` }}
+          >
             <DeviceFrame tone={study.tone} label={study.client} />
           </div>
         </div>
@@ -127,7 +143,12 @@ export default async function CaseStudyPage({ params }: Props) {
           </h2>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {(['navy', 'blue'] as const).map((tone, i) => (
-              <div key={tone} data-reveal style={{ '--i': i } as React.CSSProperties} className="aspect-[4/3] overflow-hidden rounded-panel">
+              <div
+                key={tone}
+                data-reveal
+                style={{ '--i': i } as React.CSSProperties}
+                className="rounded-panel aspect-[4/3] overflow-hidden"
+              >
                 <DeviceFrame tone={tone} label="[[PLACEHOLDER: project screenshot]]" />
               </div>
             ))}
@@ -140,19 +161,30 @@ export default async function CaseStudyPage({ params }: Props) {
           <h2 id="results-title" className="font-display text-h2">
             {tw('results')}
           </h2>
-          <dl className="mt-10 grid gap-px overflow-hidden rounded-panel border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="rounded-panel border-border bg-border mt-10 grid gap-px overflow-hidden border sm:grid-cols-2 lg:grid-cols-4">
             {study.results.map((r, i) => (
-              <div key={r.label} data-reveal style={{ '--i': i } as React.CSSProperties} className="bg-surface p-7">
+              <div
+                key={r.label}
+                data-reveal
+                style={{ '--i': i } as React.CSSProperties}
+                className="bg-surface p-7"
+              >
                 <dt className="text-body text-ink-muted">{r.label}</dt>
-                <dd className={r.value.includes('[[') ? 'mt-3 text-h4 font-semibold' : 'mt-3 text-stat font-semibold tabular'}>
+                <dd
+                  className={
+                    r.value.includes('[[')
+                      ? 'text-h4 mt-3 font-semibold'
+                      : 'text-stat tabular mt-3 font-semibold'
+                  }
+                >
                   <Ph>{r.value}</Ph>
                 </dd>
               </div>
             ))}
           </dl>
           <figure data-reveal className="mt-16 max-w-4xl">
-            <figcaption className="text-small font-medium text-ink-muted">{tw('quote')}</figcaption>
-            <blockquote className="mt-4 font-display text-h2">
+            <figcaption className="text-small text-ink-muted font-medium">{tw('quote')}</figcaption>
+            <blockquote className="font-display text-h2 mt-4">
               <p>
                 “<Ph>{study.quote.text}</Ph>”
               </p>
@@ -161,7 +193,7 @@ export default async function CaseStudyPage({ params }: Props) {
               <span className="block font-semibold">
                 <Ph>{study.quote.name}</Ph>
               </span>
-              <span className="block text-small text-ink-muted">
+              <span className="text-small text-ink-muted block">
                 <Ph>{study.quote.role}</Ph>
               </span>
             </p>
@@ -169,8 +201,20 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      <CtaBand location={`case_${study.key}_final`} title={tw('ctaTitle')} body={tw('ctaBody')} buttonLabel={t('cta.resultsLike')} />
-      <JsonLd data={creativeWorkLd({ title: study.title, description: strip(study.summary), path, locale })} />
+      <CtaBand
+        location={`case_${study.key}_final`}
+        title={tw('ctaTitle')}
+        body={tw('ctaBody')}
+        buttonLabel={t('cta.resultsLike')}
+      />
+      <JsonLd
+        data={creativeWorkLd({
+          title: study.title,
+          description: strip(study.summary),
+          path,
+          locale,
+        })}
+      />
     </>
   );
 }

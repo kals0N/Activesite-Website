@@ -29,10 +29,14 @@ for (const root of ROOTS) {
 }
 
 const groups = {
-  'Results, metrics and stats': /(%|metric|increase|rate|sales|leads|users|revenue|traffic|uptime|projects|satisfaction|enquir|demandes|ventes|prospects|trafic|utilisateurs|revenu|disponibilité|keywords|mots-clés|return|retour|cost per|coût|booked|appels|load time|chargement|number|nombre|weeks to|semaines avant|price increase|tarifs)/i,
-  'Clients, quotes and logos': /(client|quote|citation|logo|testimonial|founder quote|fondateur sur|role, company|fonction)/i,
-  'Business terms and promises': /(guarantee|garantie|response time|délai de réponse|launch time|délai de lancement|revision|révision|payment|paiement|turnaround|délai pour|learning|apprentissage|time to first|premiers résultats|concepts|pistes)/i,
-  'Integrations and assets': /(cal\.com|lead magnet|guide offert|photo|portrait|screenshot|capture)/i,
+  'Results, metrics and stats':
+    /(%|metric|increase|rate|sales|leads|users|revenue|traffic|uptime|projects|satisfaction|enquir|demandes|ventes|prospects|trafic|utilisateurs|revenu|disponibilité|keywords|mots-clés|return|retour|cost per|coût|booked|appels|load time|chargement|number|nombre|weeks to|semaines avant|price increase|tarifs)/i,
+  'Clients, quotes and logos':
+    /(client|quote|citation|logo|testimonial|founder quote|fondateur sur|role, company|fonction)/i,
+  'Business terms and promises':
+    /(guarantee|garantie|response time|délai de réponse|launch time|délai de lancement|revision|révision|payment|paiement|turnaround|délai pour|learning|apprentissage|time to first|premiers résultats|concepts|pistes)/i,
+  'Integrations and assets':
+    /(cal\.com|lead magnet|guide offert|photo|portrait|screenshot|capture)/i,
   'Legal (for the lawyer)': /(lawyer|juriste|address|adresse|registration|immatriculation)/i,
 };
 

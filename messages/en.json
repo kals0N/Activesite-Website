@@ -150,38 +150,89 @@
       "sub": "Six clear steps. You always know what happens next.",
       "time": "Typical time to launch: [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]",
       "steps": [
-        { "name": "Discover", "body": "A free call to understand your business, clients and the results you need." },
-        { "name": "Strategy", "body": "We set measurable goals and plan the pages, offer and path to conversion." },
-        { "name": "Design", "body": "You see your site before it is built. We refine it until it feels right." },
-        { "name": "Build", "body": "Fast, secure, mobile-first development with tracking on every action." },
-        { "name": "Launch", "body": "We test everything, go live and connect your domain, email and analytics." },
-        { "name": "Grow", "body": "We review the numbers, improve what converts and scale what works." }
+        {
+          "name": "Discover",
+          "body": "A free call to understand your business, clients and the results you need."
+        },
+        {
+          "name": "Strategy",
+          "body": "We set measurable goals and plan the pages, offer and path to conversion."
+        },
+        {
+          "name": "Design",
+          "body": "You see your site before it is built. We refine it until it feels right."
+        },
+        {
+          "name": "Build",
+          "body": "Fast, secure, mobile-first development with tracking on every action."
+        },
+        {
+          "name": "Launch",
+          "body": "We test everything, go live and connect your domain, email and analytics."
+        },
+        {
+          "name": "Grow",
+          "body": "We review the numbers, improve what converts and scale what works."
+        }
       ]
     },
     "stats": {
       "title": "Numbers we are accountable for.",
       "items": [
         { "value": "[[PLACEHOLDER: projects delivered]]", "label": "Projects delivered" },
-        { "value": "[[PLACEHOLDER: client satisfaction, e.g. 98%]]", "label": "Client satisfaction" },
+        {
+          "value": "[[PLACEHOLDER: client satisfaction, e.g. 98%]]",
+          "label": "Client satisfaction"
+        },
         { "value": "[[PLACEHOLDER: average launch time]]", "label": "Average time to launch" },
-        { "value": "[[PLACEHOLDER: leads generated for clients]]", "label": "Leads generated for clients" }
+        {
+          "value": "[[PLACEHOLDER: leads generated for clients]]",
+          "label": "Leads generated for clients"
+        }
       ]
     },
     "why": {
       "title": "Why businesses choose Activesite.",
       "items": [
-        { "title": "Goals before pixels", "body": "We agree on the leads, sales or sign-ups you need before we design anything." },
-        { "title": "Fast to launch", "body": "Clear scope, weekly updates and a fixed timeline. Most sites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]." },
-        { "title": "A measurable guarantee", "body": "We commit to a growth outcome in writing: [[PLACEHOLDER: guarantee terms]]." },
-        { "title": "One partner, start to finish", "body": "Brand, website, funnels and ads under one roof. No finger-pointing between suppliers." }
+        {
+          "title": "Goals before pixels",
+          "body": "We agree on the leads, sales or sign-ups you need before we design anything."
+        },
+        {
+          "title": "Fast to launch",
+          "body": "Clear scope, weekly updates and a fixed timeline. Most sites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]."
+        },
+        {
+          "title": "A measurable guarantee",
+          "body": "We commit to a growth outcome in writing: [[PLACEHOLDER: guarantee terms]]."
+        },
+        {
+          "title": "One partner, start to finish",
+          "body": "Brand, website, funnels and ads under one roof. No finger-pointing between suppliers."
+        }
       ]
     },
     "testimonials": {
       "title": "What clients say about the results.",
       "items": [
-        { "quote": "[[PLACEHOLDER: client quote about the result they got]]", "name": "[[PLACEHOLDER: client name]]", "role": "[[PLACEHOLDER: role, company]]", "result": "[[PLACEHOLDER: result, e.g. +X% leads]]" },
-        { "quote": "[[PLACEHOLDER: client quote about speed or process]]", "name": "[[PLACEHOLDER: client name]]", "role": "[[PLACEHOLDER: role, company]]", "result": "[[PLACEHOLDER: result, e.g. launched in X weeks]]" },
-        { "quote": "[[PLACEHOLDER: client quote about sales or growth]]", "name": "[[PLACEHOLDER: client name]]", "role": "[[PLACEHOLDER: role, company]]", "result": "[[PLACEHOLDER: result, e.g. X sales in Y weeks]]" }
+        {
+          "quote": "[[PLACEHOLDER: client quote about the result they got]]",
+          "name": "[[PLACEHOLDER: client name]]",
+          "role": "[[PLACEHOLDER: role, company]]",
+          "result": "[[PLACEHOLDER: result, e.g. +X% leads]]"
+        },
+        {
+          "quote": "[[PLACEHOLDER: client quote about speed or process]]",
+          "name": "[[PLACEHOLDER: client name]]",
+          "role": "[[PLACEHOLDER: role, company]]",
+          "result": "[[PLACEHOLDER: result, e.g. launched in X weeks]]"
+        },
+        {
+          "quote": "[[PLACEHOLDER: client quote about sales or growth]]",
+          "name": "[[PLACEHOLDER: client name]]",
+          "role": "[[PLACEHOLDER: role, company]]",
+          "result": "[[PLACEHOLDER: result, e.g. X sales in Y weeks]]"
+        }
       ]
     },
     "founder": {
@@ -196,14 +247,38 @@
     "faq": {
       "title": "Questions before you book.",
       "items": [
-        { "q": "How much does a website cost?", "a": "Every project is scoped to your goals — get a tailored plan on a free call. You receive a clear written proposal before any commitment." },
-        { "q": "How long does it take to launch?", "a": "Most websites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]. Larger stores and SaaS products follow a timeline we agree on the call." },
-        { "q": "Will I own my website?", "a": "Yes. Once the project is paid, you own the design, content, code and domain. We hand over every login." },
-        { "q": "How many revisions are included?", "a": "Each phase includes [[PLACEHOLDER: number of revision rounds]] rounds of revisions. We review designs with you before any development starts." },
-        { "q": "Do you support the site after launch?", "a": "Yes. We offer hosting, maintenance and growth support, so your site stays fast, secure and improving." },
-        { "q": "Do you work with clients outside Cameroon?", "a": "Yes. We work with clients in France, the UK and the US by video call, in English or French." },
-        { "q": "How does payment work?", "a": "Projects are paid in stages: [[PLACEHOLDER: payment terms, e.g. deposit, milestone, launch]]. We accept [[PLACEHOLDER: accepted payment methods]]." },
-        { "q": "What is your outcome guarantee?", "a": "We commit to a measurable growth outcome agreed before we start: [[PLACEHOLDER: guarantee terms]]." }
+        {
+          "q": "How much does a website cost?",
+          "a": "Every project is scoped to your goals — get a tailored plan on a free call. You receive a clear written proposal before any commitment."
+        },
+        {
+          "q": "How long does it take to launch?",
+          "a": "Most websites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]. Larger stores and SaaS products follow a timeline we agree on the call."
+        },
+        {
+          "q": "Will I own my website?",
+          "a": "Yes. Once the project is paid, you own the design, content, code and domain. We hand over every login."
+        },
+        {
+          "q": "How many revisions are included?",
+          "a": "Each phase includes [[PLACEHOLDER: number of revision rounds]] rounds of revisions. We review designs with you before any development starts."
+        },
+        {
+          "q": "Do you support the site after launch?",
+          "a": "Yes. We offer hosting, maintenance and growth support, so your site stays fast, secure and improving."
+        },
+        {
+          "q": "Do you work with clients outside Cameroon?",
+          "a": "Yes. We work with clients in France, the UK and the US by video call, in English or French."
+        },
+        {
+          "q": "How does payment work?",
+          "a": "Projects are paid in stages: [[PLACEHOLDER: payment terms, e.g. deposit, milestone, launch]]. We accept [[PLACEHOLDER: accepted payment methods]]."
+        },
+        {
+          "q": "What is your outcome guarantee?",
+          "a": "We commit to a measurable growth outcome agreed before we start: [[PLACEHOLDER: guarantee terms]]."
+        }
       ]
     },
     "final": {
@@ -257,9 +332,18 @@
     "partner": "We are a technical and strategic partner for two kinds of people: founders and creators turning ideas into software products, and business owners using software to win clients and grow.",
     "howTitle": "How we work",
     "how": [
-      { "title": "Goal-first", "body": "Every project starts with the result you need: leads, sales or sign-ups. Design and code serve that goal." },
-      { "title": "Fast", "body": "Small, focused scope and weekly progress. You see working pages early, not after months." },
-      { "title": "Measurable", "body": "We track every important action and commit to an outcome in writing." }
+      {
+        "title": "Goal-first",
+        "body": "Every project starts with the result you need: leads, sales or sign-ups. Design and code serve that goal."
+      },
+      {
+        "title": "Fast",
+        "body": "Small, focused scope and weekly progress. You see working pages early, not after months."
+      },
+      {
+        "title": "Measurable",
+        "body": "We track every important action and commit to an outcome in writing."
+      }
     ],
     "founderTitle": "A message from our founder",
     "founderBody": [
@@ -306,9 +390,18 @@
     "responseBody": "Every message gets a personal reply [[PLACEHOLDER: response time, e.g. within 24 hours]], Monday to Saturday.",
     "faqTitle": "Before you get in touch",
     "faq": [
-      { "q": "Is the strategy call really free?", "a": "Yes. It is 30 minutes, with no obligation. You leave with practical next steps." },
-      { "q": "What should I prepare for the call?", "a": "Your goals, your current website if you have one, and examples of sites you like." },
-      { "q": "Do you work in French?", "a": "Yes. We work in English and French with every client." }
+      {
+        "q": "Is the strategy call really free?",
+        "a": "Yes. It is 30 minutes, with no obligation. You leave with practical next steps."
+      },
+      {
+        "q": "What should I prepare for the call?",
+        "a": "Your goals, your current website if you have one, and examples of sites you like."
+      },
+      {
+        "q": "Do you work in French?",
+        "a": "Yes. We work in English and French with every client."
+      }
     ]
   },
   "form": {

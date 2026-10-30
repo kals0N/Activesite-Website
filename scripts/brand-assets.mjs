@@ -11,7 +11,9 @@ await sharp(fav, { density: 900 }).resize(512, 512).png().toFile('public/brand/i
 await sharp(fav, { density: 900 }).resize(192, 192).png().toFile('public/brand/icon-192.png');
 // Logo on white with padding for structured data (Google wants a square-ish raster ≥112px).
 await sharp({ create: { width: 600, height: 600, channels: 4, background: '#ffffff' } })
-  .composite([{ input: await sharp(logo, { density: 600 }).resize(480).png().toBuffer(), gravity: 'center' }])
+  .composite([
+    { input: await sharp(logo, { density: 600 }).resize(480).png().toBuffer(), gravity: 'center' },
+  ])
   .png()
   .toFile('public/brand/logo.png');
 fs.copyFileSync('public/brand/favicon.svg', 'app/icon.svg');

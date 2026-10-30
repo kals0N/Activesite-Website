@@ -32,7 +32,17 @@ const sans = Inter({
 });
 
 /** Only these message namespaces are needed by client components. */
-const CLIENT_NAMESPACES = ['a11y', 'nav', 'cta', 'whatsapp', 'langSuggest', 'cookie', 'newsletter', 'form', 'blog'];
+const CLIENT_NAMESPACES = [
+  'a11y',
+  'nav',
+  'cta',
+  'whatsapp',
+  'langSuggest',
+  'cookie',
+  'newsletter',
+  'form',
+  'blog',
+];
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -45,7 +55,11 @@ export const viewport: Viewport = {
   viewportFit: 'cover',
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
@@ -118,7 +132,7 @@ async function SkipLink() {
   return (
     <a
       href="#main"
-      className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-white"
+      className="focus:bg-ink sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:rounded-full focus:px-5 focus:py-3 focus:text-white"
     >
       {t('skip')}
     </a>

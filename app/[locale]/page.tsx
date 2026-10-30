@@ -47,8 +47,17 @@ export default async function HomePage({ params }: Props) {
       <section aria-labelledby="services-title" className="section-y">
         <div className="container-site">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionHeading id="services-title" title={t('home.services.title')} sub={t('home.services.sub')} />
-            <Button href={pathFor(locale, '/services')} variant="secondary" size="md" className="shrink-0 self-start md:self-auto">
+            <SectionHeading
+              id="services-title"
+              title={t('home.services.title')}
+              sub={t('home.services.sub')}
+            />
+            <Button
+              href={pathFor(locale, '/services')}
+              variant="secondary"
+              size="md"
+              className="shrink-0 self-start md:self-auto"
+            >
               {t('nav.allServices')}
             </Button>
           </div>
@@ -65,7 +74,11 @@ export default async function HomePage({ params }: Props) {
       <LocalSeo />
       <section aria-labelledby="faq-title" className="section-y pt-0">
         <div className="container-site grid-site gap-y-10">
-          <h2 id="faq-title" data-reveal className="col-span-4 font-display text-h2 md:col-span-8 lg:col-span-4">
+          <h2
+            id="faq-title"
+            data-reveal
+            className="font-display text-h2 col-span-4 md:col-span-8 lg:col-span-4"
+          >
             {t('home.faq.title')}
           </h2>
           <div className="col-span-4 md:col-span-8 lg:col-span-8">

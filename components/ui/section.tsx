@@ -22,7 +22,11 @@ export function Section({
     ink: 'on-ink bg-ink text-white',
   };
   return (
-    <section id={id} aria-labelledby={labelledBy} className={cn('section-y relative', tones[tone], className)}>
+    <section
+      id={id}
+      aria-labelledby={labelledBy}
+      className={cn('section-y relative', tones[tone], className)}
+    >
       <div className="container-site">{children}</div>
     </section>
   );
@@ -44,12 +48,15 @@ export function SectionHeading({
   align?: 'left' | 'center';
 }) {
   return (
-    <div data-reveal className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center', className)}>
+    <div
+      data-reveal
+      className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center', className)}
+    >
       <As id={id} className={cn('font-display', As === 'h1' ? 'text-h1' : 'text-h2')}>
         <Ph>{title}</Ph>
       </As>
       {sub && (
-        <p className="mt-5 text-body-lg text-ink-muted [.on-ink_&]:text-ink-soft">
+        <p className="text-body-lg text-ink-muted [.on-ink_&]:text-ink-soft mt-5">
           <Ph>{sub}</Ph>
         </p>
       )}

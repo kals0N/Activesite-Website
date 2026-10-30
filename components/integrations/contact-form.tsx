@@ -17,11 +17,18 @@ const TURNSTILE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 declare global {
   interface Window {
-    turnstile?: { render: (el: HTMLElement, opts: Record<string, unknown>) => string; reset: (id?: string) => void };
+    turnstile?: {
+      render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+      reset: (id?: string) => void;
+    };
   }
 }
 
-type Status = { state: 'idle' } | { state: 'sending' } | { state: 'error'; key: string } | { state: 'done'; delivered: boolean; wa: string };
+type Status =
+  | { state: 'idle' }
+  | { state: 'sending' }
+  | { state: 'error'; key: string }
+  | { state: 'done'; delivered: boolean; wa: string };
 
 export function ContactForm({
   services,
@@ -73,16 +80,28 @@ export function ContactForm({
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ ...data, locale, website: hpRef.current?.value ?? '', turnstileToken: tokenRef.current }),
+        body: JSON.stringify({
+          ...data,
+          locale,
+          website: hpRef.current?.value ?? '',
+          turnstileToken: tokenRef.current,
+        }),
       });
       const body = (await res.json().catch(() => ({}))) as { error?: string; delivered?: boolean };
       if (!res.ok) {
-        setStatus({ state: 'error', key: body.error === 'rate' || body.error === 'turnstile' ? body.error : 'server' });
+        setStatus({
+          state: 'error',
+          key: body.error === 'rate' || body.error === 'turnstile' ? body.error : 'server',
+        });
         if (widgetRef.current) window.turnstile?.reset(widgetRef.current);
         return;
       }
       const serviceName = services.find((s) => s.key === data.service)?.name ?? t('serviceUnsure');
-      const summary = t('waSummary', { name: data.name, service: serviceName, message: data.message.slice(0, 400) });
+      const summary = t('waSummary', {
+        name: data.name,
+        service: serviceName,
+        message: data.message.slice(0, 400),
+      });
       track('form_submit', { service: data.service || 'none' });
       setStatus({ state: 'done', delivered: body.delivered !== false, wa: whatsappUrl(summary) });
     } catch {
@@ -100,18 +119,34 @@ export function ContactForm({
     return <Success wa={status.wa} delivered={status.delivered} />;
   }
 
-  const err = (e?: FieldError) => (e?.message ? t(`errors.${e.message}` as 'errors.name') : undefined);
+  const err = (e?: FieldError) =>
+    e?.message ? t(`errors.${e.message}` as 'errors.name') : undefined;
 
   return (
-    <form onSubmit={(e) => handleSubmit(onSubmit, onInvalid)(e)} onFocus={loadTurnstile} noValidate className="grid gap-4 sm:grid-cols-2">
+    <form
+      onSubmit={(e) => handleSubmit(onSubmit, onInvalid)(e)}
+      onFocus={loadTurnstile}
+      noValidate
+      className="grid gap-4 sm:grid-cols-2"
+    >
       <Field label={t('name')} error={err(errors.name)} required requiredLabel={t('required')}>
         {(p) => <input {...p} {...register('name')} autoComplete="name" />}
       </Field>
       <Field label={t('email')} error={err(errors.email)} required requiredLabel={t('required')}>
-        {(p) => <input {...p} {...register('email')} type="email" autoComplete="email" inputMode="email" />}
+        {(p) => (
+          <input
+            {...p}
+            {...register('email')}
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+          />
+        )}
       </Field>
       <Field label={t('whatsapp')} hint={t('whatsappHint')} error={err(errors.whatsapp)}>
-        {(p) => <input {...p} {...register('whatsapp')} type="tel" autoComplete="tel" inputMode="tel" />}
+        {(p) => (
+          <input {...p} {...register('whatsapp')} type="tel" autoComplete="tel" inputMode="tel" />
+        )}
       </Field>
       <Field label={t('company')} error={err(errors.company)}>
         {(p) => <input {...p} {...register('company')} autoComplete="organization" />}
@@ -142,7 +177,14 @@ export function ContactForm({
         )}
       </Field>
       <div className="sm:col-span-2">
-        <Field label={t('message')} hint={t('messageHint')} error={err(errors.message)} required requiredLabel={t('required')} textarea>
+        <Field
+          label={t('message')}
+          hint={t('messageHint')}
+          error={err(errors.message)}
+          required
+          requiredLabel={t('required')}
+          textarea
+        >
           {(p) => <textarea {...p} {...register('message')} rows={5} />}
         </Field>
       </div>
@@ -171,7 +213,11 @@ export function ContactForm({
       {TURNSTILE_KEY && <div ref={turnstileRef} className="sm:col-span-2" />}
 
       <div className="flex flex-col gap-3 sm:col-span-2 sm:flex-row sm:items-center">
-        <button type="submit" disabled={status.state === 'sending'} className={cn(buttonClasses('primary', 'lg'), 'w-full sm:w-auto')}>
+        <button
+          type="submit"
+          disabled={status.state === 'sending'}
+          className={cn(buttonClasses('primary', 'lg'), 'w-full sm:w-auto')}
+        >
           {status.state === 'sending' ? (
             <>
               <Loader2 aria-hidden size={18} className="animate-spin" /> {t('sending')}
@@ -193,15 +239,20 @@ function Success({ wa, delivered }: { wa: string; delivered: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => ref.current?.focus(), []);
   return (
-    <div ref={ref} tabIndex={-1} role="status" className="success-in rounded-panel border border-border bg-surface p-8 outline-none">
-      <span className="inline-flex size-12 items-center justify-center rounded-full bg-success text-white">
+    <div
+      ref={ref}
+      tabIndex={-1}
+      role="status"
+      className="success-in rounded-panel border-border bg-surface border p-8 outline-none"
+    >
+      <span className="bg-success inline-flex size-12 items-center justify-center rounded-full text-white">
         <Check aria-hidden size={24} className="check-draw" />
       </span>
-      <h3 className="mt-6 text-h3 font-semibold">{t('form.successTitle')}</h3>
-      <p className="mt-3 text-body-lg text-ink-muted">
+      <h3 className="text-h3 mt-6 font-semibold">{t('form.successTitle')}</h3>
+      <p className="text-body-lg text-ink-muted mt-3">
         <Ph>{t('form.successBody')}</Ph>
       </p>
-      {!delivered && <p className="mt-3 text-small text-warning">{t('form.devNotice')}</p>}
+      {!delivered && <p className="text-small text-warning mt-3">{t('form.devNotice')}</p>}
       <a
         href={wa}
         target="_blank"
@@ -246,7 +297,8 @@ function Field({
   children: (p: FieldRenderProps) => ReactNode;
 }) {
   const id = useId();
-  const describedBy = [hint && `${id}-hint`, error && `${id}-err`].filter(Boolean).join(' ') || undefined;
+  const describedBy =
+    [hint && `${id}-hint`, error && `${id}-err`].filter(Boolean).join(' ') || undefined;
   return (
     <div>
       <div className="relative">
@@ -260,35 +312,39 @@ function Field({
             'peer block w-full rounded-input border bg-surface px-4 text-body text-ink outline-none transition-[border-color,box-shadow] duration-(--duration-fast)',
             'focus:border-primary focus:ring-4 focus:ring-primary/15',
             textarea ? 'min-h-36 resize-y pt-7 pb-3' : 'h-14 pt-5',
-            select && 'appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27none%27 stroke=%27%234A5170%27 stroke-width=%272%27%3E%3Cpath d=%27m4 6 4 4 4-4%27/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10',
+            select &&
+              'appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27none%27 stroke=%27%234A5170%27 stroke-width=%272%27%3E%3Cpath d=%27m4 6 4 4 4-4%27/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10',
             error ? 'border-error' : 'border-border hover:border-ink/30',
           ),
         })}
         <label
           htmlFor={id}
           className={cn(
-            'pointer-events-none absolute left-4 origin-left text-ink-muted transition-all duration-(--duration-fast) ease-(--ease-out)',
+            'text-ink-muted pointer-events-none absolute left-4 origin-left transition-all duration-(--duration-fast) ease-(--ease-out)',
             select
               ? 'top-2 text-[0.75rem]'
-              : 'top-2 text-[0.75rem] peer-placeholder-shown:top-4 peer-placeholder-shown:text-body peer-focus:top-2 peer-focus:text-[0.75rem]',
+              : 'peer-placeholder-shown:text-body top-2 text-[0.75rem] peer-placeholder-shown:top-4 peer-focus:top-2 peer-focus:text-[0.75rem]',
           )}
         >
           {label}
           {required && (
             <>
-              <span aria-hidden className="text-error"> *</span>
+              <span aria-hidden className="text-error">
+                {' '}
+                *
+              </span>
               <span className="sr-only"> ({requiredLabel})</span>
             </>
           )}
         </label>
       </div>
       {hint && !error && (
-        <p id={`${id}-hint`} className="mt-1.5 text-small text-ink-muted">
+        <p id={`${id}-hint`} className="text-small text-ink-muted mt-1.5">
           {hint}
         </p>
       )}
       {error && (
-        <p id={`${id}-err`} className="mt-1.5 flex items-center gap-1.5 text-small text-error">
+        <p id={`${id}-err`} className="text-small text-error mt-1.5 flex items-center gap-1.5">
           <AlertCircle aria-hidden size={14} /> {error}
         </p>
       )}
@@ -301,7 +357,11 @@ function Check_({
   error,
   children,
   ...input
-}: { id: string; error?: string; children: ReactNode } & React.InputHTMLAttributes<HTMLInputElement> & {
+}: {
+  id: string;
+  error?: string;
+  children: ReactNode;
+} & React.InputHTMLAttributes<HTMLInputElement> & {
     ref?: React.Ref<HTMLInputElement>;
   }) {
   const uid = `${useId()}-${id}`;
@@ -313,15 +373,18 @@ function Check_({
           type="checkbox"
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${uid}-err` : undefined}
-          className="mt-0.5 size-5 shrink-0 cursor-pointer rounded accent-primary"
+          className="accent-primary mt-0.5 size-5 shrink-0 cursor-pointer rounded"
           {...input}
         />
-        <label htmlFor={uid} className="cursor-pointer text-small text-ink-muted">
+        <label htmlFor={uid} className="text-small text-ink-muted cursor-pointer">
           {children}
         </label>
       </div>
       {error && (
-        <p id={`${uid}-err`} className="mt-1.5 ml-8 flex items-center gap-1.5 text-small text-error">
+        <p
+          id={`${uid}-err`}
+          className="text-small text-error mt-1.5 ml-8 flex items-center gap-1.5"
+        >
           <AlertCircle aria-hidden size={14} /> {error}
         </p>
       )}

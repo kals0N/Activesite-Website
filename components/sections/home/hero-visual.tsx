@@ -43,9 +43,9 @@ export function HeroVisual() {
     >
       {/* Gradient mesh */}
       <div className="mesh absolute inset-[12%] rounded-full opacity-70 blur-3xl md:opacity-60">
-        <div className="absolute top-[8%] left-[12%] size-[55%] rounded-full bg-primary/45" />
-        <div className="absolute right-[6%] bottom-[10%] size-[50%] rounded-full bg-ink/25" />
-        <div className="absolute top-[42%] left-[38%] size-[30%] rounded-full bg-accent/45" />
+        <div className="bg-primary/45 absolute top-[8%] left-[12%] size-[55%] rounded-full" />
+        <div className="bg-ink/25 absolute right-[6%] bottom-[10%] size-[50%] rounded-full" />
+        <div className="bg-accent/45 absolute top-[42%] left-[38%] size-[30%] rounded-full" />
       </div>
       {/* The arcs: depth layers move by different amounts for a subtle 5–15% parallax */}
       <svg
@@ -53,7 +53,10 @@ export function HeroVisual() {
         className="absolute inset-0 size-full transition-transform duration-700 ease-(--ease-out)"
         style={{ transform: 'translate3d(calc(var(--px) * -28px), calc(var(--py) * -22px), 0)' }}
       >
-        <g className="origin-center motion-safe:animate-arc-spin" style={{ transformBox: 'view-box', animationDuration: '120s' }}>
+        <g
+          className="motion-safe:animate-arc-spin origin-center"
+          style={{ transformBox: 'view-box', animationDuration: '120s' }}
+        >
           <path d={ARC_TOP} fill="var(--color-primary)" />
           <g style={{ transform: 'translate(calc(var(--px) * 1.2px), calc(var(--py) * 1.2px))' }}>
             <path d={ARC_BOTTOM} fill="var(--color-ink)" />

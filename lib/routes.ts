@@ -31,7 +31,10 @@ export function localized(make: (locale: Locale) => Href): LocalizedPaths {
 export const absolute = (p: string) => `${site.url}${p === '/' ? '' : p}`;
 
 export function servicePaths(key: (typeof serviceKeys)[number]) {
-  return localized((locale) => ({ pathname: '/services/[slug]', params: { slug: serviceSlugIn(locale, key) } }));
+  return localized((locale) => ({
+    pathname: '/services/[slug]',
+    params: { slug: serviceSlugIn(locale, key) },
+  }));
 }
 
 /** Pair translated content by its shared `key` frontmatter. */
@@ -43,7 +46,11 @@ function pairByKey<T extends { key: string; slug: string }>(
   return [...keys].map((key) =>
     localized((locale) => {
       const item = get(locale).find((i) => i.key === key);
-      return item ? { pathname, params: { slug: item.slug } } : pathname === '/work/[slug]' ? '/work' : '/blog';
+      return item
+        ? { pathname, params: { slug: item.slug } }
+        : pathname === '/work/[slug]'
+          ? '/work'
+          : '/blog';
     }),
   );
 }

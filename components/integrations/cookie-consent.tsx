@@ -43,41 +43,76 @@ export function CookieConsent() {
       role="dialog"
       aria-modal="false"
       aria-labelledby={titleId}
-      className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl rounded-panel border border-border bg-surface p-5 shadow-float sm:inset-x-auto sm:left-6 sm:bottom-6 sm:p-6"
+      className="rounded-panel border-border bg-surface shadow-float fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl border p-5 sm:inset-x-auto sm:bottom-6 sm:left-6 sm:p-6"
     >
       <h2 id={titleId} className="text-h4 font-semibold">
         {t('title')}
       </h2>
-      <p className="mt-2 text-small text-ink-muted">
+      <p className="text-small text-ink-muted mt-2">
         {t('body')}{' '}
-        <a href={locale === 'fr' ? '/fr/cookies' : '/cookies'} className="text-primary underline underline-offset-2">
+        <a
+          href={locale === 'fr' ? '/fr/cookies' : '/cookies'}
+          className="text-primary underline underline-offset-2"
+        >
           {t('policy')}
         </a>
       </p>
 
       {prefs && (
-        <fieldset className="mt-4 space-y-3 border-t border-border pt-4">
+        <fieldset className="border-border mt-4 space-y-3 border-t pt-4">
           <legend className="sr-only">{t('preferences')}</legend>
-          <Toggle label={t('necessary')} body={t('necessaryBody')} checked disabled hint={t('alwaysOn')} />
-          <Toggle label={t('analytics')} body={t('analyticsBody')} checked={analytics} onChange={setAnalytics} />
-          <Toggle label={t('marketing')} body={t('marketingBody')} checked={marketing} onChange={setMarketing} />
+          <Toggle
+            label={t('necessary')}
+            body={t('necessaryBody')}
+            checked
+            disabled
+            hint={t('alwaysOn')}
+          />
+          <Toggle
+            label={t('analytics')}
+            body={t('analyticsBody')}
+            checked={analytics}
+            onChange={setAnalytics}
+          />
+          <Toggle
+            label={t('marketing')}
+            body={t('marketingBody')}
+            checked={marketing}
+            onChange={setMarketing}
+          />
         </fieldset>
       )}
 
       {/* Accept and reject carry equal weight, as GDPR guidance expects. */}
       <div className="mt-5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
-        <button type="button" className={buttonClasses('primary', 'sm')} onClick={() => save({ analytics: true, marketing: true })}>
+        <button
+          type="button"
+          className={buttonClasses('primary', 'sm')}
+          onClick={() => save({ analytics: true, marketing: true })}
+        >
           {t('acceptAll')}
         </button>
-        <button type="button" className={buttonClasses('secondary', 'sm')} onClick={() => save({ analytics: false, marketing: false })}>
+        <button
+          type="button"
+          className={buttonClasses('secondary', 'sm')}
+          onClick={() => save({ analytics: false, marketing: false })}
+        >
           {t('rejectAll')}
         </button>
         {prefs ? (
-          <button type="button" className={cn(buttonClasses('ghost', 'sm'), 'col-span-2 underline underline-offset-2')} onClick={() => save({ analytics, marketing })}>
+          <button
+            type="button"
+            className={cn(buttonClasses('ghost', 'sm'), 'col-span-2 underline underline-offset-2')}
+            onClick={() => save({ analytics, marketing })}
+          >
             {t('save')}
           </button>
         ) : (
-          <button type="button" className={cn(buttonClasses('ghost', 'sm'), 'col-span-2 underline underline-offset-2')} onClick={() => setPrefs(true)}>
+          <button
+            type="button"
+            className={cn(buttonClasses('ghost', 'sm'), 'col-span-2 underline underline-offset-2')}
+            onClick={() => setPrefs(true)}
+          >
             {t('preferences')}
           </button>
         )}
@@ -105,8 +140,8 @@ function Toggle({
   return (
     <div className="flex items-start justify-between gap-4">
       <label htmlFor={id} className="cursor-pointer">
-        <span className="block text-small font-medium">{label}</span>
-        <span className="block text-small text-ink-muted">{body}</span>
+        <span className="text-small block font-medium">{label}</span>
+        <span className="text-small text-ink-muted block">{body}</span>
       </label>
       <span className="flex shrink-0 items-center gap-2 pt-0.5">
         {hint && <span className="text-small text-ink-muted">{hint}</span>}
@@ -117,7 +152,7 @@ function Toggle({
           checked={checked}
           disabled={disabled}
           onChange={(e) => onChange?.(e.target.checked)}
-          className="peer h-6 w-11 cursor-pointer appearance-none rounded-full bg-border transition-colors before:block before:size-5 before:translate-x-0.5 before:translate-y-0.5 before:rounded-full before:bg-white before:shadow-soft before:transition-transform checked:bg-primary checked:before:translate-x-[22px] disabled:cursor-not-allowed disabled:opacity-70"
+          className="peer bg-border before:shadow-soft checked:bg-primary h-6 w-11 cursor-pointer appearance-none rounded-full transition-colors before:block before:size-5 before:translate-x-0.5 before:translate-y-0.5 before:rounded-full before:bg-white before:transition-transform checked:before:translate-x-[22px] disabled:cursor-not-allowed disabled:opacity-70"
         />
       </span>
     </div>

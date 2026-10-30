@@ -14,7 +14,11 @@ let apiPromise: Promise<CalApi> | null = null;
 export function loadCal(locale: Locale): Promise<CalApi> {
   apiPromise ??= import('@calcom/embed-react').then(async ({ getCalApi }) => {
     const cal = (await getCalApi({ namespace: CAL_NAMESPACE })) as unknown as CalApi;
-    cal('ui', { theme: 'light', cssVarsPerTheme: { light: { 'cal-brand': '#0058FB' } }, hideEventTypeDetails: false });
+    cal('ui', {
+      theme: 'light',
+      cssVarsPerTheme: { light: { 'cal-brand': '#0058FB' } },
+      hideEventTypeDetails: false,
+    });
     cal('on', {
       action: 'bookingSuccessful',
       callback: () => {

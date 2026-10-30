@@ -151,38 +151,92 @@
       "sub": "Six étapes claires. Vous savez toujours ce qui vient ensuite.",
       "time": "Délai habituel de mise en ligne : [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]",
       "steps": [
-        { "name": "Découverte", "body": "Un appel gratuit pour comprendre votre activité, vos clients et les résultats visés." },
-        { "name": "Stratégie", "body": "Nous fixons des objectifs mesurables et planifions les pages, l’offre et le parcours de conversion." },
-        { "name": "Design", "body": "Vous voyez votre site avant son développement. Nous l’affinons jusqu’à ce qu’il vous ressemble." },
-        { "name": "Développement", "body": "Un développement rapide, sécurisé, pensé mobile, avec un suivi de chaque action." },
-        { "name": "Lancement", "body": "Nous testons tout, mettons en ligne et connectons domaine, e-mail et statistiques." },
-        { "name": "Croissance", "body": "Nous analysons les chiffres, améliorons ce qui convertit et amplifions ce qui fonctionne." }
+        {
+          "name": "Découverte",
+          "body": "Un appel gratuit pour comprendre votre activité, vos clients et les résultats visés."
+        },
+        {
+          "name": "Stratégie",
+          "body": "Nous fixons des objectifs mesurables et planifions les pages, l’offre et le parcours de conversion."
+        },
+        {
+          "name": "Design",
+          "body": "Vous voyez votre site avant son développement. Nous l’affinons jusqu’à ce qu’il vous ressemble."
+        },
+        {
+          "name": "Développement",
+          "body": "Un développement rapide, sécurisé, pensé mobile, avec un suivi de chaque action."
+        },
+        {
+          "name": "Lancement",
+          "body": "Nous testons tout, mettons en ligne et connectons domaine, e-mail et statistiques."
+        },
+        {
+          "name": "Croissance",
+          "body": "Nous analysons les chiffres, améliorons ce qui convertit et amplifions ce qui fonctionne."
+        }
       ]
     },
     "stats": {
       "title": "Des chiffres dont nous répondons.",
       "items": [
         { "value": "[[PLACEHOLDER: nombre de projets livrés]]", "label": "Projets livrés" },
-        { "value": "[[PLACEHOLDER: satisfaction client, ex. 98 %]]", "label": "Satisfaction client" },
-        { "value": "[[PLACEHOLDER: délai moyen de lancement]]", "label": "Délai moyen de mise en ligne" },
-        { "value": "[[PLACEHOLDER: prospects générés pour nos clients]]", "label": "Prospects générés pour nos clients" }
+        {
+          "value": "[[PLACEHOLDER: satisfaction client, ex. 98 %]]",
+          "label": "Satisfaction client"
+        },
+        {
+          "value": "[[PLACEHOLDER: délai moyen de lancement]]",
+          "label": "Délai moyen de mise en ligne"
+        },
+        {
+          "value": "[[PLACEHOLDER: prospects générés pour nos clients]]",
+          "label": "Prospects générés pour nos clients"
+        }
       ]
     },
     "why": {
       "title": "Pourquoi les entreprises choisissent Activesite.",
       "items": [
-        { "title": "Les objectifs avant les pixels", "body": "Nous fixons ensemble les prospects, ventes ou inscriptions visés avant de dessiner quoi que ce soit." },
-        { "title": "Une mise en ligne rapide", "body": "Périmètre clair, point hebdomadaire et calendrier fixe. La plupart des sites sont en ligne en [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]." },
-        { "title": "Une garantie mesurable", "body": "Nous nous engageons par écrit sur un résultat de croissance : [[PLACEHOLDER: conditions de la garantie]]." },
-        { "title": "Un seul partenaire, du début à la fin", "body": "Marque, site, tunnels et publicité au même endroit. Plus de renvoi de responsabilité entre prestataires." }
+        {
+          "title": "Les objectifs avant les pixels",
+          "body": "Nous fixons ensemble les prospects, ventes ou inscriptions visés avant de dessiner quoi que ce soit."
+        },
+        {
+          "title": "Une mise en ligne rapide",
+          "body": "Périmètre clair, point hebdomadaire et calendrier fixe. La plupart des sites sont en ligne en [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]."
+        },
+        {
+          "title": "Une garantie mesurable",
+          "body": "Nous nous engageons par écrit sur un résultat de croissance : [[PLACEHOLDER: conditions de la garantie]]."
+        },
+        {
+          "title": "Un seul partenaire, du début à la fin",
+          "body": "Marque, site, tunnels et publicité au même endroit. Plus de renvoi de responsabilité entre prestataires."
+        }
       ]
     },
     "testimonials": {
       "title": "Ce que nos clients disent des résultats.",
       "items": [
-        { "quote": "[[PLACEHOLDER: citation client sur le résultat obtenu]]", "name": "[[PLACEHOLDER: nom du client]]", "role": "[[PLACEHOLDER: fonction, entreprise]]", "result": "[[PLACEHOLDER: résultat, ex. +X % de prospects]]" },
-        { "quote": "[[PLACEHOLDER: citation client sur la rapidité ou la méthode]]", "name": "[[PLACEHOLDER: nom du client]]", "role": "[[PLACEHOLDER: fonction, entreprise]]", "result": "[[PLACEHOLDER: résultat, ex. en ligne en X semaines]]" },
-        { "quote": "[[PLACEHOLDER: citation client sur les ventes ou la croissance]]", "name": "[[PLACEHOLDER: nom du client]]", "role": "[[PLACEHOLDER: fonction, entreprise]]", "result": "[[PLACEHOLDER: résultat, ex. X ventes en Y semaines]]" }
+        {
+          "quote": "[[PLACEHOLDER: citation client sur le résultat obtenu]]",
+          "name": "[[PLACEHOLDER: nom du client]]",
+          "role": "[[PLACEHOLDER: fonction, entreprise]]",
+          "result": "[[PLACEHOLDER: résultat, ex. +X % de prospects]]"
+        },
+        {
+          "quote": "[[PLACEHOLDER: citation client sur la rapidité ou la méthode]]",
+          "name": "[[PLACEHOLDER: nom du client]]",
+          "role": "[[PLACEHOLDER: fonction, entreprise]]",
+          "result": "[[PLACEHOLDER: résultat, ex. en ligne en X semaines]]"
+        },
+        {
+          "quote": "[[PLACEHOLDER: citation client sur les ventes ou la croissance]]",
+          "name": "[[PLACEHOLDER: nom du client]]",
+          "role": "[[PLACEHOLDER: fonction, entreprise]]",
+          "result": "[[PLACEHOLDER: résultat, ex. X ventes en Y semaines]]"
+        }
       ]
     },
     "founder": {
@@ -197,14 +251,38 @@
     "faq": {
       "title": "Vos questions avant de réserver.",
       "items": [
-        { "q": "Combien coûte un site internet ?", "a": "Chaque projet est calibré selon vos objectifs. Obtenez un plan sur mesure lors d’un appel gratuit. Vous recevez une proposition écrite claire avant tout engagement." },
-        { "q": "Combien de temps faut-il pour la mise en ligne ?", "a": "La plupart des sites sont en ligne en [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]. Les boutiques et produits SaaS suivent un calendrier convenu lors de l’appel." },
-        { "q": "Serai-je propriétaire de mon site ?", "a": "Oui. Une fois le projet réglé, le design, les contenus, le code et le nom de domaine vous appartiennent. Nous vous remettons tous les accès." },
-        { "q": "Combien de révisions sont incluses ?", "a": "Chaque étape comprend [[PLACEHOLDER: nombre de tours de révision]] tours de révision. Nous validons les maquettes avec vous avant tout développement." },
-        { "q": "Assurez-vous le suivi après la mise en ligne ?", "a": "Oui. Nous proposons l’hébergement, la maintenance et l’accompagnement à la croissance pour un site rapide, sûr et performant." },
-        { "q": "Travaillez-vous avec des clients hors du Cameroun ?", "a": "Oui. Nous travaillons avec des clients en France, au Royaume-Uni et aux États-Unis, en visioconférence, en français ou en anglais." },
-        { "q": "Comment se déroule le paiement ?", "a": "Les projets sont réglés par étapes : [[PLACEHOLDER: modalités de paiement, ex. acompte, étape, mise en ligne]]. Nous acceptons [[PLACEHOLDER: moyens de paiement acceptés]]." },
-        { "q": "Quelle est votre garantie de résultat ?", "a": "Nous nous engageons sur un résultat de croissance mesurable, fixé avant de commencer : [[PLACEHOLDER: conditions de la garantie]]." }
+        {
+          "q": "Combien coûte un site internet ?",
+          "a": "Chaque projet est calibré selon vos objectifs. Obtenez un plan sur mesure lors d’un appel gratuit. Vous recevez une proposition écrite claire avant tout engagement."
+        },
+        {
+          "q": "Combien de temps faut-il pour la mise en ligne ?",
+          "a": "La plupart des sites sont en ligne en [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]. Les boutiques et produits SaaS suivent un calendrier convenu lors de l’appel."
+        },
+        {
+          "q": "Serai-je propriétaire de mon site ?",
+          "a": "Oui. Une fois le projet réglé, le design, les contenus, le code et le nom de domaine vous appartiennent. Nous vous remettons tous les accès."
+        },
+        {
+          "q": "Combien de révisions sont incluses ?",
+          "a": "Chaque étape comprend [[PLACEHOLDER: nombre de tours de révision]] tours de révision. Nous validons les maquettes avec vous avant tout développement."
+        },
+        {
+          "q": "Assurez-vous le suivi après la mise en ligne ?",
+          "a": "Oui. Nous proposons l’hébergement, la maintenance et l’accompagnement à la croissance pour un site rapide, sûr et performant."
+        },
+        {
+          "q": "Travaillez-vous avec des clients hors du Cameroun ?",
+          "a": "Oui. Nous travaillons avec des clients en France, au Royaume-Uni et aux États-Unis, en visioconférence, en français ou en anglais."
+        },
+        {
+          "q": "Comment se déroule le paiement ?",
+          "a": "Les projets sont réglés par étapes : [[PLACEHOLDER: modalités de paiement, ex. acompte, étape, mise en ligne]]. Nous acceptons [[PLACEHOLDER: moyens de paiement acceptés]]."
+        },
+        {
+          "q": "Quelle est votre garantie de résultat ?",
+          "a": "Nous nous engageons sur un résultat de croissance mesurable, fixé avant de commencer : [[PLACEHOLDER: conditions de la garantie]]."
+        }
       ]
     },
     "final": {
@@ -258,9 +336,18 @@
     "partner": "Nous sommes le partenaire technique et stratégique de deux profils : les fondateurs et créateurs qui transforment une idée en produit logiciel, et les dirigeants qui utilisent le logiciel pour gagner des clients et grandir.",
     "howTitle": "Notre façon de travailler",
     "how": [
-      { "title": "L’objectif d’abord", "body": "Chaque projet commence par le résultat visé : prospects, ventes ou inscriptions. Le design et le code servent cet objectif." },
-      { "title": "Rapide", "body": "Un périmètre ciblé et des avancées chaque semaine. Vous voyez des pages fonctionnelles tôt, pas après des mois." },
-      { "title": "Mesurable", "body": "Nous suivons chaque action importante et nous engageons par écrit sur un résultat." }
+      {
+        "title": "L’objectif d’abord",
+        "body": "Chaque projet commence par le résultat visé : prospects, ventes ou inscriptions. Le design et le code servent cet objectif."
+      },
+      {
+        "title": "Rapide",
+        "body": "Un périmètre ciblé et des avancées chaque semaine. Vous voyez des pages fonctionnelles tôt, pas après des mois."
+      },
+      {
+        "title": "Mesurable",
+        "body": "Nous suivons chaque action importante et nous engageons par écrit sur un résultat."
+      }
     ],
     "founderTitle": "Le mot du fondateur",
     "founderBody": [
@@ -275,10 +362,22 @@
     "portrait": "[[PLACEHOLDER: photo portrait du fondateur]]",
     "valuesTitle": "Nos valeurs",
     "values": [
-      { "title": "Clarté", "body": "Un langage simple, des délais honnêtes et aucune mauvaise surprise." },
-      { "title": "Engagement", "body": "Nous agissons comme si c’était notre propre entreprise en jeu." },
-      { "title": "Exigence", "body": "Un travail rapide, accessible et soigné, que nous sommes fiers de signer." },
-      { "title": "Respect", "body": "Votre temps, votre budget et vos idées sont traités avec soin." }
+      {
+        "title": "Clarté",
+        "body": "Un langage simple, des délais honnêtes et aucune mauvaise surprise."
+      },
+      {
+        "title": "Engagement",
+        "body": "Nous agissons comme si c’était notre propre entreprise en jeu."
+      },
+      {
+        "title": "Exigence",
+        "body": "Un travail rapide, accessible et soigné, que nous sommes fiers de signer."
+      },
+      {
+        "title": "Respect",
+        "body": "Votre temps, votre budget et vos idées sont traités avec soin."
+      }
     ],
     "marketsTitle": "Les marchés que nous servons",
     "marketsBody": "Nous sommes basés à Douala et travaillons avec des entreprises dans tout le Cameroun, notamment à Yaoundé, ainsi qu’avec des clients en France, au Royaume-Uni et aux États-Unis.",
@@ -307,9 +406,18 @@
     "responseBody": "Chaque message reçoit une réponse personnelle [[PLACEHOLDER: délai de réponse, ex. sous 24 heures]], du lundi au samedi.",
     "faqTitle": "Avant de nous contacter",
     "faq": [
-      { "q": "L’appel stratégique est-il vraiment gratuit ?", "a": "Oui. Il dure 30 minutes, sans engagement. Vous repartez avec des actions concrètes." },
-      { "q": "Que dois-je préparer pour l’appel ?", "a": "Vos objectifs, votre site actuel si vous en avez un, et des exemples de sites que vous aimez." },
-      { "q": "Travaillez-vous en anglais ?", "a": "Oui. Nous travaillons en français et en anglais avec chaque client." }
+      {
+        "q": "L’appel stratégique est-il vraiment gratuit ?",
+        "a": "Oui. Il dure 30 minutes, sans engagement. Vous repartez avec des actions concrètes."
+      },
+      {
+        "q": "Que dois-je préparer pour l’appel ?",
+        "a": "Vos objectifs, votre site actuel si vous en avez un, et des exemples de sites que vous aimez."
+      },
+      {
+        "q": "Travaillez-vous en anglais ?",
+        "a": "Oui. Nous travaillons en français et en anglais avec chaque client."
+      }
     ]
   },
   "form": {

@@ -24,7 +24,11 @@ export function organizationLd(locale: Locale, description: string) {
         addressLocality: site.location.city,
         addressCountry: site.location.countryCode,
       },
-      geo: { '@type': 'GeoCoordinates', latitude: site.location.geo.lat, longitude: site.location.geo.lng },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: site.location.geo.lat,
+        longitude: site.location.geo.lng,
+      },
       areaServed: ['Cameroon', 'France', 'United Kingdom', 'United States'],
       knowsLanguage: ['en', 'fr'],
       founder: { '@id': PERSON_ID },
@@ -86,7 +90,17 @@ export function faqLd(items: { q: string; a: string }[]) {
   };
 }
 
-export function serviceLd({ name, description, path, locale }: { name: string; description: string; path: string; locale: Locale }) {
+export function serviceLd({
+  name,
+  description,
+  path,
+  locale,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  locale: Locale;
+}) {
   return {
     '@type': 'Service',
     name,
@@ -123,7 +137,12 @@ export function blogPostingLd(p: {
   };
 }
 
-export function creativeWorkLd(p: { title: string; description: string; path: string; locale: Locale }) {
+export function creativeWorkLd(p: {
+  title: string;
+  description: string;
+  path: string;
+  locale: Locale;
+}) {
   return {
     '@type': 'CreativeWork',
     name: p.title,

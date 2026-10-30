@@ -31,21 +31,24 @@ export async function Footer({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <footer className="on-ink relative mt-auto overflow-hidden border-t border-border-ink bg-ink text-white">
+    <footer className="on-ink border-border-ink bg-ink relative mt-auto overflow-hidden border-t text-white">
       <div className="container-site pt-20 pb-10 lg:pt-28">
         <div className="grid-site gap-y-14">
           <div className="col-span-4 md:col-span-8 lg:col-span-5">
             <Logo tone="white" className="h-14 w-auto" />
-            <p className="mt-6 max-w-sm text-body-lg text-ink-soft">{t('footer.positioning')}</p>
+            <p className="text-body-lg text-ink-soft mt-6 max-w-sm">{t('footer.positioning')}</p>
             <div className="mt-10 max-w-md">
               <p className="text-h4 font-semibold">{t('newsletter.title')}</p>
               <NewsletterForm location="footer" tone="ink" />
             </div>
           </div>
 
-          <nav aria-label={t('a11y.footerNav')} className="col-span-4 grid grid-cols-2 gap-8 md:col-span-8 md:grid-cols-3 lg:col-span-7 lg:pl-8">
+          <nav
+            aria-label={t('a11y.footerNav')}
+            className="col-span-4 grid grid-cols-2 gap-8 md:col-span-8 md:grid-cols-3 lg:col-span-7 lg:pl-8"
+          >
             <div className="col-span-2 md:col-span-1">
-              <h2 className="text-small font-medium text-ink-soft">{t('footer.services')}</h2>
+              <h2 className="text-small text-ink-soft font-medium">{t('footer.services')}</h2>
               <ul className="mt-4 space-y-2.5">
                 {services.map((s) => (
                   <li key={s.key}>
@@ -57,7 +60,7 @@ export async function Footer({ locale }: { locale: Locale }) {
               </ul>
             </div>
             <div>
-              <h2 className="text-small font-medium text-ink-soft">{t('footer.company')}</h2>
+              <h2 className="text-small text-ink-soft font-medium">{t('footer.company')}</h2>
               <ul className="mt-4 space-y-2.5">
                 {company.map((l) => (
                   <li key={l.href}>
@@ -69,20 +72,31 @@ export async function Footer({ locale }: { locale: Locale }) {
               </ul>
             </div>
             <div>
-              <h2 className="text-small font-medium text-ink-soft">{t('footer.contact')}</h2>
-              <ul className="mt-4 space-y-3 text-small">
+              <h2 className="text-small text-ink-soft font-medium">{t('footer.contact')}</h2>
+              <ul className="text-small mt-4 space-y-3">
                 <li>
-                  <a href={whatsappUrl()} target="_blank" rel="noopener" className="inline-flex items-center gap-2 link-draw" data-track="whatsapp_click" data-track-label="footer">
+                  <a
+                    href={whatsappUrl()}
+                    target="_blank"
+                    rel="noopener"
+                    className="link-draw inline-flex items-center gap-2"
+                    data-track="whatsapp_click"
+                    data-track-label="footer"
+                  >
                     <WhatsAppIcon size={16} /> {site.whatsapp.display}
                   </a>
                 </li>
                 <li>
-                  <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 link-draw">
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="link-draw inline-flex items-center gap-2"
+                  >
                     <Mail aria-hidden size={16} /> {site.email}
                   </a>
                 </li>
                 <li className="inline-flex items-center gap-2">
-                  <MapPin aria-hidden size={16} /> {site.location.city}, {locale === 'fr' ? site.location.countryFr : site.location.country}
+                  <MapPin aria-hidden size={16} /> {site.location.city},{' '}
+                  {locale === 'fr' ? site.location.countryFr : site.location.country}
                 </li>
               </ul>
               <ul className="mt-6 flex gap-2" aria-label={t('footer.follow')}>
@@ -93,7 +107,7 @@ export async function Footer({ locale }: { locale: Locale }) {
                       target="_blank"
                       rel="noopener"
                       aria-label={`${label} ${t('a11y.newTab')}`}
-                      className="inline-flex size-11 items-center justify-center rounded-full border border-border-ink transition-colors hover:border-accent hover:text-accent"
+                      className="border-border-ink hover:border-accent hover:text-accent inline-flex size-11 items-center justify-center rounded-full border transition-colors"
                     >
                       <Icon size={18} />
                     </a>
@@ -104,15 +118,29 @@ export async function Footer({ locale }: { locale: Locale }) {
           </nav>
         </div>
 
-        <div className="mt-20 flex flex-col gap-6 border-t border-border-ink pt-8 text-small text-ink-soft lg:flex-row lg:items-center lg:justify-between">
+        <div className="border-border-ink text-small text-ink-soft mt-20 flex flex-col gap-6 border-t pt-8 lg:flex-row lg:items-center lg:justify-between">
           <p>
             © {year} {site.legalName}. {t('footer.rights')}
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            <li><NextLink href={path('/privacy')} className="link-draw">{t('footer.privacy')}</NextLink></li>
-            <li><NextLink href={path('/terms')} className="link-draw">{t('footer.terms')}</NextLink></li>
-            <li><NextLink href={path('/cookies')} className="link-draw">{t('footer.cookies')}</NextLink></li>
-            <li><CookieSettingsLink label={t('footer.cookieSettings')} /></li>
+            <li>
+              <NextLink href={path('/privacy')} className="link-draw">
+                {t('footer.privacy')}
+              </NextLink>
+            </li>
+            <li>
+              <NextLink href={path('/terms')} className="link-draw">
+                {t('footer.terms')}
+              </NextLink>
+            </li>
+            <li>
+              <NextLink href={path('/cookies')} className="link-draw">
+                {t('footer.cookies')}
+              </NextLink>
+            </li>
+            <li>
+              <CookieSettingsLink label={t('footer.cookieSettings')} />
+            </li>
           </ul>
           <LangSwitchFooter locale={locale} />
         </div>

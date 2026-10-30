@@ -15,7 +15,10 @@ export const contactSchema = z.object({
     .optional()
     .or(z.literal('')),
   company: z.string().trim().max(160).optional().or(z.literal('')),
-  service: z.enum([...serviceKeys, 'unsure']).optional().or(z.literal('')),
+  service: z
+    .enum([...serviceKeys, 'unsure'])
+    .optional()
+    .or(z.literal('')),
   timeline: z.enum(timelines).optional().or(z.literal('')),
   message: z.string().trim().min(10, 'message').max(5000, 'message'),
   consent: z.literal(true, { message: 'consent' }),

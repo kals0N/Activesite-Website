@@ -3,7 +3,13 @@ import type { SVGProps } from 'react';
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
 
 function base({ size = 20, ...props }: IconProps) {
-  return { width: size, height: size, 'aria-hidden': true as const, focusable: false as const, ...props };
+  return {
+    width: size,
+    height: size,
+    'aria-hidden': true as const,
+    focusable: false as const,
+    ...props,
+  };
 }
 
 export function WhatsAppIcon(props: IconProps) {

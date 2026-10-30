@@ -21,7 +21,12 @@ export async function Header({ locale }: { locale: Locale }) {
       key: group,
       label: t(`groups.${group}`),
       line: t(`groupLines.${group}`),
-      items: services.map((s) => ({ label: s.name, line: s.card, href: servicePaths(s.key)[locale], key: s.key })),
+      items: services.map((s) => ({
+        label: s.name,
+        line: s.card,
+        href: servicePaths(s.key)[locale],
+        key: s.key,
+      })),
     })),
     alternates: allLocalizedPaths(),
   };

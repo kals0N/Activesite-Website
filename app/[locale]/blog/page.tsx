@@ -17,7 +17,12 @@ type Props = { params: Promise<{ locale: Locale }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'blog' });
-  return buildMetadata({ locale, paths: localized(() => '/blog'), title: t('metaTitle'), description: t('metaDescription') });
+  return buildMetadata({
+    locale,
+    paths: localized(() => '/blog'),
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  });
 }
 
 export default async function BlogPage({ params }: Props) {
@@ -44,16 +49,19 @@ export default async function BlogPage({ params }: Props) {
         <div className="container-site">
           {featuredSummary && (
             <div className="mb-16">
-              <h2 className="mb-4 text-small font-medium text-ink-muted">{t('blog.featured')}</h2>
+              <h2 className="text-small text-ink-muted mb-4 font-medium">{t('blog.featured')}</h2>
               <PostCard post={featuredSummary} featured headingLevel="h3" />
             </div>
           )}
-          <BlogList posts={summaries} categories={blogCategories.map((c) => ({ key: c, label: t(`blog.categories.${c}`) }))} />
+          <BlogList
+            posts={summaries}
+            categories={blogCategories.map((c) => ({ key: c, label: t(`blog.categories.${c}`) }))}
+          />
 
-          <div className="mt-16 grid gap-6 rounded-panel bg-primary-tint p-6 sm:p-10 lg:grid-cols-2 lg:items-center">
+          <div className="rounded-panel bg-primary-tint mt-16 grid gap-6 p-6 sm:p-10 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="text-h3 font-semibold">{t('newsletter.title')}</h2>
-              <p className="mt-2 text-ink-muted">
+              <p className="text-ink-muted mt-2">
                 <Ph>{t('newsletter.body')}</Ph>
               </p>
             </div>

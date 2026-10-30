@@ -75,29 +75,49 @@ export default async function PostPage({ params }: Props) {
               ]}
             />
             <div className="mt-10 max-w-4xl">
-              <p className="flex flex-wrap items-center gap-2 text-small">
-                <span className="inline-flex h-8 items-center rounded-full bg-surface-warm px-3 font-medium">{tb(`categories.${post.category}`)}</span>
+              <p className="text-small flex flex-wrap items-center gap-2">
+                <span className="bg-surface-warm inline-flex h-8 items-center rounded-full px-3 font-medium">
+                  {tb(`categories.${post.category}`)}
+                </span>
                 {post.status === 'draft' && (
-                  <span className="inline-flex h-8 items-center rounded-full bg-accent px-3 font-medium">{tb('draft')}</span>
+                  <span className="bg-accent inline-flex h-8 items-center rounded-full px-3 font-medium">
+                    {tb('draft')}
+                  </span>
                 )}
               </p>
-              <h1 className="hero-word mt-6 font-display text-h1" style={{ '--w': 0 } as React.CSSProperties}>
+              <h1
+                className="hero-word font-display text-h1 mt-6"
+                style={{ '--w': 0 } as React.CSSProperties}
+              >
                 {post.title}
               </h1>
-              <p className="hero-follow mt-6 max-w-2xl text-body-lg text-ink-muted" style={{ '--d': 0 } as React.CSSProperties}>
+              <p
+                className="hero-follow text-body-lg text-ink-muted mt-6 max-w-2xl"
+                style={{ '--d': 0 } as React.CSSProperties}
+              >
                 {post.description}
               </p>
-              <div className="mt-8 flex items-center gap-3 border-t border-border pt-6 text-small">
-                <span className="inline-flex size-11 items-center justify-center rounded-full bg-surface">
+              <div className="border-border text-small mt-8 flex items-center gap-3 border-t pt-6">
+                <span className="bg-surface inline-flex size-11 items-center justify-center rounded-full">
                   <Mark size={24} />
                 </span>
                 <span>
                   <span className="block font-semibold">{tb('by', { author: post.author })}</span>
-                  <span className="block text-ink-muted">
-                    <time dateTime={post.date}>{format.dateTime(new Date(post.date), { dateStyle: 'long' })}</time>
+                  <span className="text-ink-muted block">
+                    <time dateTime={post.date}>
+                      {format.dateTime(new Date(post.date), { dateStyle: 'long' })}
+                    </time>
                     {' · '}
                     {tb('minRead', { minutes: post.readingMinutes })}
-                    {post.updated && <> · {tb('updated', { date: format.dateTime(new Date(post.updated), { dateStyle: 'long' }) })}</>}
+                    {post.updated && (
+                      <>
+                        {' '}
+                        ·{' '}
+                        {tb('updated', {
+                          date: format.dateTime(new Date(post.updated), { dateStyle: 'long' }),
+                        })}
+                      </>
+                    )}
                   </span>
                 </span>
               </div>
@@ -108,12 +128,15 @@ export default async function PostPage({ params }: Props) {
         <div className="container-site section-y">
           <div className="grid-site gap-y-10">
             {post.toc.length > 1 && (
-              <nav aria-labelledby="toc-title" className="col-span-4 md:col-span-8 lg:col-span-3 lg:row-span-2">
-                <div className="rounded-card border border-border bg-surface p-5 lg:sticky lg:top-28">
+              <nav
+                aria-labelledby="toc-title"
+                className="col-span-4 md:col-span-8 lg:col-span-3 lg:row-span-2"
+              >
+                <div className="rounded-card border-border bg-surface border p-5 lg:sticky lg:top-28">
                   <h2 id="toc-title" className="text-small font-semibold">
                     {tb('toc')}
                   </h2>
-                  <ol className="mt-3 space-y-2 text-small">
+                  <ol className="text-small mt-3 space-y-2">
                     {post.toc
                       .filter((h) => h.depth === 2)
                       .map((h) => (
@@ -134,22 +157,24 @@ export default async function PostPage({ params }: Props) {
             <aside className="col-span-4 space-y-4 md:col-span-8 lg:col-span-8 lg:col-start-5">
               <div className="rounded-panel bg-primary-tint p-6 sm:p-8">
                 <h2 className="text-h4 font-semibold">{t('newsletter.title')}</h2>
-                <p className="mt-2 text-ink-muted">
+                <p className="text-ink-muted mt-2">
                   <Ph>{t('newsletter.body')}</Ph>
                 </p>
                 <NewsletterForm location="blog_post" />
               </div>
               <NextLink
                 href={servicePaths(service.key)[locale]}
-                className="group/rs flex items-center justify-between gap-6 rounded-panel border border-border bg-surface p-6 transition-shadow hover:shadow-lift sm:p-8"
+                className="group/rs rounded-panel border-border bg-surface hover:shadow-lift flex items-center justify-between gap-6 border p-6 transition-shadow sm:p-8"
               >
                 <span>
-                  <span className="block text-small text-ink-muted">{tb('relatedService')}</span>
-                  <span className="mt-1 block text-h4 font-semibold group-hover/rs:text-primary">{service.outcome}</span>
+                  <span className="text-small text-ink-muted block">{tb('relatedService')}</span>
+                  <span className="text-h4 group-hover/rs:text-primary mt-1 block font-semibold">
+                    {service.outcome}
+                  </span>
                 </span>
                 <ArrowUpRight aria-hidden size={20} className="shrink-0" />
               </NextLink>
-              <div className="flex flex-col gap-4 rounded-panel border border-border bg-surface p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+              <div className="rounded-panel border-border bg-surface flex flex-col gap-4 border p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
                 <p className="text-h4 font-semibold">{t('home.final.title')}</p>
                 <BookButton location="blog_post_inline" size="md" />
               </div>
