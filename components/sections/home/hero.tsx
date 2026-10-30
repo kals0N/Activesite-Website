@@ -17,14 +17,7 @@ export async function Hero() {
       aria-labelledby="hero-title"
     >
       <div className="container-site flex flex-col items-center text-center">
-        <p
-          className="hero-follow border-border bg-surface text-small text-ink-muted inline-flex items-center gap-2 rounded-full border py-1.5 pr-4 pl-3 font-medium"
-          style={{ '--d': 0 } as React.CSSProperties}
-        >
-          <span aria-hidden className="bg-success size-2 rounded-full" />
-          {t('badge')}
-        </p>
-        <h1 id="hero-title" className="hero-title font-display text-display mt-7 max-w-5xl">
+        <h1 id="hero-title" className="hero-title font-display text-display max-w-5xl">
           {t('titleStart')} {t('titleEmphasis')}
         </h1>
         <p
