@@ -5,7 +5,6 @@ import { HeroVisual } from './hero-visual';
 
 export async function Hero() {
   const t = await getTranslations('home.hero');
-  const words = t('titleStart').split(' ');
 
   return (
     <section
@@ -15,18 +14,8 @@ export async function Hero() {
       <div className="container-site relative">
         <div className="grid-site items-end gap-y-10">
           <div className="relative z-10 col-span-4 md:col-span-8 lg:col-span-9">
-            <h1 id="hero-title" className="font-display text-display">
-              {words.map((w, i) => (
-                <span key={i} className="hero-word" style={{ '--w': i } as React.CSSProperties}>
-                  {w}&nbsp;
-                </span>
-              ))}
-              <em
-                className="hero-word font-display italic"
-                style={{ '--w': words.length } as React.CSSProperties}
-              >
-                {t('titleEmphasis')}
-              </em>
+            <h1 id="hero-title" className="hero-title font-display text-display">
+              {t('titleStart')} <em className="italic">{t('titleEmphasis')}</em>
             </h1>
             <p
               className="hero-follow text-body-lg text-ink-muted mt-7 max-w-[38ch] lg:mt-9"

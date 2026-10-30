@@ -123,7 +123,14 @@ export function Button(props: ButtonProps) {
   }
 
   return (
-    <NextLink href={props.href} className={cls} data-book={props.book ? '' : undefined} {...data}>
+    <NextLink
+      href={props.href}
+      className={cls}
+      data-book={props.book ? '' : undefined}
+      // Booking links usually open the Cal.com popup, so don't prefetch the contact page's JS.
+      prefetch={props.book ? false : undefined}
+      {...data}
+    >
       <Inner arrow={arrow} variant={variant}>
         {children}
       </Inner>

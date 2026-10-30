@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useId, useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from '@/lib/i18n-client';
 import { OPEN_CONSENT_EVENT, readConsent, writeConsent } from '@/lib/consent';
 import { useConsentStatus } from '@/lib/use-consent';
 import { buttonClasses } from '@/components/ui/button';
@@ -12,7 +12,9 @@ export function CookieConsent() {
   const locale = useLocale();
   const status = useConsentStatus();
   const [reopened, setReopened] = useState(false);
-  const open = status === 'unset' || reopened;
+  // Rendered in the static HTML ('unknown') so it paints with the page instead of popping in
+  // after hydration; an inline script hides it before first paint when consent already exists.
+  const open = status !== 'set' || reopened;
   const [prefs, setPrefs] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
@@ -40,6 +42,7 @@ export function CookieConsent() {
 
   return (
     <section
+      data-consent-banner={status === 'unknown' ? 'ssr' : undefined}
       role="dialog"
       aria-modal="false"
       aria-labelledby={titleId}

@@ -33,12 +33,7 @@ export default async function ThankYouPage({ params }: Props) {
         className="pointer-events-none absolute -top-20 -right-40 w-[34rem] opacity-15 max-md:hidden"
       />
       <div className="container-site relative">
-        <h1
-          className="hero-word font-display text-h1 max-w-3xl"
-          style={{ '--w': 0 } as React.CSSProperties}
-        >
-          {t('thankYou.title')}
-        </h1>
+        <h1 className="hero-title font-display text-h1 max-w-3xl">{t('thankYou.title')}</h1>
         <p className="hero-follow text-body-lg text-ink-muted mt-6 max-w-xl">
           {t('thankYou.body')}
         </p>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/i18n-client';
 import { cn } from '@/lib/cn';
 import { PostCard, type PostSummary } from '@/components/ui/post-card';
 

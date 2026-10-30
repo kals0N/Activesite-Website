@@ -43,10 +43,7 @@ export async function PageHero({
       <div className="container-site relative">
         <Breadcrumbs items={crumbs} />
         <div className="mt-8 max-w-4xl lg:mt-10" data-wa-topic={topic}>
-          <h1
-            className="hero-word font-display text-h1"
-            style={{ '--w': 0 } as React.CSSProperties}
-          >
+          <h1 className="hero-title font-display text-h1">
             <Ph>{title}</Ph>
           </h1>
           {sub && (

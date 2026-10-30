@@ -1,7 +1,7 @@
 'use client';
 
 import { useId, useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from '@/lib/i18n-client';
 import { Check, Loader2 } from 'lucide-react';
 import { track } from '@/lib/analytics';
 import { cn } from '@/lib/cn';

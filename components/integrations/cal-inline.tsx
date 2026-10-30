@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type ComponentType } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale } from '@/lib/i18n-client';
 import type { Locale } from '@/i18n/routing';
 import { track } from '@/lib/analytics';
 import { CAL_NAMESPACE, loadCal } from './cal-loader';

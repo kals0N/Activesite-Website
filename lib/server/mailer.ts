@@ -94,7 +94,7 @@ export async function sendContactEmails(
     text: `${c.hi(input.name)}\n\n${c.body}\n\n${c.wa}: ${whatsappUrl()}\n\n${c.sign}`,
     html: layout(`<p style="margin:0 0 16px;font-size:16px">${esc(c.hi(input.name))}</p>
 <p style="margin:0 0 16px;font-size:16px;line-height:1.6">${c.body}</p>
-<p style="margin:0 0 24px"><a href="${whatsappUrl()}" style="display:inline-block;background:#128C4B;color:#ffffff;text-decoration:none;padding:12px 20px;border-radius:999px;font-size:15px">${c.wa}</a></p>
+<p style="margin:0 0 24px"><a href="${whatsappUrl()}" style="display:inline-block;background:#0E7D42;color:#ffffff;text-decoration:none;padding:12px 20px;border-radius:999px;font-size:15px">${c.wa}</a></p>
 <p style="margin:0 0 8px;font-size:14px;color:#4A5170">${c.summary}</p>
 <blockquote style="margin:0;padding:12px 16px;border-left:2px solid #E8B04B;font-size:14px;line-height:1.6;white-space:pre-wrap">${esc(input.message)}</blockquote>
 <p style="margin:24px 0 0;font-size:16px">${c.sign}</p>`),

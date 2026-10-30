@@ -22,7 +22,7 @@
   --color-success: #12805c;
   --color-error: #d92d20;
   --color-warning: #b54708;
-  --color-whatsapp: #128c4b; /* WhatsApp-green darkened to pass AA with white text */
+  --color-whatsapp: #0e7d42; /* WhatsApp-green darkened to pass AA with white text */
   --color-white: #ffffff;
   --color-transparent: transparent;
   --color-current: currentColor;
@@ -85,10 +85,10 @@
 
   @keyframes wa-pulse {
     0% {
-      box-shadow: 0 0 0 0 rgb(18 140 75 / 0.45);
+      box-shadow: 0 0 0 0 rgb(14 125 66 / 0.45);
     }
     100% {
-      box-shadow: 0 0 0 18px rgb(18 140 75 / 0);
+      box-shadow: 0 0 0 18px rgb(14 125 66 / 0);
     }
   }
   @keyframes arc-spin {
@@ -391,12 +391,19 @@ html.reveal-ready [data-reveal]:not(.is-in) {
 }
 
 /* ---------- Hero intro ----------
- * The headline is painted at first frame (so LCP is not delayed): words start faint and low,
- * then settle in sequence. Subhead, CTAs and the visual follow. */
-@keyframes word-in {
+ * The headline is one text block painted at the first frame (so LCP is not delayed). A mask
+ * wipes it in from left to right while it rises; subhead, CTAs and the visual follow. */
+@keyframes title-rise {
   from {
-    opacity: 0.12;
-    transform: translateY(0.35em);
+    transform: translateY(0.18em);
+  }
+}
+@keyframes title-wipe {
+  from {
+    mask-position: 100% 0;
+  }
+  to {
+    mask-position: 0 0;
   }
 }
 @keyframes rise-in {
@@ -414,10 +421,13 @@ html.reveal-ready [data-reveal]:not(.is-in) {
     transform: translate3d(-4%, 3%, 0) scale(1.06);
   }
 }
-.hero-word {
-  display: inline-block;
-  animation: word-in var(--duration-story) var(--ease-out) both;
-  animation-delay: calc(var(--w) * 70ms);
+.hero-title {
+  mask-image: linear-gradient(90deg, #000 45%, rgb(0 0 0 / 0.15) 55%);
+  mask-size: 250% 100%;
+  mask-position: 0 0;
+  animation:
+    title-rise var(--duration-story) var(--ease-out) both,
+    title-wipe 1200ms var(--ease-out) both;
 }
 .hero-follow {
   animation: rise-in 700ms var(--ease-out) both;
@@ -427,7 +437,7 @@ html.reveal-ready [data-reveal]:not(.is-in) {
   animation: mesh-drift 18s var(--ease-in-out) infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-word,
+  .hero-title,
   .hero-follow {
     animation: none;
   }
@@ -464,4 +474,9 @@ html.reveal-ready [data-reveal]:not(.is-in) {
 .check-draw polyline {
   stroke-dasharray: 24;
   animation: check-draw 500ms 200ms var(--ease-out) both;
+}
+
+/* Cookie banner is server-rendered; hide the static copy when a choice already exists. */
+html.consented [data-consent-banner='ssr'] {
+  display: none;
 }

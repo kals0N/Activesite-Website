@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { Instrument_Serif, Inter } from 'next/font/google';
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { hasLocale } from 'next-intl';
+import { MessagesProvider } from '@/lib/i18n-client';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing, type Locale } from '@/i18n/routing';
 import { Header } from '@/components/layout/header';
@@ -17,6 +18,7 @@ import { JsonLd } from '@/components/ui/json-ld';
 import { organizationLd } from '@/lib/jsonld';
 import { site } from '@/lib/site';
 
+// Only the hero face is preloaded (it carries the LCP headline). Inter and the italic load with swap.
 const serif = Instrument_Serif({
   subsets: ['latin', 'latin-ext'],
   weight: '400',
@@ -28,6 +30,7 @@ const serif = Instrument_Serif({
 const sans = Inter({
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
+  preload: false,
   variable: '--font-inter',
 });
 
@@ -102,12 +105,12 @@ export default async function LocaleLayout({
         {/* Marks JS as available before paint, so reveal animations never hide content without JS. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `document.documentElement.classList.add('js')`,
+            __html: `document.documentElement.classList.add('js');if(document.cookie.indexOf('as_consent=')>-1)document.documentElement.classList.add('consented')`,
           }}
         />
       </head>
       <body>
-        <NextIntlClientProvider locale={locale as Locale} messages={clientMessages}>
+        <MessagesProvider locale={locale} messages={clientMessages}>
           <SkipLink />
           <Header locale={locale as Locale} />
           <main id="main" tabIndex={-1} className="outline-none">
@@ -120,7 +123,7 @@ export default async function LocaleLayout({
           <Analytics />
           <CalLoader calLink={site.calLink} locale={locale as Locale} />
           <RevealObserver />
-        </NextIntlClientProvider>
+        </MessagesProvider>
         <JsonLd data={organizationLd(locale as Locale, t('siteDescription'))} />
       </body>
     </html>

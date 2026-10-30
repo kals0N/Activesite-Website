@@ -1,20 +1,19 @@
 'use client';
 
 import { useEffect, useId, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/i18n-client';
 import { Check, ChevronDown, Globe } from 'lucide-react';
 import { locales, type Locale } from '@/i18n/routing';
 import type { LocalizedPaths } from '@/lib/routes';
 import { track } from '@/lib/analytics';
 import { cn } from '@/lib/cn';
+import { useCleanPathname } from '@/lib/use-clean-pathname';
 
 const names: Record<Locale, string> = { en: 'English', fr: 'Français' };
 
 /** Find the same page in the other language; falls back to that language's home page. */
 export function equivalentPath(pathname: string, target: Locale, alternates: LocalizedPaths[]) {
-  const clean = pathname.replace(/\/$/, '') || '/';
-  const match = alternates.find((p) => locales.some((l) => p[l] === clean));
+  const match = alternates.find((p) => locales.some((l) => p[l] === pathname));
   return match ? match[target] : target === 'en' ? '/' : '/fr';
 }
 
@@ -34,7 +33,7 @@ export function LangSwitch({
   tone?: 'light' | 'ink';
 }) {
   const t = useTranslations('a11y');
-  const pathname = usePathname();
+  const pathname = useCleanPathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/i18n-client';
 import { WhatsAppIcon } from '@/components/ui/icons';
 import { useConsentStatus } from '@/lib/use-consent';
 import { whatsappUrl } from '@/lib/whatsapp';

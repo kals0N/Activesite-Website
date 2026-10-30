@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useForm, type FieldError } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from '@/lib/i18n-client';
 import { AlertCircle, Check, Loader2 } from 'lucide-react';
 import { contactSchema, timelines, type ContactInput } from '@/lib/schemas';
 import { track } from '@/lib/analytics';
@@ -53,6 +53,7 @@ export function ContactForm({
   } = useForm<ContactInput>({
     resolver: zodResolver(contactSchema),
     mode: 'onTouched',
+    shouldFocusError: false,
     defaultValues: { whatsapp: '', company: '', service: '', timeline: '', marketing: false },
   });
 
@@ -109,9 +110,19 @@ export function ContactForm({
     }
   };
 
-  // Move focus to the first invalid field on submit.
-  const onInvalid = (errs: Record<string, unknown>) => {
-    const first = Object.keys(errs)[0] as keyof ContactInput | undefined;
+  // Move focus to the first invalid field on submit, in the order fields appear on screen.
+  const FIELD_ORDER: (keyof ContactInput)[] = [
+    'name',
+    'email',
+    'whatsapp',
+    'company',
+    'service',
+    'timeline',
+    'message',
+    'consent',
+  ];
+  const onInvalid = (errs: Partial<Record<keyof ContactInput, unknown>>) => {
+    const first = FIELD_ORDER.find((f) => errs[f]);
     if (first) setFocus(first);
   };
 

@@ -16,6 +16,7 @@ import { WhatsAppButton } from '@/components/ui/cta-buttons';
 import { Faq } from '@/components/ui/faq';
 import { Ph } from '@/components/ui/ph';
 import { WhatsAppIcon } from '@/components/ui/icons';
+import { ClientMessages } from '@/components/ui/client-messages';
 
 type Props = { params: Promise<{ locale: Locale }> };
 
@@ -151,10 +152,12 @@ export default async function ContactPage({ params }: Props) {
             </p>
           </div>
           <div className="col-span-4 md:col-span-8 lg:col-span-7 lg:col-start-6">
-            <ContactForm
-              services={getServices(locale).map((s) => ({ key: s.key, name: s.name }))}
-              privacyHref={pathFor(locale, '/privacy')}
-            />
+            <ClientMessages namespaces={['form', 'cta']}>
+              <ContactForm
+                services={getServices(locale).map((s) => ({ key: s.key, name: s.name }))}
+                privacyHref={pathFor(locale, '/privacy')}
+              />
+            </ClientMessages>
           </div>
         </div>
       </section>

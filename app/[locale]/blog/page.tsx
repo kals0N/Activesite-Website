@@ -11,6 +11,7 @@ import { BlogList } from '@/components/sections/blog-list';
 import { PostCard } from '@/components/ui/post-card';
 import { NewsletterForm } from '@/components/integrations/newsletter-form';
 import { Ph } from '@/components/ui/ph';
+import { ClientMessages } from '@/components/ui/client-messages';
 
 type Props = { params: Promise<{ locale: Locale }> };
 
@@ -53,10 +54,12 @@ export default async function BlogPage({ params }: Props) {
               <PostCard post={featuredSummary} featured headingLevel="h3" />
             </div>
           )}
-          <BlogList
-            posts={summaries}
-            categories={blogCategories.map((c) => ({ key: c, label: t(`blog.categories.${c}`) }))}
-          />
+          <ClientMessages namespaces={['blog']}>
+            <BlogList
+              posts={summaries}
+              categories={blogCategories.map((c) => ({ key: c, label: t(`blog.categories.${c}`) }))}
+            />
+          </ClientMessages>
 
           <div className="rounded-panel bg-primary-tint mt-16 grid gap-6 p-6 sm:p-10 lg:grid-cols-2 lg:items-center">
             <div>

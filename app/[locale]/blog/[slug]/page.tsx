@@ -85,12 +85,7 @@ export default async function PostPage({ params }: Props) {
                   </span>
                 )}
               </p>
-              <h1
-                className="hero-word font-display text-h1 mt-6"
-                style={{ '--w': 0 } as React.CSSProperties}
-              >
-                {post.title}
-              </h1>
+              <h1 className="hero-title font-display text-h1 mt-6">{post.title}</h1>
               <p
                 className="hero-follow text-body-lg text-ink-muted mt-6 max-w-2xl"
                 style={{ '--d': 0 } as React.CSSProperties}

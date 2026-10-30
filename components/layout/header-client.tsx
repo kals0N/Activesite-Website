@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import NextLink from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/i18n-client';
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 import type { Locale } from '@/i18n/routing';
 import type { LocalizedPaths } from '@/lib/routes';
 import { cn } from '@/lib/cn';
+import { useCleanPathname } from '@/lib/use-clean-pathname';
 import { Logo } from '@/components/ui/logo';
 import { buttonClasses } from '@/components/ui/button';
 import { LangSwitch } from './lang-switch';
@@ -28,7 +28,7 @@ export type NavData = {
 
 export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }) {
   const t = useTranslations();
-  const pathname = usePathname();
+  const pathname = useCleanPathname();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);

@@ -27,7 +27,7 @@ const colors = [
   ['success', '#12805C', 'Success messages'],
   ['error', '#D92D20', 'Errors'],
   ['warning', '#B54708', 'Warnings'],
-  ['whatsapp', '#128C4B', 'WhatsApp actions (AA with white text)'],
+  ['whatsapp', '#0E7D42', 'WhatsApp actions (AA with white text)'],
 ] as const;
 
 const type = [

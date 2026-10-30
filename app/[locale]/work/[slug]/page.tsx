@@ -69,8 +69,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <div className="grid-site mt-10 gap-y-10">
             <div className="col-span-4 md:col-span-8 lg:col-span-7">
               <p
-                className={`hero-word font-display ${study.metric.includes('[[') ? 'text-h1' : 'text-display'}`}
-                style={{ '--w': 0 } as React.CSSProperties}
+                className={`hero-title font-display ${study.metric.includes('[[') ? 'text-h1' : 'text-display'}`}
               >
                 <Ph>{study.metric}</Ph>
               </p>
