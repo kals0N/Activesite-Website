@@ -173,7 +173,8 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
               data-track-label="header"
               className={cn(buttonClasses('primary', 'sm'), 'px-4 lg:h-11 lg:px-5')}
             >
-              <span>{t('cta.book')}</span>
+              <span className="sm:hidden">{t('cta.bookShort')}</span>
+              <span className="max-sm:hidden">{t('cta.book')}</span>
               <ArrowRight
                 aria-hidden
                 size={16}

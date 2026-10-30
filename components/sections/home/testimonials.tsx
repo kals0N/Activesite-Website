@@ -14,10 +14,10 @@ export async function Testimonials() {
           {items.map((item, i) => (
             <li key={i} data-reveal style={{ '--i': i } as React.CSSProperties}>
               <figure className="rounded-card border-border bg-surface flex h-full flex-col border p-7">
-                <p className="bg-accent/25 text-small text-ink inline-flex self-start rounded-full px-3 py-1 font-medium">
+                <p className="bg-surface-warm text-small text-ink inline-flex self-start rounded-full px-3 py-1 font-medium">
                   <Ph>{item.result}</Ph>
                 </p>
-                <blockquote className="font-display text-h3 mt-6 flex-1 leading-snug">
+                <blockquote className="font-display text-h4 mt-6 flex-1 leading-snug font-medium">
                   <p>
                     <Ph>{item.quote}</Ph>
                   </p>

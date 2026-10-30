@@ -8,7 +8,6 @@ import { personLd } from '@/lib/jsonld';
 import { site } from '@/lib/site';
 import { PageHero } from '@/components/sections/page-hero';
 import { CtaBand } from '@/components/sections/cta-band';
-import { ArcField } from '@/components/sections/arc-art';
 import { JsonLd } from '@/components/ui/json-ld';
 import { Ph } from '@/components/ui/ph';
 import { FacebookIcon, InstagramIcon, LinkedInIcon } from '@/components/ui/icons';
@@ -90,10 +89,6 @@ export default async function AboutPage({ params }: Props) {
 
       {/* Founder message */}
       <section aria-labelledby="founder-title" className="section-y relative overflow-hidden">
-        <ArcField
-          tone="light"
-          className="pointer-events-none absolute -top-40 -left-56 w-[40rem] opacity-[0.08]"
-        />
         <div className="container-site grid-site relative gap-y-12">
           <div className="col-span-4 md:col-span-3 lg:col-span-4">
             <div className="rounded-panel border-border bg-surface text-small text-ink-muted aspect-[4/5] max-w-xs overflow-hidden border border-dashed p-6">
@@ -104,12 +99,12 @@ export default async function AboutPage({ params }: Props) {
             <h2 id="founder-title" className="font-display text-h2">
               {ta('founderTitle')}
             </h2>
-            <div className="font-display text-ink mt-8 space-y-5 text-[1.375rem] leading-[1.5] sm:text-[1.5rem]">
+            <div className="text-body-lg text-ink mt-8 max-w-[62ch] space-y-5">
               {founderBody.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
               ))}
             </div>
-            <p className="font-display text-h3 mt-10 italic">{ta('founderSign')}</p>
+            <p className="font-display text-h4 mt-10">{ta('founderSign')}</p>
             <p className="text-small text-ink-muted">{ta('founderRole')}</p>
           </div>
         </div>

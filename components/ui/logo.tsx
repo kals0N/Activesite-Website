@@ -1,6 +1,7 @@
 /** Activesite logo, inlined from public/brand/logo.svg so it renders without an extra request. */
 export function Logo({ className, tone = 'ink' }: { className?: string; tone?: 'ink' | 'white' }) {
-  const ink = tone === 'ink' ? 'var(--color-ink)' : 'var(--color-white)';
+  // The logo keeps its own brand navy, independent of the site's text colour.
+  const ink = tone === 'ink' ? '#000B30' : 'var(--color-white)';
   return (
     <svg viewBox="0 0 325 186" className={className} role="img" aria-label="Activesite">
       <g fill={ink}>

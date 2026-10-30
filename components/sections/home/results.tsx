@@ -5,25 +5,25 @@ import { caseStudyPaths, pathFor } from '@/lib/routes';
 import { CaseStudyCard } from '@/components/ui/case-study-card';
 import { Button } from '@/components/ui/button';
 
-/** The page's one dark section: results come before services. */
+/** Results come before services. */
 export async function Results() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations();
   const studies = getCaseStudies(locale).slice(0, 3);
 
   return (
-    <section aria-labelledby="results-title" className="on-ink section-y bg-ink text-white">
+    <section aria-labelledby="results-title" className="section-y bg-surface-warm">
       <div className="container-site">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div data-reveal className="max-w-2xl">
             <h2 id="results-title" className="font-display text-h2">
               {t('home.results.title')}
             </h2>
-            <p className="text-body-lg text-ink-soft mt-5">{t('home.results.sub')}</p>
+            <p className="text-body-lg text-ink-muted mt-5">{t('home.results.sub')}</p>
           </div>
           <Button
             href={pathFor(locale, '/work')}
-            variant="inverse"
+            variant="secondary"
             size="md"
             className="shrink-0 max-md:hidden"
           >
@@ -42,11 +42,12 @@ export async function Results() {
                 readLabel={t('cta.readStory')}
                 size={i === 0 ? 'lg' : 'md'}
                 index={i}
+                tone="light"
               />
             </div>
           ))}
         </div>
-        <p className="text-small text-ink-soft mt-8">{t('home.results.placeholderNote')}</p>
+        <p className="text-small text-ink-muted mt-8">{t('home.results.placeholderNote')}</p>
       </div>
     </section>
   );

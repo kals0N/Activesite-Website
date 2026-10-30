@@ -1,21 +1,20 @@
 import { getTranslations } from 'next-intl/server';
 import { BookButton, WhatsAppButton } from '@/components/ui/cta-buttons';
 import { Ph } from '@/components/ui/ph';
-import { HeroVisual } from './hero-visual';
 
 export async function Hero() {
   const t = await getTranslations('home.hero');
 
   return (
     <section
-      className="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-44 lg:pb-28"
+      className="relative overflow-hidden pt-32 pb-20 sm:pt-36 lg:pt-48 lg:pb-32"
       aria-labelledby="hero-title"
     >
       <div className="container-site relative">
         <div className="grid-site items-end gap-y-10">
-          <div className="relative z-10 col-span-4 md:col-span-8 lg:col-span-10 xl:col-span-7">
+          <div className="relative z-10 col-span-4 md:col-span-8 lg:col-span-10 xl:col-span-9">
             <h1 id="hero-title" className="hero-title font-display text-display">
-              {t('titleStart')} <em className="italic">{t('titleEmphasis')}</em>
+              {t('titleStart')} {t('titleEmphasis')}
             </h1>
             <p
               className="hero-follow text-body-lg text-ink-muted mt-7 max-w-[38ch] lg:mt-9"
@@ -39,7 +38,6 @@ export async function Hero() {
           </div>
         </div>
       </div>
-      <HeroVisual />
     </section>
   );
 }

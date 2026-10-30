@@ -80,7 +80,7 @@ export default async function PostPage({ params }: Props) {
                   {tb(`categories.${post.category}`)}
                 </span>
                 {post.status === 'draft' && (
-                  <span className="bg-accent inline-flex h-8 items-center rounded-full px-3 font-medium">
+                  <span className="border-border inline-flex h-8 items-center rounded-full border px-3 font-medium">
                     {tb('draft')}
                   </span>
                 )}

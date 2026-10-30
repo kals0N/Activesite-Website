@@ -9,14 +9,14 @@
   --color-*: initial;
   --color-primary: #0058fb;
   --color-primary-hover: #0047cc;
-  --color-primary-tint: #e8efff;
-  --color-ink: #000b30;
-  --color-ink-muted: #4a5170;
+  --color-primary-tint: #eef3ff;
+  --color-ink: #111318; /* graphite: headings and body text */
+  --color-ink-muted: #5b6170;
   --color-ink-soft: #c9cde0; /* body text on ink sections (≈11:1 on ink) */
-  --color-canvas: #faf8f4;
+  --color-canvas: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-warm: #f2eee7;
-  --color-border: #e4ded3;
+  --color-surface-warm: #f6f6f7; /* soft grey sections (name kept for compatibility) */
+  --color-border: #e7e8eb;
   --color-border-ink: #1f2a52; /* hairlines on ink sections */
   --color-accent: #e8b04b;
   --color-success: #12805c;
@@ -28,19 +28,20 @@
   --color-current: currentColor;
 
   /* Type families (set by next/font in the root layout) */
-  --font-serif: var(--font-instrument-serif), 'Fraunces', Georgia, serif;
+  --font-serif:
+    var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif; /* display face: Inter Tight */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
   /* Fluid type scale */
-  --text-display: clamp(3rem, 1.8rem + 6vw, 7.5rem);
-  --text-display--line-height: 0.95;
-  --text-display--letter-spacing: -0.02em;
-  --text-h1: clamp(2.5rem, 1.6rem + 4vw, 5rem);
-  --text-h1--line-height: 1;
-  --text-h1--letter-spacing: -0.02em;
-  --text-h2: clamp(2rem, 1.4rem + 2.6vw, 3.5rem);
-  --text-h2--line-height: 1.05;
-  --text-h2--letter-spacing: -0.02em;
+  --text-display: clamp(2.75rem, 1.5rem + 5.2vw, 6.25rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.045em;
+  --text-h1: clamp(2.5rem, 1.6rem + 3.4vw, 4.5rem);
+  --text-h1--line-height: 1.04;
+  --text-h1--letter-spacing: -0.04em;
+  --text-h2: clamp(2rem, 1.45rem + 2.2vw, 3.25rem);
+  --text-h2--line-height: 1.08;
+  --text-h2--letter-spacing: -0.035em;
   --text-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
   --text-h3--line-height: 1.15;
   --text-h3--letter-spacing: -0.03em;
@@ -121,16 +122,6 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
   }
-  /* Organic grain at 2.5% opacity. Fixed, non-interactive, GPU-cheap. */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    pointer-events: none;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
   h1,
   h2,
   h3,
@@ -204,7 +195,7 @@
 
 @utility font-display {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 @utility tabular {
@@ -235,9 +226,10 @@
   }
   & h2 {
     font-family: var(--font-serif);
-    font-size: var(--text-h2);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
     margin-top: 2.2em;
   }
   & h3 {
@@ -276,11 +268,13 @@
     font-weight: 600;
   }
   & blockquote {
-    border-left: 2px solid var(--color-accent);
+    border-left: 2px solid var(--color-ink);
     padding-left: 1.25em;
     font-family: var(--font-serif);
-    font-size: 1.4em;
-    line-height: 1.35;
+    font-weight: 500;
+    font-size: 1.3em;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
   }
   & table {
     width: 100%;

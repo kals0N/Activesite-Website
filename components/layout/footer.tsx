@@ -31,15 +31,15 @@ export async function Footer({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <footer className="on-ink border-border-ink bg-ink relative mt-auto overflow-hidden border-t text-white">
-      <div className="container-site pt-20 pb-10 lg:pt-28">
+    <footer className="border-border bg-surface-warm text-ink relative mt-auto border-t">
+      <div className="container-site pt-16 pb-10 lg:pt-24">
         <div className="grid-site gap-y-14">
           <div className="col-span-4 md:col-span-8 lg:col-span-5">
-            <Logo tone="white" className="h-14 w-auto" />
-            <p className="text-body-lg text-ink-soft mt-6 max-w-sm">{t('footer.positioning')}</p>
+            <Logo className="h-14 w-auto" />
+            <p className="text-body-lg text-ink-muted mt-6 max-w-sm">{t('footer.positioning')}</p>
             <div className="mt-10 max-w-md">
               <p className="text-h4 font-semibold">{t('newsletter.title')}</p>
-              <NewsletterForm location="footer" tone="ink" />
+              <NewsletterForm location="footer" />
             </div>
           </div>
 
@@ -48,7 +48,7 @@ export async function Footer({ locale }: { locale: Locale }) {
             className="col-span-4 grid grid-cols-2 gap-8 md:col-span-8 md:grid-cols-3 lg:col-span-7 lg:pl-8"
           >
             <div className="col-span-2 md:col-span-1">
-              <h2 className="text-small text-ink-soft font-medium">{t('footer.services')}</h2>
+              <h2 className="text-small text-ink-muted font-medium">{t('footer.services')}</h2>
               <ul className="mt-4 space-y-2.5">
                 {services.map((s) => (
                   <li key={s.key}>
@@ -60,7 +60,7 @@ export async function Footer({ locale }: { locale: Locale }) {
               </ul>
             </div>
             <div>
-              <h2 className="text-small text-ink-soft font-medium">{t('footer.company')}</h2>
+              <h2 className="text-small text-ink-muted font-medium">{t('footer.company')}</h2>
               <ul className="mt-4 space-y-2.5">
                 {company.map((l) => (
                   <li key={l.href}>
@@ -72,14 +72,14 @@ export async function Footer({ locale }: { locale: Locale }) {
               </ul>
             </div>
             <div>
-              <h2 className="text-small text-ink-soft font-medium">{t('footer.contact')}</h2>
+              <h2 className="text-small text-ink-muted font-medium">{t('footer.contact')}</h2>
               <ul className="text-small mt-4 space-y-3">
                 <li>
                   <a
                     href={whatsappUrl()}
                     target="_blank"
                     rel="noopener"
-                    className="link-draw inline-flex items-center gap-2"
+                    className="link-draw inline-flex max-w-full items-center gap-2 [overflow-wrap:anywhere]"
                     data-track="whatsapp_click"
                     data-track-label="footer"
                   >
@@ -89,7 +89,7 @@ export async function Footer({ locale }: { locale: Locale }) {
                 <li>
                   <a
                     href={`mailto:${site.email}`}
-                    className="link-draw inline-flex items-center gap-2"
+                    className="link-draw inline-flex max-w-full items-center gap-2 [overflow-wrap:anywhere]"
                   >
                     <Mail aria-hidden size={16} /> {site.email}
                   </a>
@@ -107,7 +107,7 @@ export async function Footer({ locale }: { locale: Locale }) {
                       target="_blank"
                       rel="noopener"
                       aria-label={`${label} ${t('a11y.newTab')}`}
-                      className="border-border-ink hover:border-accent hover:text-accent inline-flex size-11 items-center justify-center rounded-full border transition-colors"
+                      className="border-border bg-surface hover:border-ink/40 inline-flex size-11 items-center justify-center rounded-full border transition-colors"
                     >
                       <Icon size={18} />
                     </a>
@@ -118,7 +118,7 @@ export async function Footer({ locale }: { locale: Locale }) {
           </nav>
         </div>
 
-        <div className="border-border-ink text-small text-ink-soft mt-20 flex flex-col gap-6 border-t pt-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="border-border text-small text-ink-muted mt-20 flex flex-col gap-6 border-t pt-8 lg:flex-row lg:items-center lg:justify-between">
           <p>
             © {year} {site.legalName}. {t('footer.rights')}
           </p>

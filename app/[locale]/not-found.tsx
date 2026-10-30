@@ -4,7 +4,6 @@ import type { Locale } from '@/i18n/routing';
 import { pathFor } from '@/lib/routes';
 import { BookButton } from '@/components/ui/cta-buttons';
 import { Button } from '@/components/ui/button';
-import { ArcField } from '@/components/sections/arc-art';
 
 export default async function NotFound() {
   const t = await getTranslations();
@@ -18,10 +17,6 @@ export default async function NotFound() {
   ];
   return (
     <section className="relative overflow-hidden pt-32 pb-24 lg:pt-44">
-      <ArcField
-        tone="light"
-        className="pointer-events-none absolute -top-10 -right-40 w-[32rem] opacity-15"
-      />
       <div className="container-site relative">
         <p
           className="font-display text-ink/10 text-[clamp(6rem,20vw,14rem)] leading-none"

@@ -16,7 +16,7 @@ export function CaseStudyCard({
   readLabel,
   size = 'md',
   index = 0,
-  tone = 'ink',
+  tone = 'light',
 }: {
   study: CaseStudy;
   href: string;
@@ -51,7 +51,7 @@ export function CaseStudyCard({
           <DeviceFrame tone={study.tone} label={study.client} />
         </div>
         <div className="from-ink via-ink/80 absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t to-transparent p-6 pt-16 opacity-0 transition-[opacity,transform] duration-(--duration-base) ease-(--ease-out) group-hover/cs:translate-y-0 group-hover/cs:opacity-100 group-focus-visible/cs:translate-y-0 group-focus-visible/cs:opacity-100 max-lg:hidden">
-          <p className="text-small text-ink-soft">
+          <p className="text-small text-ink-muted">
             <Ph>{study.summary}</Ph>
           </p>
         </div>

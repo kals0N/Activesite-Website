@@ -56,7 +56,7 @@ export function Mark({ size = 28, ...props }: IconProps) {
   return (
     <svg viewBox="4 5 31.5 31" width={size} height={size} aria-hidden focusable={false} {...props}>
       <path d={ARC_TOP} fill="var(--color-primary)" />
-      <path d={ARC_BOTTOM} fill="var(--color-ink)" />
+      <path d={ARC_BOTTOM} fill="#000B30" />
     </svg>
   );
 }

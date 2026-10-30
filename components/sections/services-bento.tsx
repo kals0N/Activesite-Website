@@ -34,9 +34,7 @@ export async function ServicesBento({ headingLevel = 'h3' }: { headingLevel?: 'h
           )}
         >
           <div className="flex items-baseline justify-between gap-4">
-            <H className="font-display text-h3 !font-normal tracking-[-0.02em]">
-              {t(`groups.${group}`)}
-            </H>
+            <H className="font-display text-h3">{t(`groups.${group}`)}</H>
             <p className="text-small text-ink-muted text-right">{t(`groupLines.${group}`)}</p>
           </div>
           <ul
@@ -52,7 +50,7 @@ export async function ServicesBento({ headingLevel = 'h3' }: { headingLevel?: 'h
                   href={servicePaths(s.key)[locale]}
                   className="group/svc rounded-card bg-canvas/60 hover:border-border hover:bg-surface hover:shadow-lift flex h-full items-start gap-4 border border-transparent p-4 transition-[transform,box-shadow,border-color] duration-(--duration-base) ease-(--ease-out) hover:-translate-y-1"
                 >
-                  <span className="bg-primary-tint text-primary inline-flex size-10 shrink-0 items-center justify-center rounded-full">
+                  <span className="border-border bg-surface text-ink inline-flex size-10 shrink-0 items-center justify-center rounded-full border">
                     <ServiceIcon name={s.icon} size={18} />
                   </span>
                   <span className="min-w-0 flex-1">

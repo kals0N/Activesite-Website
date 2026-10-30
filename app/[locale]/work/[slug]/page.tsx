@@ -183,7 +183,7 @@ export default async function CaseStudyPage({ params }: Props) {
           </dl>
           <figure data-reveal className="mt-16 max-w-4xl">
             <figcaption className="text-small text-ink-muted font-medium">{tw('quote')}</figcaption>
-            <blockquote className="font-display text-h2 mt-4">
+            <blockquote className="font-display mt-4 text-[clamp(1.5rem,1.05rem+1.7vw,2.375rem)] leading-[1.25] font-medium tracking-[-0.03em]">
               <p>
                 “<Ph>{study.quote.text}</Ph>”
               </p>

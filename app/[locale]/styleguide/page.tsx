@@ -14,16 +14,13 @@ export const metadata: Metadata = { title: 'Styleguide', robots: { index: false,
 const colors = [
   ['primary', '#0058FB', 'Buttons, links, focus. If it is blue, it is clickable.'],
   ['primary-hover', '#0047CC', 'Hover and pressed state of primary'],
-  ['primary-tint', '#E8EFFF', 'Soft blue backgrounds, selected states'],
-  ['ink', '#000B30', 'Headings, body text, dark sections'],
-  ['ink-muted', '#4A5170', 'Secondary text, captions'],
-  ['ink-soft', '#C9CDE0', 'Body text on ink sections'],
-  ['canvas', '#FAF8F4', 'Page background'],
+  ['primary-tint', '#EEF3FF', 'Soft blue backgrounds, selected states'],
+  ['ink', '#111318', 'Graphite: headings and body text'],
+  ['ink-muted', '#5B6170', 'Secondary text, captions'],
+  ['canvas', '#FFFFFF', 'Page background'],
   ['surface', '#FFFFFF', 'Cards on canvas'],
-  ['surface-warm', '#F2EEE7', 'Alternate warm sections'],
-  ['border', '#E4DED3', 'Hairlines, dividers'],
-  ['border-ink', '#1F2A52', 'Hairlines on ink'],
-  ['accent', '#E8B04B', 'Gold: badges, icons on ink. Never text on light.'],
+  ['surface-warm', '#F6F6F7', 'Soft grey sections and footer'],
+  ['border', '#E7E8EB', 'Hairlines, dividers'],
   ['success', '#12805C', 'Success messages'],
   ['error', '#D92D20', 'Errors'],
   ['warning', '#B54708', 'Warnings'],
@@ -31,9 +28,9 @@ const colors = [
 ] as const;
 
 const type = [
-  ['text-display font-display', 'Display · Instrument Serif · 48→120px / 0.95'],
-  ['text-h1 font-display', 'H1 · Instrument Serif · 40→80px / 1.0'],
-  ['text-h2 font-display', 'H2 · Instrument Serif · 32→56px / 1.05'],
+  ['text-display font-display', 'Display · Inter Tight 600 · 44→100px / 1.0'],
+  ['text-h1 font-display', 'H1 · Inter Tight 600 · 40→72px / 1.04'],
+  ['text-h2 font-display', 'H2 · Inter Tight 600 · 32→52px / 1.08'],
   ['text-h3 font-semibold', 'H3 · Inter 600 · 24→32px / 1.15 · −3%'],
   ['text-h4 font-semibold', 'H4 · Inter 600 · 20px / 1.3 · −3%'],
   ['text-body-lg', 'Body large · Inter 400 · 18→20px / 1.55'],
@@ -65,16 +62,13 @@ export default async function Styleguide({ params }: { params: Promise<{ locale:
       <Block title="Brand">
         <div className="flex flex-wrap items-center gap-10">
           <Logo className="h-24 w-auto" />
-          <div className="rounded-card bg-ink p-6">
-            <Logo tone="white" className="h-24 w-auto" />
-          </div>
           <Mark size={64} />
         </div>
       </Block>
 
       <Block title="Colour">
         <p className="text-ink-muted mb-6">
-          60-30-10: canvas and surfaces 60%, ink 30%, primary blue 10%. Gold under 5%.
+          White and soft grey surfaces, graphite text, logo blue only for actions.
         </p>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {colors.map(([name, hex, role]) => (

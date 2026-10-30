@@ -43,7 +43,6 @@ export default async function ContactPage({ params }: Props) {
         title={tc('title')}
         sub={tc('sub')}
         location="contact_hero"
-        art={false}
         crumbs={[
           { name: t('breadcrumbs.home'), href: pathFor(locale, '/') },
           { name: t('nav.contact'), href: pathFor(locale, '/contact') },

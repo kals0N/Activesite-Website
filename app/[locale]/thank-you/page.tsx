@@ -5,7 +5,6 @@ import { buildMetadata } from '@/lib/seo';
 import { localized, pathFor } from '@/lib/routes';
 import { whatsappUrl } from '@/lib/whatsapp';
 import { Button } from '@/components/ui/button';
-import { ArcField } from '@/components/sections/arc-art';
 
 type Props = { params: Promise<{ locale: Locale }> };
 
@@ -28,10 +27,6 @@ export default async function ThankYouPage({ params }: Props) {
   const steps = t.raw('thankYou.steps') as string[];
   return (
     <section className="relative overflow-hidden pt-32 pb-[clamp(64px,10vw,160px)] lg:pt-44">
-      <ArcField
-        tone="light"
-        className="pointer-events-none absolute -top-20 -right-40 w-[34rem] opacity-15 max-md:hidden"
-      />
       <div className="container-site relative">
         <h1 className="hero-title font-display text-h1 max-w-3xl">{t('thankYou.title')}</h1>
         <p className="hero-follow text-body-lg text-ink-muted mt-6 max-w-xl">

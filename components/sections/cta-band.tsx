@@ -3,8 +3,6 @@ import { Check } from 'lucide-react';
 import { BookButton, WhatsAppButton } from '@/components/ui/cta-buttons';
 import { Ph } from '@/components/ui/ph';
 import { NewsletterForm } from '@/components/integrations/newsletter-form';
-import { ArcField } from '@/components/sections/arc-art';
-import { cn } from '@/lib/cn';
 
 /** The closing block every page ends with: one primary action, objections handled beside it. */
 export async function CtaBand({
@@ -14,7 +12,6 @@ export async function CtaBand({
   topic,
   newsletter = false,
   buttonLabel,
-  tone = 'ink',
 }: {
   title?: string;
   body?: string;
@@ -22,10 +19,7 @@ export async function CtaBand({
   topic?: string;
   newsletter?: boolean;
   buttonLabel?: string;
-  /** Pages that already have a dark section use the warm band, keeping one dark moment per page. */
-  tone?: 'ink' | 'warm';
 }) {
-  const ink = tone === 'ink';
   const t = await getTranslations();
   const objections = [
     t('objections.free'),
@@ -35,52 +29,27 @@ export async function CtaBand({
   ];
 
   return (
-    <section
-      aria-labelledby={`cta-${location}`}
-      className={cn(
-        'relative overflow-hidden',
-        ink ? 'on-ink bg-ink text-white' : 'bg-surface-warm text-ink',
-      )}
-    >
-      <ArcField
-        tone={ink ? 'ink' : 'light'}
-        className={cn(
-          'pointer-events-none absolute -right-40 -bottom-56 w-[44rem] max-md:-right-64 max-md:w-[34rem]',
-          ink ? 'opacity-90' : 'opacity-[0.14]',
-        )}
-      />
-      <div className="container-site section-y relative">
-        <div className="grid-site gap-y-12">
-          <div data-reveal className="col-span-4 md:col-span-8 lg:col-span-7">
-            <h2 id={`cta-${location}`} className="font-display text-h1">
+    <section aria-labelledby={`cta-${location}`} className="section-y">
+      <div className="container-site">
+        <div
+          data-reveal
+          className="rounded-panel border-border bg-surface-warm grid grid-cols-1 gap-12 border px-6 py-12 sm:px-10 lg:grid-cols-12 lg:px-16 lg:py-20"
+        >
+          <div className={newsletter ? 'min-w-0 lg:col-span-7' : 'min-w-0 lg:col-span-9'}>
+            <h2 id={`cta-${location}`} className="font-display text-h2 max-w-3xl">
               {title ?? t('home.final.title')}
             </h2>
-            <p
-              className={cn('text-body-lg mt-6 max-w-xl', ink ? 'text-ink-soft' : 'text-ink-muted')}
-            >
+            <p className="text-body-lg text-ink-muted mt-5 max-w-xl">
               {body ?? t('home.final.body')}
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <BookButton
-                location={location}
-                variant={ink ? 'inverse' : 'primary'}
-                label={buttonLabel ?? t('cta.bookLong')}
-              />
-              <WhatsAppButton location={location} variant="whatsapp" topic={topic} />
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <BookButton location={location} label={buttonLabel ?? t('cta.bookLong')} />
+              <WhatsAppButton location={location} topic={topic} />
             </div>
-            <ul
-              className={cn(
-                'text-small mt-10 grid gap-3 sm:grid-cols-2',
-                ink ? 'text-ink-soft' : 'text-ink-muted',
-              )}
-            >
+            <ul className="text-small text-ink-muted mt-9 grid gap-3 sm:grid-cols-2">
               {objections.map((o) => (
                 <li key={o} className="flex items-start gap-2.5">
-                  <Check
-                    aria-hidden
-                    size={18}
-                    className={cn('mt-px shrink-0', ink ? 'text-accent' : 'text-success')}
-                  />
+                  <Check aria-hidden size={18} className="text-success mt-px shrink-0" />
                   <span>
                     <Ph>{o}</Ph>
                   </span>
@@ -89,17 +58,13 @@ export async function CtaBand({
             </ul>
           </div>
           {newsletter && (
-            <div
-              data-reveal
-              style={{ '--i': 2 } as React.CSSProperties}
-              className="col-span-4 self-end md:col-span-6 lg:col-span-4 lg:col-start-9"
-            >
-              <div className="rounded-panel border-border-ink border bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8">
+            <div className="self-end lg:col-span-4 lg:col-start-9">
+              <div className="rounded-card border-border bg-surface border p-6 sm:p-8">
                 <p className="text-h4 font-semibold">{t('newsletter.title')}</p>
-                <p className="text-small text-ink-soft mt-2">
+                <p className="text-small text-ink-muted mt-2">
                   <Ph>{t('newsletter.body')}</Ph>
                 </p>
-                <NewsletterForm location={`${location}_band`} tone="ink" />
+                <NewsletterForm location={`${location}_band`} />
               </div>
             </div>
           )}

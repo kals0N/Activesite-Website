@@ -35,9 +35,9 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  sm: 'h-10 px-4 text-small',
-  md: 'h-12 px-6 text-[0.9375rem]',
-  lg: 'h-14 px-7 text-base',
+  sm: 'min-h-10 py-2 px-4 text-small',
+  md: 'min-h-12 py-2.5 px-6 text-[0.9375rem]',
+  lg: 'min-h-14 py-3 px-7 text-base',
 };
 
 export function buttonClasses(
@@ -46,7 +46,7 @@ export function buttonClasses(
   fullOnMobile = false,
 ) {
   return cn(
-    'group/btn relative inline-flex min-w-11 select-none items-center justify-center gap-2 rounded-full font-medium tracking-[-0.01em] whitespace-nowrap',
+    'group/btn relative inline-flex min-w-11 select-none items-center justify-center gap-2 rounded-full text-center font-medium tracking-[-0.01em] sm:whitespace-nowrap',
     'transition-[background-color,border-color,color,transform,filter] duration-(--duration-fast) ease-(--ease-out) active:scale-[0.98]',
     'disabled:pointer-events-none disabled:opacity-60',
     variants[variant],

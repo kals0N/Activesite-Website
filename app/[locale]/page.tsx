@@ -86,7 +86,7 @@ export default async function HomePage({ params }: Props) {
           </div>
         </div>
       </section>
-      <CtaBand location="home_final" tone="warm" />
+      <CtaBand location="home_final" />
     </>
   );
 }

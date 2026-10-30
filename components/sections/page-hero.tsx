@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import { BookButton, WhatsAppButton } from '@/components/ui/cta-buttons';
 import { Breadcrumbs, type Crumb } from '@/components/ui/breadcrumbs';
 import { Ph } from '@/components/ui/ph';
-import { ArcField } from './arc-art';
 import { cn } from '@/lib/cn';
 
 /**
@@ -19,7 +18,6 @@ export async function PageHero({
   ctas = true,
   bookLabel,
   children,
-  art = true,
 }: {
   title: string;
   sub?: string;
@@ -29,17 +27,10 @@ export async function PageHero({
   ctas?: boolean;
   bookLabel?: string;
   children?: ReactNode;
-  art?: boolean;
 }) {
   const t = await getTranslations('objections');
   return (
     <section className="relative overflow-hidden pt-24 pb-14 sm:pt-28 lg:pt-36 lg:pb-20">
-      {art && (
-        <ArcField
-          tone="light"
-          className="pointer-events-none absolute top-10 -right-48 w-[30rem] opacity-[0.12] max-lg:hidden xl:-right-24"
-        />
-      )}
       <div className="container-site relative">
         <Breadcrumbs items={crumbs} />
         <div className="mt-8 max-w-4xl lg:mt-10" data-wa-topic={topic}>

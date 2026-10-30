@@ -251,7 +251,7 @@ export default async function ServicePage({ params }: Props) {
                     href={servicePaths(key)[locale]}
                     className="group/rel rounded-card border-border bg-surface hover:shadow-lift flex h-full flex-col border p-6 transition-[transform,box-shadow] duration-(--duration-base) ease-(--ease-out) hover:-translate-y-1"
                   >
-                    <span className="bg-primary-tint text-primary inline-flex size-10 items-center justify-center rounded-full">
+                    <span className="bg-surface-warm text-ink inline-flex size-10 items-center justify-center rounded-full">
                       <ServiceIcon name={r.icon} size={18} />
                     </span>
                     <span className="text-small text-ink-muted mt-5 font-medium">{r.name}</span>

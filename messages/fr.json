@@ -38,6 +38,7 @@
   },
   "cta": {
     "book": "Réserver un appel gratuit",
+    "bookShort": "Réserver",
     "bookLong": "Réserver mon appel stratégique gratuit",
     "whatsapp": "Discuter sur WhatsApp",
     "plan": "Obtenir mon plan de site",

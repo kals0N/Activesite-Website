@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
-import { Instrument_Serif, Inter } from 'next/font/google';
+import { Inter, Inter_Tight } from 'next/font/google';
 import { hasLocale } from 'next-intl';
 import { MessagesProvider } from '@/lib/i18n-client';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
@@ -18,13 +18,12 @@ import { JsonLd } from '@/components/ui/json-ld';
 import { organizationLd } from '@/lib/jsonld';
 import { site } from '@/lib/site';
 
-// Only the hero face is preloaded (it carries the LCP headline). Inter and the italic load with swap.
-const serif = Instrument_Serif({
+// Only the display face is preloaded (it carries the LCP headline). Inter loads with swap.
+const display = Inter_Tight({
   subsets: ['latin', 'latin-ext'],
-  weight: '400',
-  style: ['normal', 'italic'],
+  weight: ['500', '600'],
   display: 'swap',
-  variable: '--font-instrument-serif',
+  variable: '--font-inter-tight',
 });
 
 const sans = Inter({
@@ -52,7 +51,7 @@ export function generateStaticParams() {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#FAF8F4',
+  themeColor: '#FFFFFF',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
@@ -100,7 +99,7 @@ export default async function LocaleLayout({
   const t = await getTranslations('meta');
 
   return (
-    <html lang={locale} className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${display.variable} ${sans.variable}`} suppressHydrationWarning>
       <head>
         {/* Marks JS as available before paint, so reveal animations never hide content without JS. */}
         <script
