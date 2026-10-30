@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
-import { Urbanist } from 'next/font/google';
+import { Geist } from 'next/font/google';
 import { hasLocale } from 'next-intl';
 import { MessagesProvider } from '@/lib/i18n-client';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
@@ -18,11 +18,11 @@ import { JsonLd } from '@/components/ui/json-ld';
 import { organizationLd } from '@/lib/jsonld';
 import { site } from '@/lib/site';
 
-// Urbanist for headings and text (variable font: one file covers every weight).
-const urbanist = Urbanist({
+// Geist for headings and text (variable font: one file covers every weight).
+const geist = Geist({
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-urbanist',
+  variable: '--font-geist',
 });
 
 /** Only these message namespaces are needed by client components. */
@@ -91,7 +91,7 @@ export default async function LocaleLayout({
   const t = await getTranslations('meta');
 
   return (
-    <html lang={locale} className={`${urbanist.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${geist.variable}`} suppressHydrationWarning>
       <head>
         {/* Marks JS as available before paint, so reveal animations never hide content without JS. */}
         <script

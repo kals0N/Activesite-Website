@@ -266,6 +266,50 @@
     "final": {
       "title": "Ready for a website that brings you clients?",
       "body": "Book a free 30-minute strategy call. You leave with a clear plan, whether or not we work together."
+    },
+    "planner": {
+      "title": "Plan your project in 20 seconds",
+      "sub": "Pick what you need. We show you the plan and the timeline, then you choose how to talk to us.",
+      "needLabel": "What do you need?",
+      "whenLabel": "When do you want to launch?",
+      "needs": {
+        "website": "A new website",
+        "store": "An online store",
+        "app": "A web or mobile app",
+        "brand": "A brand identity",
+        "grow": "More leads and sales"
+      },
+      "whens": {
+        "asap": "As soon as possible",
+        "1-3": "In 1 to 3 months",
+        "exploring": "Just exploring"
+      },
+      "resultLabel": "Your plan",
+      "includes": "We recommend",
+      "timeline": "Typical timeline",
+      "timelines": {
+        "website": "3 to 6 weeks",
+        "store": "4 to 8 weeks",
+        "app": "8 to 12 weeks for an MVP",
+        "brand": "2 to 3 weeks",
+        "grow": "Live in 2 to 4 weeks"
+      },
+      "book": "Book my free call",
+      "whatsapp": "Send my plan on WhatsApp",
+      "waMessage": "Hi Activesite, I need {need}, and I want to launch {when}. Can we talk about a plan?",
+      "whenPhrases": {
+        "asap": "as soon as possible",
+        "1-3": "in 1 to 3 months",
+        "exploring": "when the plan is right (I'm exploring options)"
+      },
+      "note": "Free 30-minute call. No obligation.",
+      "needPhrases": {
+        "website": "a new website",
+        "store": "an online store",
+        "app": "a web or mobile app",
+        "brand": "a brand identity",
+        "grow": "more leads and sales"
+      }
     }
   },
   "servicesHub": {

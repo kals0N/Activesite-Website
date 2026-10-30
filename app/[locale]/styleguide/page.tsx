@@ -28,14 +28,14 @@ const colors = [
 ] as const;
 
 const type = [
-  ['text-display font-display', 'Display · Urbanist 700 · 44→100px / 1.0'],
-  ['text-h1 font-display', 'H1 · Urbanist 700 · 40→72px / 1.04'],
-  ['text-h2 font-display', 'H2 · Urbanist 700 · 32→52px / 1.08'],
-  ['text-h3 font-semibold', 'H3 · Urbanist 600 · 24→32px / 1.15 · −3%'],
-  ['text-h4 font-semibold', 'H4 · Urbanist 600 · 20px / 1.3 · −3%'],
-  ['text-body-lg', 'Body large · Urbanist 400 · 18→20px / 1.55'],
-  ['text-body', 'Body · Urbanist 400 · 16→17px / 1.6'],
-  ['text-small font-medium', 'Small / label · Urbanist 500 · 14px / 1.45'],
+  ['text-display font-display', 'Display · Geist 600 · 44→100px / 1.0'],
+  ['text-h1 font-display', 'H1 · Geist 600 · 40→72px / 1.04'],
+  ['text-h2 font-display', 'H2 · Geist 600 · 32→52px / 1.08'],
+  ['text-h3 font-semibold', 'H3 · Geist 600 · 24→32px / 1.15 · −3%'],
+  ['text-h4 font-semibold', 'H4 · Geist 600 · 20px / 1.3 · −3%'],
+  ['text-body-lg', 'Body large · Geist 400 · 18→20px / 1.55'],
+  ['text-body', 'Body · Geist 400 · 16→17px / 1.6'],
+  ['text-small font-medium', 'Small / label · Geist 500 · 14px / 1.45'],
 ] as const;
 
 const motion = [

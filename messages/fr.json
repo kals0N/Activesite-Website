@@ -267,6 +267,50 @@
     "final": {
       "title": "Prêt pour un site qui vous apporte des clients ?",
       "body": "Réservez un appel stratégique gratuit de 30 minutes. Vous repartez avec un plan clair, que nous travaillions ensemble ou non."
+    },
+    "planner": {
+      "title": "Planifiez votre projet en 20 secondes",
+      "sub": "Choisissez ce dont vous avez besoin. Nous vous montrons le plan et le délai, puis vous choisissez comment nous parler.",
+      "needLabel": "De quoi avez-vous besoin ?",
+      "whenLabel": "Quand souhaitez-vous lancer ?",
+      "needs": {
+        "website": "Un nouveau site internet",
+        "store": "Une boutique en ligne",
+        "app": "Une application web ou mobile",
+        "brand": "Une identité visuelle",
+        "grow": "Plus de prospects et de ventes"
+      },
+      "whens": {
+        "asap": "Dès que possible",
+        "1-3": "Dans 1 à 3 mois",
+        "exploring": "Je me renseigne"
+      },
+      "resultLabel": "Votre plan",
+      "includes": "Nous recommandons",
+      "timeline": "Délai habituel",
+      "timelines": {
+        "website": "3 à 6 semaines",
+        "store": "4 à 8 semaines",
+        "app": "8 à 12 semaines pour un MVP",
+        "brand": "2 à 3 semaines",
+        "grow": "En ligne en 2 à 4 semaines"
+      },
+      "book": "Réserver mon appel gratuit",
+      "whatsapp": "Envoyer mon plan sur WhatsApp",
+      "waMessage": "Bonjour Activesite, j’ai besoin {need} et je souhaite lancer {when}. Pouvons-nous parler d’un plan ?",
+      "whenPhrases": {
+        "asap": "dès que possible",
+        "1-3": "dans 1 à 3 mois",
+        "exploring": "quand le plan sera prêt (je me renseigne)"
+      },
+      "note": "Appel gratuit de 30 minutes, sans engagement.",
+      "needPhrases": {
+        "website": "d’un nouveau site internet",
+        "store": "d’une boutique en ligne",
+        "app": "d’une application web ou mobile",
+        "brand": "d’une identité visuelle",
+        "grow": "de plus de prospects et de ventes"
+      }
     }
   },
   "servicesHub": {

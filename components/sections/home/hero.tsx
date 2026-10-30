@@ -1,15 +1,43 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Image from 'next/image';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
+import type { Locale } from '@/i18n/routing';
+import { getService, type ServiceKey } from '@/lib/services';
+import { pathFor, servicePaths } from '@/lib/routes';
+import { ProjectPlanner, type Need, type PlannerCopy } from './project-planner';
 import { BookButton, WhatsAppButton } from '@/components/ui/cta-buttons';
 
 /** Hero image lives at public/images/hero.jpg (AI-generated). The hero renders cleanly without it. */
 const HERO_IMAGE = '/images/hero.jpg';
 const hasHeroImage = fs.existsSync(path.join(process.cwd(), 'public', HERO_IMAGE));
 
+/** What each planner choice recommends; the first key also pre-selects the contact form. */
+const PLANS: Record<Need, ServiceKey[]> = {
+  website: ['website-development', 'seo-aeo-geo', 'hosting-maintenance'],
+  store: ['ecommerce-development', 'digital-marketing', 'hosting-maintenance'],
+  app: ['saas-development', 'ui-ux-design', 'hosting-maintenance'],
+  brand: ['brand-identity', 'graphic-design', 'portfolio-websites'],
+  grow: ['sales-funnels', 'seo-aeo-geo', 'digital-marketing'],
+};
+
 export async function Hero() {
   const t = await getTranslations('home.hero');
+  const tp = await getTranslations('home');
+  const locale = (await getLocale()) as Locale;
+  const plans = Object.fromEntries(
+    Object.entries(PLANS).map(([need, keys]) => [
+      need,
+      {
+        primary: keys[0],
+        services: keys.map((k) => ({
+          key: k,
+          name: getService(locale, k).name,
+          href: servicePaths(k)[locale],
+        })),
+      },
+    ]),
+  ) as Record<Need, { primary: string; services: { key: string; name: string; href: string }[] }>;
 
   return (
     <section
@@ -39,6 +67,12 @@ export async function Hero() {
         >
           {t('trust')}
         </p>
+
+        <ProjectPlanner
+          copy={tp.raw('planner') as PlannerCopy}
+          plans={plans}
+          contactHref={pathFor(locale, '/contact')}
+        />
 
         {hasHeroImage && (
           <div

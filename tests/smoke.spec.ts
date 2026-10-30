@@ -251,3 +251,25 @@ test('SEO files are served', async ({ page }) => {
   const og = await page.request.get('/og?title=Test');
   expect(og.headers()['content-type']).toBe('image/png');
 });
+
+test('hero planner builds a plan and pre-fills the contact form', async ({ page }) => {
+  await setConsent(page, { analytics: false, marketing: false });
+  await page.goto('/');
+  await page.waitForLoadState('networkidle');
+  const planner = page.locator('[data-planner]');
+  await planner.getByRole('button', { name: 'An online store' }).click();
+  await planner.getByRole('button', { name: 'As soon as possible' }).click();
+  await expect(planner.locator('[data-pl-title]')).toHaveText('An online store');
+  await expect(planner.locator('[data-pl-timeline]')).toHaveText('4 to 8 weeks');
+  const wa = await planner.locator('[data-pl-wa]').getAttribute('href');
+  expect(decodeURIComponent(wa!)).toContain(
+    'I need an online store, and I want to launch as soon as possible',
+  );
+  await planner.locator('[data-pl-book]').click();
+  await expect(page).toHaveURL(/\/contact\?service=ecommerce-development&timeline=asap#book$/);
+  const form = page
+    .locator('form')
+    .filter({ has: page.getByRole('button', { name: 'Send my project details' }) });
+  await expect(form.locator('select').first()).toHaveValue('ecommerce-development');
+  await expect(form.locator('select').nth(1)).toHaveValue('asap');
+});

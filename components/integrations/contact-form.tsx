@@ -49,6 +49,7 @@ export function ContactForm({
     register,
     handleSubmit,
     setFocus,
+    setValue,
     formState: { errors },
   } = useForm<ContactInput>({
     resolver: zodResolver(contactSchema),
@@ -56,6 +57,17 @@ export function ContactForm({
     shouldFocusError: false,
     defaultValues: { whatsapp: '', company: '', service: '', timeline: '', marketing: false },
   });
+
+  // Pre-fill service and timeline when arriving from the hero planner (?service=…&timeline=…).
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const service = q.get('service');
+    const timeline = q.get('timeline');
+    if (service && services.some((s) => s.key === service))
+      setValue('service', service as ContactInput['service']);
+    if (timeline && (timelines as readonly string[]).includes(timeline))
+      setValue('timeline', timeline as ContactInput['timeline']);
+  }, [services, setValue]);
 
   // Turnstile loads on first interaction with the form, never on page view.
   const loadTurnstile = () => {

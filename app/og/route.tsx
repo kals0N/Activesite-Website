@@ -6,8 +6,8 @@ export const runtime = 'nodejs';
 
 const fontDir = path.join(process.cwd(), 'node_modules/@fontsource');
 const fonts = Promise.all([
-  fs.readFile(path.join(fontDir, 'urbanist/files/urbanist-latin-700-normal.woff')),
-  fs.readFile(path.join(fontDir, 'urbanist/files/urbanist-latin-500-normal.woff')),
+  fs.readFile(path.join(fontDir, 'geist-sans/files/geist-sans-latin-600-normal.woff')),
+  fs.readFile(path.join(fontDir, 'geist-sans/files/geist-sans-latin-500-normal.woff')),
 ]);
 
 /** Auto-generated Open Graph image: /og?title=…&locale=en|fr */
@@ -25,7 +25,7 @@ export async function GET(req: Request) {
         display: 'flex',
         background: '#FFFFFF',
         position: 'relative',
-        fontFamily: 'Urbanist',
+        fontFamily: 'Geist',
       }}
     >
       <div
@@ -41,11 +41,11 @@ export async function GET(req: Request) {
         <div
           style={{
             fontFamily: 'Display',
-            fontWeight: 700,
+            fontWeight: 600,
             fontSize: title.length > 60 ? 64 : 80,
             lineHeight: 1.02,
             color: '#111318',
-            letterSpacing: -2,
+            letterSpacing: -3,
           }}
         >
           {title}
@@ -59,8 +59,8 @@ export async function GET(req: Request) {
       width: 1200,
       height: 630,
       fonts: [
-        { name: 'Display', data: serif, weight: 700, style: 'normal' },
-        { name: 'Urbanist', data: sans, weight: 500, style: 'normal' },
+        { name: 'Display', data: serif, weight: 600, style: 'normal' },
+        { name: 'Geist', data: sans, weight: 500, style: 'normal' },
       ],
       headers: { 'Cache-Control': 'public, max-age=86400, s-maxage=604800, immutable' },
     },
