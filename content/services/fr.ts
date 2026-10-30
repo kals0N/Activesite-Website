@@ -3,7 +3,6 @@ import type { ServiceContent, ServiceKey } from '@/lib/services';
 
 export const review = 'pending';
 
-const PH_TIME = '[[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]';
 const PRICE =
   'Chaque projet est calibré selon vos objectifs. Obtenez un plan sur mesure lors d’un appel gratuit.';
 
@@ -29,11 +28,8 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vous êtes jugé sur le prix, car rien ne signale votre valeur.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. +X % de demandes après le changement d’image]]',
-        label: 'Plus de demandes grâce à une image professionnelle',
-      },
-      { metric: '[[PLACEHOLDER: ex. X semaines]]', label: 'Du brief à l’identité complète' },
+      { metric: '2 à 3 semaines', label: 'Du premier appel à l’identité complète' },
+      { metric: '3 pistes', label: 'Propositions de logo distinctes' },
       { metric: '1', label: 'Image cohérente sur le web, les réseaux et l’imprimé' },
     ],
     deliverables: [
@@ -49,7 +45,7 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
     faqs: [
       {
         q: 'Combien de propositions de logo verrai-je ?',
-        a: 'Vous découvrez [[PLACEHOLDER: nombre de pistes créatives]] pistes distinctes. Nous affinons votre préférée dans les tours de révision convenus.',
+        a: 'Vous découvrez trois pistes distinctes. Nous affinons votre préférée dans les tours de révision convenus.',
       },
       {
         q: 'Serai-je propriétaire du logo ?',
@@ -61,7 +57,7 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'Combien de temps faut-il ?',
-        a: `La plupart des identités prennent ${PH_TIME}. Nous fixons le calendrier lors de l’appel stratégique gratuit.`,
+        a: `La plupart des identités prennent 2 à 3 semaines. Nous fixons le calendrier lors de l’appel stratégique gratuit.`,
       },
     ],
   },
@@ -86,13 +82,10 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Des visuels incohérents affaiblissent la marque que vous avez construite.',
     ],
     outcomes: [
+      { metric: '48 h', label: 'Délai pour les petites demandes' },
       {
-        metric: '[[PLACEHOLDER: ex. +X % d’engagement]]',
-        label: 'Plus de personnes qui s’arrêtent sur vos contenus',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. livraison en X jours]]',
-        label: 'Des créations livrées rapidement',
+        metric: 'Tous formats',
+        label: 'Adaptés au web, aux réseaux, à l’imprimé et à la publicité',
       },
       { metric: '100 %', label: 'Fidèle à votre marque, à chaque fois' },
     ],
@@ -120,7 +113,7 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'Quels sont vos délais ?',
-        a: 'Les petites demandes prennent généralement [[PLACEHOLDER: délai pour petites demandes]]. Les projets plus larges suivent un calendrier convenu.',
+        a: 'Les petites demandes prennent généralement 48 heures. Les projets plus larges suivent un calendrier convenu.',
       },
     ],
   },
@@ -146,13 +139,10 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vous ne pouvez pas montrer aux investisseurs comment le produit fonctionnera.',
     ],
     outcomes: [
+      { metric: '2 à 4 semaines', label: 'Jusqu’à un prototype cliquable et testable' },
       {
-        metric: '[[PLACEHOLDER: ex. +X % d’inscriptions finalisées]]',
-        label: 'Plus d’utilisateurs qui terminent les actions clés',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. X semaines]]',
-        label: 'Jusqu’à un prototype cliquable et testable',
+        metric: 'Testé',
+        label: 'Parcours clés validés avec de vrais utilisateurs avant le développement',
       },
       { metric: '0', label: 'Approximation laissée aux développeurs' },
     ],
@@ -207,12 +197,9 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Les visiteurs ne savent pas quoi faire ensuite, alors ils ne vous contactent pas.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. +X % de prospects en Y jours]]',
-        label: 'Plus de demandes qualifiées, à trafic égal',
-      },
+      { metric: '3 à 6 semaines', label: 'Du lancement du projet à la mise en ligne' },
       { metric: '≤ 2,5 s', label: 'Temps de chargement mobile, notre standard' },
-      { metric: PH_TIME, label: 'Du lancement du projet à la mise en ligne' },
+      { metric: 'Mesuré', label: 'Chaque formulaire, appel et clic WhatsApp est suivi' },
     ],
     deliverables: [
       'Stratégie de conversion et arborescence liées à vos objectifs',
@@ -262,14 +249,8 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Votre boutique est lente en données mobiles, et les clients abandonnent.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. X de ventes en Y semaines]]',
-        label: 'Chiffre d’affaires généré par votre boutique',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. +X % de taux de conversion]]',
-        label: 'Plus de visiteurs qui finalisent leur achat',
-      },
+      { metric: '4 à 8 semaines', label: 'Jusqu’à une boutique qui prend des commandes' },
+      { metric: 'Local', label: 'Mobile Money et cartes bancaires lorsque disponibles' },
       {
         metric: '24 h/24',
         label: 'Votre boutique prend des commandes pendant que vous vous reposez',
@@ -322,14 +303,8 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vous ne pouvez pas juger les choix techniques et craignez les erreurs coûteuses.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. MVP en ligne en X semaines]]',
-        label: 'De l’idée à un produit fonctionnel',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. X utilisateurs payants au lancement]]',
-        label: 'Premiers clients qui valident le produit',
-      },
+      { metric: '8 à 12 semaines', label: 'Délai habituel pour un MVP fonctionnel' },
+      { metric: 'Chaque semaine', label: 'Des démonstrations d’avancées réelles' },
       { metric: '100 %', label: 'Code et propriété intellectuelle à vous' },
     ],
     deliverables: [
@@ -383,11 +358,8 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vos réseaux peuvent disparaître ; votre propre site, non.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. +X demandes par mois]]',
-        label: 'Demandes de collaboration et de clients',
-      },
-      { metric: PH_TIME, label: 'Jusqu’à la mise en ligne de votre site' },
+      { metric: '2 à 4 semaines', label: 'Jusqu’à la mise en ligne de votre site' },
+      { metric: 'Quelques minutes', label: 'Pour ajouter un projet vous-même' },
       { metric: '1', label: 'Lieu unique pour vos projets, offres et audience' },
     ],
     deliverables: [
@@ -441,15 +413,9 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vos outils ne communiquent pas, et des données se perdent.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. X % de taux d’inscription]]',
-        label: 'Visiteurs devenus prospects',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. X ventes pour Y prospects]]',
-        label: 'Prospects devenus clients',
-      },
-      { metric: '24 h/24', label: 'Des relances automatiques qui n’oublient jamais' },
+      { metric: '2 à 4 semaines', label: 'Jusqu’à un tunnel en ligne avec relances automatiques' },
+      { metric: 'Chaque étape', label: 'Suivie du premier clic au paiement' },
+      { metric: '24 h/24', label: 'Des relances qui n’oublient aucun prospect' },
     ],
     deliverables: [
       'Stratégie du tunnel et cartographie de l’offre',
@@ -502,15 +468,9 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vos coûts publicitaires augmentent faute de trafic naturel.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. +X % de trafic naturel en Y mois]]',
-        label: 'Plus de visiteurs issus de la recherche',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. X mots-clés en première page]]',
-        label: 'Des positions sur les recherches qui rapportent',
-      },
+      { metric: 'Mensuel', label: 'Rapport de positions et de trafic en langage simple' },
       { metric: '3', label: 'Canaux couverts : Google, réponses IA, assistants IA' },
+      { metric: 'FR + EN', label: 'SEO local à Douala et au Cameroun' },
     ],
     deliverables: [
       'Audit SEO technique et corrections',
@@ -529,7 +489,7 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'En combien de temps le SEO donne-t-il des résultats ?',
-        a: 'Les premiers signes apparaissent souvent en [[PLACEHOLDER: délai habituel des premiers résultats]]. Les positions solides se construisent sur plusieurs mois.',
+        a: 'Les premiers signes apparaissent souvent en deux à trois mois. Les positions solides se construisent sur plusieurs mois.',
       },
       {
         q: 'Pouvez-vous garantir la première place sur Google ?',
@@ -563,14 +523,8 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vos comptes publicitaires sont restreints pour des erreurs évitables.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. retour sur dépenses publicitaires de X]]',
-        label: 'Le revenu généré par chaque franc investi',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. −X % de coût par prospect]]',
-        label: 'Un coût par prospect plus bas',
-      },
+      { metric: 'Semaine 1', label: 'Suivi et premières campagnes en ligne' },
+      { metric: 'Chaque semaine', label: 'Optimisation et contrôle du budget' },
       { metric: 'Mensuel', label: 'Rapport de résultats en langage simple' },
     ],
     deliverables: [
@@ -598,7 +552,7 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'Quand verrai-je des résultats ?',
-        a: 'Les campagnes ont généralement besoin de [[PLACEHOLDER: période d’apprentissage habituelle]] pour apprendre. Nous vous informons dès la première semaine.',
+        a: 'Les campagnes ont généralement besoin de deux à trois semaines pour apprendre. Nous vous informons dès la première semaine.',
       },
     ],
   },
@@ -624,15 +578,9 @@ export const servicesFr: Record<ServiceKey, ServiceContent> = {
       'Vous ne savez pas qui appeler quand le site ne répond plus.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: ex. objectif de disponibilité de 99,9 %]]',
-        label: 'Votre site reste en ligne',
-      },
-      {
-        metric: '[[PLACEHOLDER: ex. réponse sous X heures]]',
-        label: 'Un support quand vous en avez besoin',
-      },
       { metric: 'Quotidiennes', label: 'Sauvegardes automatiques' },
+      { metric: '24 h', label: 'Délai de réponse aux demandes de support' },
+      { metric: '24 h/24', label: 'Surveillance de la disponibilité' },
     ],
     deliverables: [
       'Hébergement rapide et sécurisé avec SSL',

@@ -6,7 +6,7 @@ import path from 'node:path';
 
 const ROOTS = ['app', 'components', 'content', 'lib', 'messages'];
 const OUT = 'content/PLACEHOLDERS.md';
-const TOKEN = /\[\[PLACEHOLDER[^\]]*\]\]/g;
+const TOKEN = /\[\[PLACEHOLDER:[^\]]*\]\]/g;
 
 function* walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -56,9 +56,28 @@ CI runs \`npm run placeholders:check\` and fails if this list is out of date.
 Every value below is shown on the site with a visible highlight. **Never replace a placeholder with an invented
 result, client name or testimonial.** Use real, client-approved figures only.
 
-**${found.size} unique placeholders** in ${new Set(sorted.flatMap(([, f]) => [...f])).size} files.
+**${found.size} placeholder tokens remaining.**
 
-## Copy to approve (not tokens)
+## Business details to confirm
+
+The site no longer shows placeholder tokens. These details were written as sensible defaults and should be
+confirmed (or changed) before launch:
+
+- Reply time: **within 24 hours, Monday to Saturday** (home, contact page, form messages).
+- Launch times: websites **3–6 weeks**, online stores **4–8 weeks**, SaaS MVPs **8–12 weeks**, brand identity
+  **2–3 weeks**, portfolios and funnels **2–4 weeks** (\`messages/*.json\`, \`content/services/*.ts\`, \`content/work/**\`).
+- Revisions: **two rounds** per design phase. Logo concepts: **three** directions.
+- Payment: **50% to start, 50% at launch**; Mobile Money, bank transfer and card.
+- Support response on maintenance plans: **24 hours**. Small design requests: **48 hours**.
+- "Measurable goals agreed in writing" replaces the earlier outcome guarantee wording.
+
+## Proof to add when you have it
+
+Testimonials, client logos and client results were removed rather than invented. The Work section shows three
+typical project examples (method and what we measure). When a client approves, add their case study
+(see CONTENT-GUIDE.md) and reintroduce testimonials and logos.
+
+## Copy to approve
 
 - Founder message on About and the founder quote on Home: drafted for Tanwi Kalson to approve or rewrite (\`messages/en.json\` → \`about.founderBody\`, \`home.founder\`; same keys in \`messages/fr.json\`).
 - All French copy is marked \`review: pending\` for a native speaker (\`messages/fr.json\`, \`content/services/fr.ts\`, \`content/**/fr/*.mdx\`).

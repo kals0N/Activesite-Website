@@ -9,7 +9,6 @@ import { site } from '@/lib/site';
 import { PageHero } from '@/components/sections/page-hero';
 import { CtaBand } from '@/components/sections/cta-band';
 import { JsonLd } from '@/components/ui/json-ld';
-import { Ph } from '@/components/ui/ph';
 import { FacebookIcon, InstagramIcon, LinkedInIcon } from '@/components/ui/icons';
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -91,8 +90,14 @@ export default async function AboutPage({ params }: Props) {
       <section aria-labelledby="founder-title" className="section-y relative overflow-hidden">
         <div className="container-site grid-site relative gap-y-12">
           <div className="col-span-4 md:col-span-3 lg:col-span-4">
-            <div className="rounded-panel border-border bg-surface text-small text-ink-muted aspect-[4/5] max-w-xs overflow-hidden border border-dashed p-6">
-              <Ph>{ta('portrait')}</Ph>
+            <div className="rounded-panel bg-surface-warm flex aspect-[4/5] max-w-xs flex-col justify-end p-8">
+              <span
+                aria-hidden
+                className="font-display text-[5rem] leading-none tracking-[-0.04em]"
+              >
+                TK
+              </span>
+              <span className="text-ink-muted text-small mt-3">{ta('founderSign')}</span>
             </div>
           </div>
           <div className="col-span-4 md:col-span-5 lg:col-span-7 lg:col-start-6">

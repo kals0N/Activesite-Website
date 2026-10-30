@@ -6,197 +6,30 @@ CI runs `npm run placeholders:check` and fails if this list is out of date.
 Every value below is shown on the site with a visible highlight. **Never replace a placeholder with an invented
 result, client name or testimonial.** Use real, client-approved figures only.
 
-**156 unique placeholders** in 21 files.
+**0 placeholder tokens remaining.**
 
-## Copy to approve (not tokens)
+## Business details to confirm
+
+The site no longer shows placeholder tokens. These details were written as sensible defaults and should be
+confirmed (or changed) before launch:
+
+- Reply time: **within 24 hours, Monday to Saturday** (home, contact page, form messages).
+- Launch times: websites **3–6 weeks**, online stores **4–8 weeks**, SaaS MVPs **8–12 weeks**, brand identity
+  **2–3 weeks**, portfolios and funnels **2–4 weeks** (`messages/*.json`, `content/services/*.ts`, `content/work/**`).
+- Revisions: **two rounds** per design phase. Logo concepts: **three** directions.
+- Payment: **50% to start, 50% at launch**; Mobile Money, bank transfer and card.
+- Support response on maintenance plans: **24 hours**. Small design requests: **48 hours**.
+- "Measurable goals agreed in writing" replaces the earlier outcome guarantee wording.
+
+## Proof to add when you have it
+
+Testimonials, client logos and client results were removed rather than invented. The Work section shows three
+typical project examples (method and what we measure). When a client approves, add their case study
+(see CONTENT-GUIDE.md) and reintroduce testimonials and logos.
+
+## Copy to approve
 
 - Founder message on About and the founder quote on Home: drafted for Tanwi Kalson to approve or rewrite (`messages/en.json` → `about.founderBody`, `home.founder`; same keys in `messages/fr.json`).
 - All French copy is marked `review: pending` for a native speaker (`messages/fr.json`, `content/services/fr.ts`, `content/**/fr/*.mdx`).
 - Legal pages are drafts for a qualified lawyer (`content/legal/**`).
 - Blog posts ship with `status: draft` (shown with a Draft badge, `noindex`, left out of the sitemap). Set `status: published` once reviewed.
-
-## Results, metrics and stats
-
-| Placeholder | Where |
-| --- | --- |
-| `[[PLACEHOLDER: appels réservés]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: booked calls]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: citation client sur les prospects apportés par le nouveau site]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: citation client sur les ventes ou la croissance]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: client quote about sales or growth]]` | `messages/en.json` |
-| `[[PLACEHOLDER: client quote about the leads the new website brings]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: client satisfaction, e.g. 98%]]` | `messages/en.json` |
-| `[[PLACEHOLDER: conversion rate]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: délai pour petites demandes]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: demandes par mois]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: e.g. +X enquiries per month]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. +X% conversion rate]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. +X% engagement]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. +X% enquiries after rebrand]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. +X% leads in Y days]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. +X% organic traffic in Y months]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. +X% sign-up completion]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. −X% cost per lead]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. 40+ projects delivered]]` | `messages/en.json` |
-| `[[PLACEHOLDER: e.g. 99.9% uptime target]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. X in sales in Y weeks]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. X keywords on page one]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. X paying users at launch]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. X sales from Y leads]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. X% opt-in rate]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. X× return on ad spend]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: enquiries per month]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: ex. +X % d’engagement]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. +X % d’inscriptions finalisées]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. +X % de demandes après le changement d’image]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. +X % de prospects en Y jours]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. +X % de taux de conversion]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. +X % de trafic naturel en Y mois]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. +X demandes par mois]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. −X % de coût par prospect]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. objectif de disponibilité de 99,9 %]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. retour sur dépenses publicitaires de X]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. X % de taux d’inscription]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. X de ventes en Y semaines]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. X mots-clés en première page]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. X utilisateurs payants au lancement]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. X ventes pour Y prospects]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: hausse des prospects en %]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: hausse des tarifs en %]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: hausse des ventes en %]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: lead increase %]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: leads generated for clients]]` | `messages/en.json` |
-| `[[PLACEHOLDER: load time]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: monthly recurring revenue]]` | `content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: nombre d’utilisateurs payants]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: nombre de jours]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: nombre de mois]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: nombre de pistes créatives]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: nombre de projets livrés]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: nombre de semaines]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: nombre de tours de révision]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: number of concepts]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: number of days]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: number of months]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: number of paying users]]` | `content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: number of revision rounds]]` | `messages/en.json` |
-| `[[PLACEHOLDER: number of weeks]]` | `content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: price increase %]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: projects delivered]]` | `messages/en.json` |
-| `[[PLACEHOLDER: prospects générés pour nos clients]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: registered business address and registration number]]` | `content/legal/en/privacy.mdx` |
-| `[[PLACEHOLDER: result, e.g. +X% leads]]` | `messages/en.json` |
-| `[[PLACEHOLDER: result, e.g. X sales in Y weeks]]` | `messages/en.json` |
-| `[[PLACEHOLDER: résultat, ex. +X % de prospects]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: résultat, ex. X ventes en Y semaines]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: revenu mensuel récurrent]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: sales increase %]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: satisfaction client, ex. 98 %]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: semaines avant lancement]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: temps de chargement]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: weeks to launch]]` | `content/work/en/saas-mvp.mdx` |
-
-## Clients, quotes and logos
-
-| Placeholder | Where |
-| --- | --- |
-| `[[PLACEHOLDER: add one or two specific decisions made for this client.]]` | `content/work/en/brand-launch.mdx`<br>`content/work/en/lead-generation-website.mdx`<br>`content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: ajouter une ou deux décisions spécifiques à ce client.]]` | `content/work/fr/lancement-identite-visuelle.mdx`<br>`content/work/fr/lancement-mvp-saas.mdx`<br>`content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: citation client sur l’effet de la nouvelle marque]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: citation client sur la rapidité ou la méthode]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: citation client sur le résultat obtenu]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: citation du fondateur sur Activesite comme partenaire technique]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: client logo]]` | `components/sections/home/logo-strip.tsx` |
-| `[[PLACEHOLDER: client name]]` | `content/work/en/brand-launch.mdx`<br>`content/work/en/lead-generation-website.mdx`<br>`content/work/en/saas-mvp.mdx`<br>`messages/en.json` |
-| `[[PLACEHOLDER: client quote about how the new brand changed client perception]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: client quote about speed or process]]` | `messages/en.json` |
-| `[[PLACEHOLDER: client quote about the result they got]]` | `messages/en.json` |
-| `[[PLACEHOLDER: décrire la situation du client avant le changement d’image.]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: décrire la situation du client avant le projet en deux ou trois phrases.]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: describe the client's situation before the project in two or three sentences.]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: describe the client's situation before the rebrand.]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: e.g. 4.9/5 client rating]]` | `messages/en.json` |
-| `[[PLACEHOLDER: ex. note client de 4,9/5]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: fonction, entreprise]]` | `content/work/fr/lancement-identite-visuelle.mdx`<br>`content/work/fr/lancement-mvp-saas.mdx`<br>`content/work/fr/site-generation-prospects.mdx`<br>`messages/fr.json` |
-| `[[PLACEHOLDER: founder quote about working with Activesite as a technical partner]]` | `content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: nom du client]]` | `content/work/fr/lancement-identite-visuelle.mdx`<br>`content/work/fr/lancement-mvp-saas.mdx`<br>`content/work/fr/site-generation-prospects.mdx`<br>`messages/fr.json` |
-| `[[PLACEHOLDER: role, company]]` | `content/work/en/brand-launch.mdx`<br>`content/work/en/lead-generation-website.mdx`<br>`content/work/en/saas-mvp.mdx`<br>`messages/en.json` |
-
-## Business terms and promises
-
-| Placeholder | Where |
-| --- | --- |
-| `[[PLACEHOLDER: accepted payment methods]]` | `messages/en.json` |
-| `[[PLACEHOLDER: average launch time]]` | `messages/en.json` |
-| `[[PLACEHOLDER: conditions de la garantie]]` | `content/legal/fr/terms.mdx`<br>`messages/fr.json` |
-| `[[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]` | `content/services/fr.ts`<br>`messages/fr.json` |
-| `[[PLACEHOLDER: délai de réponse, ex. sous 24 heures]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: délai habituel des premiers résultats]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: e.g. X-day turnaround]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: guarantee terms]]` | `content/legal/en/terms.mdx`<br>`messages/en.json` |
-| `[[PLACEHOLDER: modalités de paiement, ex. acompte, étape, mise en ligne]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: moyens de paiement acceptés]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: payment terms, e.g. deposit, milestone, launch]]` | `messages/en.json` |
-| `[[PLACEHOLDER: période d’apprentissage habituelle]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: response time, e.g. within 24 hours]]` | `messages/en.json` |
-| `[[PLACEHOLDER: turnaround for small requests]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]` | `content/services/en.ts`<br>`messages/en.json` |
-| `[[PLACEHOLDER: typical learning period]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: typical time to first results]]` | `content/services/en.ts` |
-
-## Integrations and assets
-
-| Placeholder | Where |
-| --- | --- |
-| `[[PLACEHOLDER: Cal.com username/event link]]` | `app/[locale]/contact/page.tsx` |
-| `[[PLACEHOLDER: founder portrait photo]]` | `messages/en.json` |
-| `[[PLACEHOLDER: lead magnet title, e.g. The 12-point website conversion checklist]]` | `messages/en.json` |
-| `[[PLACEHOLDER: photo portrait du fondateur]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: project screenshot]]` | `app/[locale]/work/[slug]/page.tsx` |
-| `[[PLACEHOLDER: titre du guide offert, ex. La checklist de conversion en 12 points]]` | `messages/fr.json` |
-
-## Legal (for the lawyer)
-
-| Placeholder | Where |
-| --- | --- |
-| `[[PLACEHOLDER: adresse officielle et numéro d’immatriculation]]` | `content/legal/fr/privacy.mdx` |
-| `[[PLACEHOLDER: juriste à confirmer la juridiction et les dispositions protectrices pour les consommateurs de l’UE et du Royaume-Uni]]` | `content/legal/fr/terms.mdx` |
-| `[[PLACEHOLDER: juriste à confirmer la référence exacte de la loi camerounaise et les éventuelles formalités]]` | `content/legal/fr/privacy.mdx` |
-| `[[PLACEHOLDER: juriste à confirmer les durées de conservation]]` | `content/legal/fr/privacy.mdx` |
-| `[[PLACEHOLDER: lawyer to confirm jurisdiction and consumer-protection carve-outs for EU/UK visitors]]` | `content/legal/en/terms.mdx` |
-| `[[PLACEHOLDER: lawyer to confirm retention periods]]` | `content/legal/en/privacy.mdx` |
-| `[[PLACEHOLDER: lawyer to confirm the exact Cameroonian law reference and any registration duties]]` | `content/legal/en/privacy.mdx` |
-
-## Other
-
-| Placeholder | Where |
-| --- | --- |
-| `[[PLACEHOLDER: décrire l’idée du fondateur et ses contraintes.]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: délai moyen de lancement]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: describe the founder's idea and constraints.]]` | `content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: durée du projet, ex. 10 semaines]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: durée du projet, ex. 4 semaines]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: durée du projet, ex. 5 semaines]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: e.g. MVP live in X weeks]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. response within X hours]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: e.g. X weeks]]` | `content/services/en.ts` |
-| `[[PLACEHOLDER: ex. livraison en X jours]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. MVP en ligne en X semaines]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. plus de 40 projets livrés]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: ex. réponse sous X heures]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: ex. X semaines]]` | `content/services/fr.ts` |
-| `[[PLACEHOLDER: facultatif, ajouter ici les fourchettes ou données publiées par Activesite si vous choisissez de les partager. Le site lui-même n’affiche aucun prix.]]` | `content/blog/fr/prix-site-internet-cameroun.mdx` |
-| `[[PLACEHOLDER: industry, e.g. creator, coaching]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: industry, e.g. education technology]]` | `content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: industry, e.g. professional services]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: optional, add Activesite's own published price ranges or data here if you decide to share them. The site itself never shows prices.]]` | `content/blog/en/website-cost-cameroon.mdx` |
-| `[[PLACEHOLDER: project timeline, e.g. 10 weeks]]` | `content/work/en/saas-mvp.mdx` |
-| `[[PLACEHOLDER: project timeline, e.g. 4 weeks]]` | `content/work/en/brand-launch.mdx` |
-| `[[PLACEHOLDER: project timeline, e.g. 5 weeks]]` | `content/work/en/lead-generation-website.mdx` |
-| `[[PLACEHOLDER: result, e.g. launched in X weeks]]` | `messages/en.json` |
-| `[[PLACEHOLDER: résultat, ex. en ligne en X semaines]]` | `messages/fr.json` |
-| `[[PLACEHOLDER: secteur, ex. création de contenu, coaching]]` | `content/work/fr/lancement-identite-visuelle.mdx` |
-| `[[PLACEHOLDER: secteur, ex. services aux entreprises]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER: secteur, ex. technologies éducatives]]` | `content/work/fr/lancement-mvp-saas.mdx` |
-| `[[PLACEHOLDER: taux de conversion]]` | `content/work/fr/site-generation-prospects.mdx` |
-| `[[PLACEHOLDER…]]` | `components/ui/ph.tsx`<br>`lib/rehype-placeholders.ts` |

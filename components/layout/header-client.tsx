@@ -107,17 +107,20 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
             : 'bg-transparent',
         )}
       >
-        <div className="container-site flex h-16 items-center gap-6 lg:h-20" ref={megaRef}>
+        <div
+          className="container-site flex h-16 items-center gap-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr]"
+          ref={megaRef}
+        >
           <NextLink
             href={data.home}
-            className="-ml-1 shrink-0 rounded-md p-1"
+            className="-ml-1 shrink-0 rounded-md p-1 lg:justify-self-start"
             aria-label={t('a11y.logoHome')}
           >
             <Logo className="h-11 w-auto lg:h-12" />
           </NextLink>
 
-          <nav aria-label={t('a11y.mainNav')} className="hidden flex-1 lg:block">
-            <ul className="flex items-center gap-1">
+          <nav aria-label={t('a11y.mainNav')} className="hidden lg:block">
+            <ul className="border-border bg-surface/70 flex items-center gap-1 rounded-full border p-1 backdrop-blur-md">
               <li
                 onPointerEnter={(e) => e.pointerType === 'mouse' && hover(true)}
                 onPointerLeave={(e) => e.pointerType === 'mouse' && hover(false)}
@@ -129,7 +132,7 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
                   aria-controls="mega-menu"
                   onClick={() => setMegaOpen((o) => !o)}
                   className={cn(
-                    'hover:bg-ink/5 inline-flex h-11 items-center gap-1 rounded-full px-4 text-[0.9375rem] font-medium transition-colors',
+                    'hover:bg-ink/5 inline-flex h-10 items-center gap-1 rounded-full px-4 text-[0.9375rem] font-medium transition-colors',
                     (megaOpen || isActive(data.servicesHref)) && 'bg-ink/5',
                   )}
                 >
@@ -151,7 +154,7 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
                     href={l.href}
                     aria-current={isActive(l.href) ? 'page' : undefined}
                     className={cn(
-                      'hover:bg-ink/5 inline-flex h-11 items-center rounded-full px-4 text-[0.9375rem] font-medium transition-colors',
+                      'hover:bg-ink/5 inline-flex h-10 items-center rounded-full px-4 text-[0.9375rem] font-medium transition-colors',
                       isActive(l.href) && 'bg-ink/5',
                     )}
                   >
@@ -162,7 +165,7 @@ export function HeaderClient({ data, locale }: { data: NavData; locale: Locale }
             </ul>
           </nav>
 
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ml-auto flex items-center gap-2 lg:justify-self-end">
             <div className="hidden lg:block">
               <LangSwitch locale={locale} alternates={data.alternates} />
             </div>

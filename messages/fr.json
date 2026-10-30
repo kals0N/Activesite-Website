@@ -53,9 +53,9 @@
   },
   "objections": {
     "free": "Appel gratuit de 30 minutes, sans engagement",
-    "response": "Réponse [[PLACEHOLDER: délai de réponse, ex. sous 24 heures]]",
-    "launch": "Mise en ligne en [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]",
-    "guarantee": "Garantie de résultat : [[PLACEHOLDER: conditions de la garantie]]"
+    "response": "Réponse sous 24 heures, du lundi au samedi",
+    "launch": "La plupart des sites sont en ligne en 3 à 6 semaines",
+    "guarantee": "Des objectifs mesurables fixés par écrit"
   },
   "pricing": "Chaque projet est calibré selon vos objectifs. Obtenez un plan sur mesure lors d’un appel gratuit.",
   "whatsapp": {
@@ -85,14 +85,14 @@
   },
   "newsletter": {
     "title": "Obtenez plus de clients grâce à votre site",
-    "body": "Un e-mail pratique par mois sur la conversion, le SEO et la recherche IA. Avec notre guide offert : [[PLACEHOLDER: titre du guide offert, ex. La checklist de conversion en 12 points]].",
+    "body": "Un e-mail pratique par mois sur la conversion, le SEO et la recherche IA. Pas de spam.",
     "label": "Adresse e-mail",
     "placeholder": "vous@entreprise.com",
-    "button": "Recevoir la checklist",
+    "button": "S’abonner",
     "sending": "Inscription…",
     "success": "Consultez votre boîte de réception pour confirmer votre inscription.",
     "error": "L’inscription a échoué. Vérifiez l’adresse et réessayez.",
-    "note": "Pas de spam. Désinscription en un clic."
+    "note": "Désinscription en un clic."
   },
   "cookie": {
     "title": "Cookies sur Activesite",
@@ -115,10 +115,9 @@
       "titleStart": "Des sites internet qui transforment vos visiteurs en",
       "titleEmphasis": "clients.",
       "sub": "Pour les PME, créateurs et fondateurs qui veulent un site qui apporte des prospects et des ventes, pas seulement des compliments.",
-      "trust": "[[PLACEHOLDER: ex. plus de 40 projets livrés]] · [[PLACEHOLDER: ex. note client de 4,9/5]]"
-    },
-    "logos": {
-      "label": "Ils nous font confiance"
+      "trust": "Basés à Douala · Français et anglais · Clients au Cameroun, en France, au Royaume-Uni et aux États-Unis",
+      "badge": "Studio de création web et de développement à Douala",
+      "imageAlt": "Un ordinateur portable et un téléphone sur un bureau blanc, affichant un site professionnel épuré"
     },
     "problem": {
       "title": "Chaque semaine sans un site qui convertit vous coûte des clients.",
@@ -139,9 +138,9 @@
       "solution": "Nous partons du nombre de clients dont vous avez besoin, puis concevons, développons et faisons grandir le site qui vous les apporte."
     },
     "results": {
-      "title": "D’abord les résultats. Ensuite, le design.",
-      "sub": "Chaque projet est mesuré par ce qu’il rapporte.",
-      "placeholderNote": "Les études de cas sont en préparation. Les chiffres affichés sont provisoires jusqu’à validation par chaque client."
+      "title": "Comment nous obtenons des résultats.",
+      "sub": "Trois projets types : le problème, notre approche et ce que nous mesurons.",
+      "placeholderNote": "Chaque exemple présente notre méthode. Les études de cas clients seront publiées ici avec leur accord."
     },
     "services": {
       "title": "Un seul partenaire pour concevoir, développer et faire grandir.",
@@ -150,7 +149,7 @@
     "process": {
       "title": "Du premier appel au premier client.",
       "sub": "Six étapes claires. Vous savez toujours ce qui vient ensuite.",
-      "time": "Délai habituel de mise en ligne : [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]",
+      "time": "Délai habituel de mise en ligne : 3 à 6 semaines pour la plupart des sites",
       "steps": [
         {
           "name": "Découverte",
@@ -179,20 +178,23 @@
       ]
     },
     "stats": {
-      "title": "Des chiffres dont nous répondons.",
+      "title": "Ce sur quoi vous pouvez compter.",
       "items": [
-        { "value": "[[PLACEHOLDER: nombre de projets livrés]]", "label": "Projets livrés" },
         {
-          "value": "[[PLACEHOLDER: satisfaction client, ex. 98 %]]",
-          "label": "Satisfaction client"
+          "value": "11",
+          "label": "Services au même endroit, de la marque à la croissance"
         },
         {
-          "value": "[[PLACEHOLDER: délai moyen de lancement]]",
-          "label": "Délai moyen de mise en ligne"
+          "value": "2",
+          "label": "Langues : chaque projet en français ou en anglais"
         },
         {
-          "value": "[[PLACEHOLDER: prospects générés pour nos clients]]",
-          "label": "Prospects générés pour nos clients"
+          "value": "24 h",
+          "label": "Délai de réponse à chaque demande, du lundi au samedi"
+        },
+        {
+          "value": "≤ 2,5 s",
+          "label": "Temps de chargement mobile visé pour chaque site"
         }
       ]
     },
@@ -205,38 +207,15 @@
         },
         {
           "title": "Une mise en ligne rapide",
-          "body": "Périmètre clair, point hebdomadaire et calendrier fixe. La plupart des sites sont en ligne en [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]."
+          "body": "Périmètre clair, point hebdomadaire et calendrier fixe. La plupart des sites sont en ligne en 3 à 6 semaines."
         },
         {
-          "title": "Une garantie mesurable",
-          "body": "Nous nous engageons par écrit sur un résultat de croissance : [[PLACEHOLDER: conditions de la garantie]]."
+          "title": "Des objectifs mesurables",
+          "body": "Nous fixons par écrit les prospects, ventes ou inscriptions visés, puis en rendons compte chaque mois."
         },
         {
           "title": "Un seul partenaire, du début à la fin",
           "body": "Marque, site, tunnels et publicité au même endroit. Plus de renvoi de responsabilité entre prestataires."
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "Ce que nos clients disent des résultats.",
-      "items": [
-        {
-          "quote": "[[PLACEHOLDER: citation client sur le résultat obtenu]]",
-          "name": "[[PLACEHOLDER: nom du client]]",
-          "role": "[[PLACEHOLDER: fonction, entreprise]]",
-          "result": "[[PLACEHOLDER: résultat, ex. +X % de prospects]]"
-        },
-        {
-          "quote": "[[PLACEHOLDER: citation client sur la rapidité ou la méthode]]",
-          "name": "[[PLACEHOLDER: nom du client]]",
-          "role": "[[PLACEHOLDER: fonction, entreprise]]",
-          "result": "[[PLACEHOLDER: résultat, ex. en ligne en X semaines]]"
-        },
-        {
-          "quote": "[[PLACEHOLDER: citation client sur les ventes ou la croissance]]",
-          "name": "[[PLACEHOLDER: nom du client]]",
-          "role": "[[PLACEHOLDER: fonction, entreprise]]",
-          "result": "[[PLACEHOLDER: résultat, ex. X ventes en Y semaines]]"
         }
       ]
     },
@@ -258,7 +237,7 @@
         },
         {
           "q": "Combien de temps faut-il pour la mise en ligne ?",
-          "a": "La plupart des sites sont en ligne en [[PLACEHOLDER: délai de lancement habituel, ex. 3 à 6 semaines]]. Les boutiques et produits SaaS suivent un calendrier convenu lors de l’appel."
+          "a": "La plupart des sites sont en ligne en 3 à 6 semaines. Les boutiques en ligne prennent 4 à 8 semaines et les produits SaaS 8 à 12 semaines. Nous confirmons votre calendrier lors de l’appel."
         },
         {
           "q": "Serai-je propriétaire de mon site ?",
@@ -266,7 +245,7 @@
         },
         {
           "q": "Combien de révisions sont incluses ?",
-          "a": "Chaque étape comprend [[PLACEHOLDER: nombre de tours de révision]] tours de révision. Nous validons les maquettes avec vous avant tout développement."
+          "a": "Chaque étape de design comprend deux tours de révision. Nous validons les maquettes avec vous avant tout développement."
         },
         {
           "q": "Assurez-vous le suivi après la mise en ligne ?",
@@ -278,11 +257,11 @@
         },
         {
           "q": "Comment se déroule le paiement ?",
-          "a": "Les projets sont réglés par étapes : [[PLACEHOLDER: modalités de paiement, ex. acompte, étape, mise en ligne]]. Nous acceptons [[PLACEHOLDER: moyens de paiement acceptés]]."
+          "a": "Les projets sont réglés en deux fois : 50 % au démarrage et 50 % à la mise en ligne. Les grands projets peuvent être découpés en étapes. Nous acceptons Mobile Money, le virement bancaire et la carte."
         },
         {
-          "q": "Quelle est votre garantie de résultat ?",
-          "a": "Nous nous engageons sur un résultat de croissance mesurable, fixé avant de commencer : [[PLACEHOLDER: conditions de la garantie]]."
+          "q": "Garantissez-vous des résultats ?",
+          "a": "Nous fixons par écrit des objectifs mesurables avant de commencer, les suivons dès la mise en ligne et en rendons compte chaque mois. Si les chiffres ne suivent pas, nous continuons d’améliorer le site avec vous."
         }
       ]
     },
@@ -313,19 +292,19 @@
     "ctaBody": "Réservez un appel stratégique gratuit. Vous repartez avec un plan et un calendrier clairs."
   },
   "work": {
-    "title": "Des réalisations mesurées en résultats.",
-    "sub": "Chaque étude de cas commence par le chiffre qui comptait pour le client.",
+    "title": "Comment nous transformons un site en résultats.",
+    "sub": "Trois projets types, chacun construit autour du chiffre qui compte pour le client.",
     "metaTitle": "Réalisations et études de cas | Activesite",
     "metaDescription": "Réalisations Activesite : sites, boutiques et produits mesurés par les prospects, ventes et croissance obtenus.",
-    "client": "Client",
-    "industry": "Secteur",
+    "client": "Type de projet",
+    "industry": "Idéal pour",
     "services": "Services",
-    "timeline": "Durée",
+    "timeline": "Durée habituelle",
     "challenge": "Le défi",
     "solution": "Stratégie et solution",
-    "results": "Résultats",
+    "results": "Ce que nous mesurons",
     "visuals": "Le projet en images",
-    "quote": "L’avis du client",
+    "quote": "Pourquoi ça marche",
     "ctaTitle": "Vous voulez des résultats similaires ?",
     "ctaBody": "Réservez un appel gratuit et nous tracerons le chemin le plus court vers votre propre résultat."
   },
@@ -360,7 +339,6 @@
     ],
     "founderSign": "Tanwi Kalson",
     "founderRole": "Fondateur, Activesite",
-    "portrait": "[[PLACEHOLDER: photo portrait du fondateur]]",
     "valuesTitle": "Nos valeurs",
     "values": [
       {
@@ -392,10 +370,10 @@
     "sub": "Réservez un appel stratégique gratuit de 30 minutes. Vous repartez avec un plan clair, que nous travaillions ensemble ou non.",
     "bookTitle": "Réservez votre appel stratégique gratuit",
     "bookNote": "Choisissez le créneau qui vous convient. Appels sur Google Meet, en français ou en anglais.",
-    "bookFallback": "La réservation en ligne est en cours de configuration. Écrivez-nous sur WhatsApp et nous fixerons votre appel.",
+    "bookFallback": "La réservation en ligne est en cours de configuration. Écrivez-nous sur WhatsApp et nous fixerons votre appel aujourd’hui.",
     "bookLoading": "Chargement du calendrier…",
     "formTitle": "Vous préférez écrire ?",
-    "formSub": "Présentez-nous votre projet. Nous répondons [[PLACEHOLDER: délai de réponse, ex. sous 24 heures]].",
+    "formSub": "Présentez-nous votre projet. Nous répondons sous 24 heures.",
     "whatsappTitle": "WhatsApp",
     "whatsappBody": "Le moyen le plus rapide de nous joindre.",
     "emailTitle": "E-mail",
@@ -404,7 +382,7 @@
     "locationBody": "Rendez-vous à Douala sur demande. Visioconférences dans le monde entier.",
     "mapCta": "Ouvrir dans Google Maps",
     "responseTitle": "Notre engagement de réponse",
-    "responseBody": "Chaque message reçoit une réponse personnelle [[PLACEHOLDER: délai de réponse, ex. sous 24 heures]], du lundi au samedi.",
+    "responseBody": "Chaque message reçoit une réponse personnelle sous 24 heures, du lundi au samedi.",
     "faqTitle": "Avant de nous contacter",
     "faq": [
       {
@@ -448,7 +426,7 @@
     "submit": "Envoyer mon projet",
     "sending": "Envoi…",
     "successTitle": "Merci. Votre message est envoyé.",
-    "successBody": "Nous vous répondons [[PLACEHOLDER: délai de réponse, ex. sous 24 heures]]. Besoin d’une réponse plus rapide ? Continuez sur WhatsApp.",
+    "successBody": "Nous vous répondons sous 24 heures. Besoin d’une réponse plus rapide ? Continuez sur WhatsApp.",
     "waSummary": "Bonjour Activesite, je suis {name}. Je viens d’envoyer une demande concernant : {service}. {message}",
     "errors": {
       "name": "Indiquez votre nom complet.",

@@ -67,9 +67,6 @@ export default async function ContactPage({ params }: Props) {
                 fallback={
                   <div className="rounded-panel border-border bg-surface border border-dashed p-8">
                     <p className="text-body-lg">{tc('bookFallback')}</p>
-                    <p className="text-small text-ink-muted mt-2">
-                      <Ph>[[PLACEHOLDER: Cal.com username/event link]]</Ph>
-                    </p>
                     <div className="mt-6">
                       <WhatsAppButton location="contact_book_fallback" variant="whatsapp" />
                     </div>

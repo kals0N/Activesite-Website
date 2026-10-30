@@ -68,9 +68,7 @@ export default async function CaseStudyPage({ params }: Props) {
           />
           <div className="grid-site mt-10 gap-y-10">
             <div className="col-span-4 md:col-span-8 lg:col-span-7">
-              <p
-                className={`hero-title font-display ${study.metric.includes('[[') ? 'text-h1' : 'text-display'}`}
-              >
+              <p className="hero-title font-display text-h1">
                 <Ph>{study.metric}</Ph>
               </p>
               <p
@@ -148,7 +146,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 style={{ '--i': i } as React.CSSProperties}
                 className="rounded-panel aspect-[4/3] overflow-hidden"
               >
-                <DeviceFrame tone={tone} label="[[PLACEHOLDER: project screenshot]]" />
+                <DeviceFrame tone={tone} />
               </div>
             ))}
           </div>
@@ -168,16 +166,8 @@ export default async function CaseStudyPage({ params }: Props) {
                 style={{ '--i': i } as React.CSSProperties}
                 className="bg-surface p-7"
               >
-                <dt className="text-body text-ink-muted">{r.label}</dt>
-                <dd
-                  className={
-                    r.value.includes('[[')
-                      ? 'text-h4 mt-3 font-semibold'
-                      : 'text-stat tabular mt-3 font-semibold'
-                  }
-                >
-                  <Ph>{r.value}</Ph>
-                </dd>
+                <dt className="text-h4 font-semibold">{r.value}</dt>
+                <dd className="text-ink-muted mt-2">{r.label}</dd>
               </div>
             ))}
           </dl>

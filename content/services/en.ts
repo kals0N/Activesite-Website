@@ -1,7 +1,5 @@
 import type { ServiceContent, ServiceKey } from '@/lib/services';
 
-const PH_TIME = '[[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]';
-
 export const servicesEn: Record<ServiceKey, ServiceContent> = {
   'brand-identity': {
     slug: 'brand-identity',
@@ -24,11 +22,8 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'You compete on price because nothing signals premium value.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. +X% enquiries after rebrand]]',
-        label: 'More enquiries from a brand that looks the part',
-      },
-      { metric: '[[PLACEHOLDER: e.g. X weeks]]', label: 'From brief to a complete brand kit' },
+      { metric: '2–3 weeks', label: 'From first call to a complete brand kit' },
+      { metric: '3 directions', label: 'Distinct logo concepts to choose from' },
       { metric: '1', label: 'Consistent look across web, social and print' },
     ],
     deliverables: [
@@ -44,7 +39,7 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
     faqs: [
       {
         q: 'How many logo concepts will I see?',
-        a: 'You see [[PLACEHOLDER: number of concepts]] distinct directions. We refine your favourite until it is right, within the agreed revision rounds.',
+        a: 'You see three distinct directions. We refine your favourite until it is right, within the agreed revision rounds.',
       },
       {
         q: 'Do I own the final logo?',
@@ -56,7 +51,7 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'How long does a brand identity take?',
-        a: `Most identities take ${PH_TIME}. We agree a fixed timeline on the free strategy call.`,
+        a: `Most identities take 2 to 3 weeks. We agree a fixed timeline on the free strategy call.`,
       },
     ],
   },
@@ -81,14 +76,8 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Inconsistent visuals weaken the brand you paid to build.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. +X% engagement]]',
-        label: 'More people stopping on your content',
-      },
-      {
-        metric: '[[PLACEHOLDER: e.g. X-day turnaround]]',
-        label: 'Fast turnaround on new creatives',
-      },
+      { metric: '48 h', label: 'Turnaround on small creative requests' },
+      { metric: 'Every format', label: 'Sized for web, social, print and ads' },
       { metric: '100%', label: 'On-brand, every time' },
     ],
     deliverables: [
@@ -116,7 +105,7 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'How fast can you deliver?',
-        a: 'Small requests usually take [[PLACEHOLDER: turnaround for small requests]]. Larger projects follow an agreed timeline.',
+        a: 'Small requests usually take 48 hours. Larger projects follow an agreed timeline.',
       },
     ],
   },
@@ -141,11 +130,8 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'You cannot show investors or clients how the product will work.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. +X% sign-up completion]]',
-        label: 'More users finishing key tasks',
-      },
-      { metric: '[[PLACEHOLDER: e.g. X weeks]]', label: 'To a clickable, testable prototype' },
+      { metric: '2–4 weeks', label: 'To a clickable, testable prototype' },
+      { metric: 'Tested', label: 'Key journeys checked with real users before the build' },
       { metric: '0', label: 'Guesswork handed to developers' },
     ],
     deliverables: [
@@ -199,12 +185,9 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Visitors do not know what to do next, so they never contact you.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. +X% leads in Y days]]',
-        label: 'More qualified enquiries from the same traffic',
-      },
+      { metric: '3–6 weeks', label: 'From kickoff to launch' },
       { metric: '≤ 2.5 s', label: 'Load time on mobile, our build standard' },
-      { metric: PH_TIME, label: 'From kickoff to launch' },
+      { metric: 'Tracked', label: 'Every form, call and WhatsApp click is measured' },
     ],
     deliverables: [
       'Conversion strategy and sitemap tied to your goals',
@@ -256,14 +239,8 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Your store is slow on mobile data, so customers give up.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. X in sales in Y weeks]]',
-        label: 'Revenue from your own store',
-      },
-      {
-        metric: '[[PLACEHOLDER: e.g. +X% conversion rate]]',
-        label: 'More visitors completing checkout',
-      },
+      { metric: '4–8 weeks', label: 'From kickoff to a store taking orders' },
+      { metric: 'Local', label: 'Mobile Money and card payments where available' },
       { metric: '24/7', label: 'Your store takes orders while you rest' },
     ],
     deliverables: [
@@ -316,14 +293,8 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'You cannot judge technical choices, so you fear costly mistakes.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. MVP live in X weeks]]',
-        label: 'From idea to a working product',
-      },
-      {
-        metric: '[[PLACEHOLDER: e.g. X paying users at launch]]',
-        label: 'Early customers validating the product',
-      },
+      { metric: '8–12 weeks', label: 'Typical time to a working MVP' },
+      { metric: 'Weekly', label: 'Demos of real, working progress' },
       { metric: '100%', label: 'Code and IP owned by you' },
     ],
     deliverables: [
@@ -377,11 +348,8 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Your social profiles can disappear; your own site cannot.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. +X enquiries per month]]',
-        label: 'Collaboration and client requests',
-      },
-      { metric: PH_TIME, label: 'To a live personal brand site' },
+      { metric: '2–4 weeks', label: 'To a live personal brand site' },
+      { metric: 'Minutes', label: 'To add a new project yourself' },
       { metric: '1', label: 'Home for your work, offers and audience' },
     ],
     deliverables: [
@@ -434,9 +402,9 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Your tools do not talk to each other, so data gets lost.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. X% opt-in rate]]', label: 'Visitors becoming leads' },
-      { metric: '[[PLACEHOLDER: e.g. X sales from Y leads]]', label: 'Leads becoming customers' },
-      { metric: '24/7', label: 'Automated follow-up that never forgets' },
+      { metric: '2–4 weeks', label: 'To a live funnel with automated follow-up' },
+      { metric: 'Every step', label: 'Tracked from first click to payment' },
+      { metric: '24/7', label: 'Follow-up that never forgets a lead' },
     ],
     deliverables: [
       'Funnel strategy and offer mapping',
@@ -488,15 +456,9 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Ad costs rise every month because you have no organic traffic.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. +X% organic traffic in Y months]]',
-        label: 'More visitors from search',
-      },
-      {
-        metric: '[[PLACEHOLDER: e.g. X keywords on page one]]',
-        label: 'Rankings for the terms that bring clients',
-      },
+      { metric: 'Monthly', label: 'Ranking and traffic report in plain language' },
       { metric: '3', label: 'Channels covered: Google, AI answers, AI chat' },
+      { metric: 'EN + FR', label: 'Local SEO for Douala and Cameroon' },
     ],
     deliverables: [
       'Technical SEO audit and fixes',
@@ -515,7 +477,7 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'How long does SEO take to work?',
-        a: 'Early movement often shows in [[PLACEHOLDER: typical time to first results]]. Strong rankings build over several months.',
+        a: 'Early movement often shows in two to three months. Strong rankings build over several months.',
       },
       {
         q: 'Can you guarantee first place on Google?',
@@ -548,11 +510,8 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'Ad accounts get restricted because of avoidable mistakes.',
     ],
     outcomes: [
-      {
-        metric: '[[PLACEHOLDER: e.g. X× return on ad spend]]',
-        label: 'Revenue from every unit spent on ads',
-      },
-      { metric: '[[PLACEHOLDER: e.g. −X% cost per lead]]', label: 'Lower cost for each new lead' },
+      { metric: 'Week 1', label: 'Tracking and first campaigns live' },
+      { metric: 'Weekly', label: 'Optimisation and budget checks' },
       { metric: 'Monthly', label: 'Plain-language results report' },
     ],
     deliverables: [
@@ -580,7 +539,7 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       },
       {
         q: 'How soon will I see results?',
-        a: 'Campaigns usually need [[PLACEHOLDER: typical learning period]] to learn. We report from week one.',
+        a: 'Campaigns usually need two to three weeks to learn. We report from week one.',
       },
     ],
   },
@@ -605,12 +564,9 @@ export const servicesEn: Record<ServiceKey, ServiceContent> = {
       'You do not know who to call when the site goes down.',
     ],
     outcomes: [
-      { metric: '[[PLACEHOLDER: e.g. 99.9% uptime target]]', label: 'Your site stays online' },
-      {
-        metric: '[[PLACEHOLDER: e.g. response within X hours]]',
-        label: 'Support when you need it',
-      },
       { metric: 'Daily', label: 'Automatic backups' },
+      { metric: '24 h', label: 'Response time on support requests' },
+      { metric: '24/7', label: 'Uptime monitoring' },
     ],
     deliverables: [
       'Secure, fast hosting setup with SSL',

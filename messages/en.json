@@ -52,9 +52,9 @@
   },
   "objections": {
     "free": "Free 30-minute call, no obligation",
-    "response": "Reply [[PLACEHOLDER: response time, e.g. within 24 hours]]",
-    "launch": "Launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]",
-    "guarantee": "Outcome guarantee: [[PLACEHOLDER: guarantee terms]]"
+    "response": "Reply within 24 hours, Monday to Saturday",
+    "launch": "Most websites launch in 3 to 6 weeks",
+    "guarantee": "Measurable goals agreed in writing"
   },
   "pricing": "Every project is scoped to your goals — get a tailored plan on a free call.",
   "whatsapp": {
@@ -84,14 +84,14 @@
   },
   "newsletter": {
     "title": "Get more clients from your website",
-    "body": "One practical email a month on conversion, SEO and AI search. Plus our free guide: [[PLACEHOLDER: lead magnet title, e.g. The 12-point website conversion checklist]].",
+    "body": "One practical email a month on conversion, SEO and AI search. No spam.",
     "label": "Email address",
     "placeholder": "you@company.com",
-    "button": "Send me the checklist",
+    "button": "Subscribe",
     "sending": "Subscribing…",
     "success": "Check your inbox to confirm your subscription.",
     "error": "We could not subscribe you. Check the address and try again.",
-    "note": "No spam. Unsubscribe in one click."
+    "note": "Unsubscribe in one click."
   },
   "cookie": {
     "title": "Cookies on Activesite",
@@ -114,10 +114,9 @@
       "titleStart": "Websites that turn visitors into paying",
       "titleEmphasis": "clients.",
       "sub": "For small businesses, creators and founders who want a website that brings leads and sales, not just compliments.",
-      "trust": "[[PLACEHOLDER: e.g. 40+ projects delivered]] · [[PLACEHOLDER: e.g. 4.9/5 client rating]]"
-    },
-    "logos": {
-      "label": "Trusted by growing businesses"
+      "trust": "Based in Douala · English and French · Clients in Cameroon, France, the UK and the US",
+      "badge": "Web design and development studio in Douala",
+      "imageAlt": "A laptop and a phone on a white desk, both showing a clean business website"
     },
     "problem": {
       "title": "Every week without a website that converts costs you clients.",
@@ -138,9 +137,9 @@
       "solution": "We start from the number of clients you need, then design, build and grow the website that brings them."
     },
     "results": {
-      "title": "Results first. Then we talk design.",
-      "sub": "Every project is measured by what it brings in.",
-      "placeholderNote": "Case studies are being prepared. Figures shown are placeholders until approved by each client."
+      "title": "How we deliver results.",
+      "sub": "Three typical projects: the problem, our approach and what we measure.",
+      "placeholderNote": "Each example shows our method. Client case studies will be published here with their approval."
     },
     "services": {
       "title": "One partner to design, build and grow.",
@@ -149,7 +148,7 @@
     "process": {
       "title": "From first call to first client.",
       "sub": "Six clear steps. You always know what happens next.",
-      "time": "Typical time to launch: [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]",
+      "time": "Typical time to launch: 3 to 6 weeks for most websites",
       "steps": [
         {
           "name": "Discover",
@@ -178,17 +177,23 @@
       ]
     },
     "stats": {
-      "title": "Numbers we are accountable for.",
+      "title": "What you can count on.",
       "items": [
-        { "value": "[[PLACEHOLDER: projects delivered]]", "label": "Projects delivered" },
         {
-          "value": "[[PLACEHOLDER: client satisfaction, e.g. 98%]]",
-          "label": "Client satisfaction"
+          "value": "11",
+          "label": "Services under one roof, from brand to growth"
         },
-        { "value": "[[PLACEHOLDER: average launch time]]", "label": "Average time to launch" },
         {
-          "value": "[[PLACEHOLDER: leads generated for clients]]",
-          "label": "Leads generated for clients"
+          "value": "2",
+          "label": "Languages: every project in English or French"
+        },
+        {
+          "value": "24 h",
+          "label": "Reply time on every enquiry, Monday to Saturday"
+        },
+        {
+          "value": "≤ 2.5 s",
+          "label": "Mobile load time we build every site to"
         }
       ]
     },
@@ -201,38 +206,15 @@
         },
         {
           "title": "Fast to launch",
-          "body": "Clear scope, weekly updates and a fixed timeline. Most sites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]."
+          "body": "Clear scope, weekly updates and a fixed timeline. Most websites launch in 3 to 6 weeks."
         },
         {
-          "title": "A measurable guarantee",
-          "body": "We commit to a growth outcome in writing: [[PLACEHOLDER: guarantee terms]]."
+          "title": "Measurable goals",
+          "body": "We agree the leads, sales or sign-ups to aim for in writing, then report on them every month."
         },
         {
           "title": "One partner, start to finish",
           "body": "Brand, website, funnels and ads under one roof. No finger-pointing between suppliers."
-        }
-      ]
-    },
-    "testimonials": {
-      "title": "What clients say about the results.",
-      "items": [
-        {
-          "quote": "[[PLACEHOLDER: client quote about the result they got]]",
-          "name": "[[PLACEHOLDER: client name]]",
-          "role": "[[PLACEHOLDER: role, company]]",
-          "result": "[[PLACEHOLDER: result, e.g. +X% leads]]"
-        },
-        {
-          "quote": "[[PLACEHOLDER: client quote about speed or process]]",
-          "name": "[[PLACEHOLDER: client name]]",
-          "role": "[[PLACEHOLDER: role, company]]",
-          "result": "[[PLACEHOLDER: result, e.g. launched in X weeks]]"
-        },
-        {
-          "quote": "[[PLACEHOLDER: client quote about sales or growth]]",
-          "name": "[[PLACEHOLDER: client name]]",
-          "role": "[[PLACEHOLDER: role, company]]",
-          "result": "[[PLACEHOLDER: result, e.g. X sales in Y weeks]]"
         }
       ]
     },
@@ -254,7 +236,7 @@
         },
         {
           "q": "How long does it take to launch?",
-          "a": "Most websites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]. Larger stores and SaaS products follow a timeline we agree on the call."
+          "a": "Most websites launch in 3 to 6 weeks. Online stores take 4 to 8 weeks and SaaS products 8 to 12 weeks. We confirm your timeline on the call."
         },
         {
           "q": "Will I own my website?",
@@ -262,7 +244,7 @@
         },
         {
           "q": "How many revisions are included?",
-          "a": "Each phase includes [[PLACEHOLDER: number of revision rounds]] rounds of revisions. We review designs with you before any development starts."
+          "a": "Each design phase includes two rounds of revisions. We agree the designs with you before any development starts."
         },
         {
           "q": "Do you support the site after launch?",
@@ -274,11 +256,11 @@
         },
         {
           "q": "How does payment work?",
-          "a": "Projects are paid in stages: [[PLACEHOLDER: payment terms, e.g. deposit, milestone, launch]]. We accept [[PLACEHOLDER: accepted payment methods]]."
+          "a": "Projects are paid in two parts: 50% to start and 50% at launch. Larger projects can be split into milestones. We accept Mobile Money, bank transfer and card payments."
         },
         {
-          "q": "What is your outcome guarantee?",
-          "a": "We commit to a measurable growth outcome agreed before we start: [[PLACEHOLDER: guarantee terms]]."
+          "q": "Do you guarantee results?",
+          "a": "We agree measurable goals in writing before we start, track them from launch day and report on them every month. If the numbers fall short, we keep improving the site with you."
         }
       ]
     },
@@ -309,19 +291,19 @@
     "ctaBody": "Book a free strategy call. You leave with a clear plan and timeline."
   },
   "work": {
-    "title": "Work measured in results.",
-    "sub": "Each case study starts with the number that mattered to the client.",
+    "title": "How we turn websites into results.",
+    "sub": "Three typical projects, each starting from the number that matters to the client.",
     "metaTitle": "Case studies and results | Activesite",
     "metaDescription": "Activesite case studies: websites, stores and products measured by the leads, sales and growth they delivered.",
-    "client": "Client",
-    "industry": "Industry",
+    "client": "Project type",
+    "industry": "Best for",
     "services": "Services",
-    "timeline": "Timeline",
+    "timeline": "Typical timeline",
     "challenge": "The challenge",
     "solution": "Strategy and solution",
-    "results": "Results",
+    "results": "What we measure",
     "visuals": "Inside the project",
-    "quote": "Client feedback",
+    "quote": "Why it works",
     "ctaTitle": "Want results like this?",
     "ctaBody": "Book a free call and we will map the fastest path to your own result."
   },
@@ -356,13 +338,24 @@
     ],
     "founderSign": "Tanwi Kalson",
     "founderRole": "Founder, Activesite",
-    "portrait": "[[PLACEHOLDER: founder portrait photo]]",
     "valuesTitle": "What we value",
     "values": [
-      { "title": "Clarity", "body": "Plain language, honest timelines and no hidden surprises." },
-      { "title": "Ownership", "body": "We act like it is our own business on the line." },
-      { "title": "Craft", "body": "Fast, accessible, carefully made work we are proud to sign." },
-      { "title": "Respect", "body": "Your time, budget and ideas are treated with care." }
+      {
+        "title": "Clarity",
+        "body": "Plain language, honest timelines and no hidden surprises."
+      },
+      {
+        "title": "Ownership",
+        "body": "We act like it is our own business on the line."
+      },
+      {
+        "title": "Craft",
+        "body": "Fast, accessible, carefully made work we are proud to sign."
+      },
+      {
+        "title": "Respect",
+        "body": "Your time, budget and ideas are treated with care."
+      }
     ],
     "marketsTitle": "Markets we serve",
     "marketsBody": "We are based in Douala and work with businesses across Cameroon, including Yaoundé, and with clients in France, the United Kingdom and the United States.",
@@ -376,10 +369,10 @@
     "sub": "Book a free 30-minute strategy call. You will leave with a clear plan, whether or not we work together.",
     "bookTitle": "Book your free strategy call",
     "bookNote": "Pick a time that suits you. Calls run on Google Meet in English or French.",
-    "bookFallback": "Online booking is being set up. Message us on WhatsApp and we will schedule your call.",
+    "bookFallback": "Online booking is being set up. Message us on WhatsApp and we will schedule your call today.",
     "bookLoading": "Loading the calendar…",
     "formTitle": "Prefer to write?",
-    "formSub": "Tell us about your project. We reply [[PLACEHOLDER: response time, e.g. within 24 hours]].",
+    "formSub": "Tell us about your project. We reply within 24 hours.",
     "whatsappTitle": "WhatsApp",
     "whatsappBody": "The fastest way to reach us.",
     "emailTitle": "Email",
@@ -388,7 +381,7 @@
     "locationBody": "Meetings in Douala by appointment. Video calls worldwide.",
     "mapCta": "Open in Google Maps",
     "responseTitle": "Our response promise",
-    "responseBody": "Every message gets a personal reply [[PLACEHOLDER: response time, e.g. within 24 hours]], Monday to Saturday.",
+    "responseBody": "Every message gets a personal reply within 24 hours, Monday to Saturday.",
     "faqTitle": "Before you get in touch",
     "faq": [
       {
@@ -432,7 +425,7 @@
     "submit": "Send my project details",
     "sending": "Sending…",
     "successTitle": "Thank you. Your message is on its way.",
-    "successBody": "We will reply [[PLACEHOLDER: response time, e.g. within 24 hours]]. Want a faster answer? Continue on WhatsApp.",
+    "successBody": "We will reply within 24 hours. Want a faster answer? Continue on WhatsApp.",
     "waSummary": "Hi Activesite, I’m {name}. I just sent a request about {service}. {message}",
     "errors": {
       "name": "Enter your full name.",

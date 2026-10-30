@@ -4,14 +4,12 @@ import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import { localized } from '@/lib/routes';
 import { Hero } from '@/components/sections/home/hero';
-import { LogoStrip } from '@/components/sections/home/logo-strip';
 import { Problem } from '@/components/sections/home/problem';
 import { Results } from '@/components/sections/home/results';
 import { ServicesBento } from '@/components/sections/services-bento';
 import { Process } from '@/components/sections/home/process';
 import { Stats } from '@/components/sections/home/stats';
 import { Why } from '@/components/sections/home/why';
-import { Testimonials } from '@/components/sections/home/testimonials';
 import { FounderNote } from '@/components/sections/home/founder-note';
 import { LocalSeo } from '@/components/sections/home/local';
 import { CtaBand } from '@/components/sections/cta-band';
@@ -41,7 +39,6 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <Hero />
-      <LogoStrip />
       <Problem />
       <Results />
       <section aria-labelledby="services-title" className="section-y">
@@ -69,7 +66,6 @@ export default async function HomePage({ params }: Props) {
       <Process />
       <Stats />
       <Why />
-      <Testimonials />
       <FounderNote />
       <LocalSeo />
       <section aria-labelledby="faq-title" className="section-y pt-0">
