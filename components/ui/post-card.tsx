@@ -54,7 +54,7 @@ export function PostCard({
       >
         <H
           className={cn(
-            'group-hover/post:text-primary font-semibold tracking-[-0.03em]',
+            'group-hover/post:text-primary font-semibold tracking-[-0.02em]',
             featured ? 'text-h3' : 'text-h4',
           )}
         >

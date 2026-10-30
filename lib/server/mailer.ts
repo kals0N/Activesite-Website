@@ -17,7 +17,7 @@ const transport = integrations.smtp
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 function layout(body: string) {
-  return `<!doctype html><html><body style="margin:0;background:#F6F6F7;font-family:Inter,Arial,sans-serif;color:#111318">
+  return `<!doctype html><html><body style="margin:0;background:#F6F6F7;font-family:Urbanist,Arial,sans-serif;color:#111318">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:32px 16px">
 <table role="presentation" width="100%" style="max-width:560px;background:#ffffff;border:1px solid #E7E8EB;border-radius:16px">
 <tr><td style="padding:32px">

@@ -28,38 +28,37 @@
   --color-current: currentColor;
 
   /* Type families (set by next/font in the root layout) */
-  --font-serif:
-    var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif; /* display face: Inter Tight */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif; /* headings: Urbanist */
+  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
 
   /* Fluid type scale */
   --text-display: clamp(2.75rem, 1.5rem + 5.2vw, 6.25rem);
   --text-display--line-height: 1;
-  --text-display--letter-spacing: -0.045em;
+  --text-display--letter-spacing: -0.035em;
   --text-h1: clamp(2.5rem, 1.6rem + 3.4vw, 4.5rem);
   --text-h1--line-height: 1.04;
-  --text-h1--letter-spacing: -0.04em;
+  --text-h1--letter-spacing: -0.03em;
   --text-h2: clamp(2rem, 1.45rem + 2.2vw, 3.25rem);
   --text-h2--line-height: 1.08;
-  --text-h2--letter-spacing: -0.035em;
+  --text-h2--letter-spacing: -0.025em;
   --text-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
   --text-h3--line-height: 1.15;
-  --text-h3--letter-spacing: -0.03em;
+  --text-h3--letter-spacing: -0.02em;
   --text-h4: 1.25rem;
   --text-h4--line-height: 1.3;
-  --text-h4--letter-spacing: -0.03em;
+  --text-h4--letter-spacing: -0.015em;
   --text-body-lg: clamp(1.125rem, 1rem + 0.4vw, 1.25rem);
   --text-body-lg--line-height: 1.55;
-  --text-body-lg--letter-spacing: -0.005em;
+  --text-body-lg--letter-spacing: 0;
   --text-body: clamp(1rem, 0.975rem + 0.1vw, 1.0625rem);
   --text-body--line-height: 1.6;
-  --text-body--letter-spacing: -0.003em;
+  --text-body--letter-spacing: 0;
   --text-small: 0.875rem;
   --text-small--line-height: 1.45;
   --text-small--letter-spacing: 0;
   --text-stat: clamp(2.75rem, 2rem + 3vw, 4.5rem);
   --text-stat--line-height: 1;
-  --text-stat--letter-spacing: -0.03em;
+  --text-stat--letter-spacing: -0.02em;
 
   /* Radius */
   --radius-input: 8px;
@@ -115,10 +114,10 @@
     background-color: var(--color-canvas);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    font-weight: 500; /* Urbanist reads best at medium for running text */
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
     letter-spacing: var(--text-body--letter-spacing);
-    font-feature-settings: 'cv11', 'ss01';
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
   }
@@ -195,7 +194,7 @@
 
 @utility font-display {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @utility tabular {

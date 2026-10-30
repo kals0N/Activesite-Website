@@ -12,7 +12,7 @@ export async function FounderNote() {
       <div className="container-site">
         <figure data-reveal className="mx-auto max-w-4xl">
           <Mark size={40} />
-          <blockquote className="font-display mt-8 text-[clamp(1.5rem,1.05rem+1.7vw,2.375rem)] leading-[1.25] font-medium tracking-[-0.03em]">
+          <blockquote className="font-display mt-8 text-[clamp(1.5rem,1.05rem+1.7vw,2.375rem)] leading-[1.25] font-medium tracking-[-0.02em]">
             <p>“{t('home.founder.quote')}”</p>
           </blockquote>
           <figcaption className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">

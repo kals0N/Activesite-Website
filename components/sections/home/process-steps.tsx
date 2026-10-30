@@ -40,7 +40,7 @@ export function ProcessSteps({
           {heading}
           <div className="mt-12 hidden lg:block" aria-hidden>
             <div className="flex items-baseline gap-4">
-              <span className="font-display text-ink tabular text-[6rem] leading-none tracking-[-0.05em]">
+              <span className="font-display text-ink tabular text-[6rem] leading-none tracking-[-0.02em]">
                 {String(active + 1).padStart(2, '0')}
               </span>
               <span className="text-h3 font-semibold">{steps[active].name}</span>

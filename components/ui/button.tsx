@@ -46,7 +46,7 @@ export function buttonClasses(
   fullOnMobile = false,
 ) {
   return cn(
-    'group/btn relative inline-flex min-w-11 select-none items-center justify-center gap-2 rounded-full text-center font-medium tracking-[-0.01em] sm:whitespace-nowrap',
+    'group/btn relative inline-flex min-w-11 select-none items-center justify-center gap-2 rounded-full text-center font-semibold tracking-[-0.005em] sm:whitespace-nowrap',
     'transition-[background-color,border-color,color,transform,filter] duration-(--duration-fast) ease-(--ease-out) active:scale-[0.98]',
     'disabled:pointer-events-none disabled:opacity-60',
     variants[variant],
