@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-label="Map of Douala, Cameroon">
+  <rect width="640" height="400" fill="#F2EEE7"/>
+  <!-- Wouri estuary -->
+  <path d="M0 250 C 90 230 150 280 230 262 C 300 246 330 300 410 318 C 470 332 520 380 560 400 L 0 400 Z" fill="#E8EFFF"/>
+  <path d="M230 262 C 250 220 236 170 262 120 C 280 86 270 40 296 0 L 330 0 C 304 46 314 92 296 128 C 272 176 290 230 262 268 Z" fill="#E8EFFF"/>
+  <!-- Streets -->
+  <g fill="none" stroke="#E4DED3" stroke-width="2">
+    <path d="M340 0 L 380 400"/><path d="M430 0 L 450 330"/><path d="M520 0 L 540 380"/><path d="M600 0 L 610 400"/>
+    <path d="M300 60 L 640 40"/><path d="M310 140 L 640 120"/><path d="M296 220 L 640 210"/><path d="M380 300 L 640 290"/>
+    <path d="M0 120 L 240 100"/><path d="M0 190 L 250 170"/><path d="M60 0 L 90 240"/><path d="M160 0 L 180 250"/>
+  </g>
+  <g fill="none" stroke="#C9CDE0" stroke-width="5" stroke-linecap="round">
+    <path d="M250 300 C 330 260 420 230 640 180"/>
+    <path d="M296 128 C 380 150 470 170 640 150"/>
+  </g>
+  <!-- Pin -->
+  <g transform="translate(420 168)">
+    <circle r="44" fill="#0058FB" opacity="0.12"/>
+    <path d="M0 18 C -6 8 -18 -2 -18 -14 A 18 18 0 0 1 18 -14 C 18 -2 6 8 0 18 Z" fill="#000B30"/>
+    <circle cy="-14" r="6.5" fill="#FAF8F4"/>
+  </g>
+  <text x="446" y="160" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" fill="#000B30">Douala</text>
+  <text x="446" y="184" font-family="Inter, Arial, sans-serif" font-size="14" fill="#4A5170">Cameroon · Cameroun</text>
+  <text x="70" y="330" font-family="Inter, Arial, sans-serif" font-size="13" fill="#4A5170" font-style="italic">Wouri</text>
+</svg>

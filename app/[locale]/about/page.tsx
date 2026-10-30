@@ -1,0 +1,163 @@
+import type { Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Gauge, Target, Zap } from 'lucide-react';
+import type { Locale } from '@/i18n/routing';
+import { buildMetadata } from '@/lib/seo';
+import { localized, pathFor } from '@/lib/routes';
+import { personLd } from '@/lib/jsonld';
+import { site } from '@/lib/site';
+import { PageHero } from '@/components/sections/page-hero';
+import { CtaBand } from '@/components/sections/cta-band';
+import { ArcField } from '@/components/sections/arc-art';
+import { JsonLd } from '@/components/ui/json-ld';
+import { Ph } from '@/components/ui/ph';
+import { FacebookIcon, InstagramIcon, LinkedInIcon } from '@/components/ui/icons';
+
+type Props = { params: Promise<{ locale: Locale }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'about' });
+  return buildMetadata({ locale, paths: localized(() => '/about'), title: t('metaTitle'), description: t('metaDescription') });
+}
+
+const howIcons = [Target, Zap, Gauge];
+
+export default async function AboutPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations();
+  const ta = await getTranslations('about');
+  const how = ta.raw('how') as { title: string; body: string }[];
+  const values = ta.raw('values') as { title: string; body: string }[];
+  const markets = ta.raw('markets') as string[];
+  const founderBody = ta.raw('founderBody') as string[];
+  const social = [
+    { label: 'LinkedIn', href: site.social.linkedin, Icon: LinkedInIcon },
+    { label: 'Instagram', href: site.social.instagram, Icon: InstagramIcon },
+    { label: 'Facebook', href: site.social.facebook, Icon: FacebookIcon },
+  ];
+
+  return (
+    <>
+      <PageHero
+        title={ta('title')}
+        sub={ta('mission')}
+        location="about_hero"
+        crumbs={[
+          { name: t('breadcrumbs.home'), href: pathFor(locale, '/') },
+          { name: t('nav.about'), href: pathFor(locale, '/about') },
+        ]}
+      />
+
+      <section className="pb-[clamp(64px,10vw,160px)]">
+        <div className="container-site grid-site gap-y-12">
+          <p data-reveal className="col-span-4 text-h3 font-semibold md:col-span-8 lg:col-span-7">
+            {ta('partner')}
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="how-title" className="section-y bg-surface-warm">
+        <div className="container-site">
+          <h2 id="how-title" data-reveal className="font-display text-h2">
+            {ta('howTitle')}
+          </h2>
+          <ul className="mt-12 grid gap-4 md:grid-cols-3">
+            {how.map((h, i) => {
+              const Icon = howIcons[i];
+              return (
+                <li key={h.title} data-reveal style={{ '--i': i } as React.CSSProperties} className="rounded-panel bg-surface p-7 sm:p-8">
+                  <Icon aria-hidden size={24} />
+                  <h3 className="mt-6 text-h3 font-semibold">{h.title}</h3>
+                  <p className="mt-3 text-body-lg text-ink-muted">{h.body}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* Founder message */}
+      <section aria-labelledby="founder-title" className="section-y relative overflow-hidden">
+        <ArcField tone="light" className="pointer-events-none absolute -top-40 -left-56 w-[40rem] opacity-[0.08]" />
+        <div className="container-site relative grid-site gap-y-12">
+          <div className="col-span-4 md:col-span-3 lg:col-span-4">
+            <div className="aspect-[4/5] max-w-xs overflow-hidden rounded-panel border border-dashed border-border bg-surface p-6 text-small text-ink-muted">
+              <Ph>{ta('portrait')}</Ph>
+            </div>
+          </div>
+          <div className="col-span-4 md:col-span-5 lg:col-span-7 lg:col-start-6">
+            <h2 id="founder-title" className="font-display text-h2">
+              {ta('founderTitle')}
+            </h2>
+            <div className="mt-8 space-y-5 font-display text-[1.375rem] leading-[1.5] text-ink sm:text-[1.5rem]">
+              {founderBody.map((p) => (
+                <p key={p.slice(0, 24)}>{p}</p>
+              ))}
+            </div>
+            <p className="mt-10 font-display text-h3 italic">{ta('founderSign')}</p>
+            <p className="text-small text-ink-muted">{ta('founderRole')}</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="values-title" className="section-y">
+        <div className="container-site grid-site gap-y-12">
+          <h2 id="values-title" data-reveal className="col-span-4 font-display text-h2 md:col-span-8 lg:col-span-4">
+            {ta('valuesTitle')}
+          </h2>
+          <ul className="col-span-4 grid gap-x-8 gap-y-10 sm:grid-cols-2 md:col-span-8">
+            {values.map((v, i) => (
+              <li key={v.title} data-reveal style={{ '--i': i } as React.CSSProperties} className="border-t border-ink pt-6">
+                <h3 className="text-h4 font-semibold">{v.title}</h3>
+                <p className="mt-2 text-ink-muted">{v.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="markets-title" className="pb-[clamp(64px,10vw,160px)]">
+        <div className="container-site">
+          <div data-reveal className="grid gap-10 rounded-panel border border-border bg-surface p-6 sm:p-10 lg:grid-cols-12">
+            <div className="lg:col-span-6">
+              <h2 id="markets-title" className="text-h3 font-semibold">
+                {ta('marketsTitle')}
+              </h2>
+              <p className="mt-4 text-body-lg text-ink-muted">{ta('marketsBody')}</p>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8">
+              <ul className="flex flex-wrap gap-2">
+                {markets.map((m) => (
+                  <li key={m} className="inline-flex h-11 items-center rounded-full bg-surface-warm px-5 text-small font-medium">
+                    {m}
+                  </li>
+                ))}
+              </ul>
+              <h3 className="mt-8 text-small font-medium text-ink-muted">{ta('socialTitle')}</h3>
+              <ul className="mt-3 flex gap-2">
+                {social.map(({ label, href, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`${label} ${t('a11y.newTab')}`}
+                      className="inline-flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
+                    >
+                      <Icon size={18} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand location="about_final" />
+      <JsonLd data={personLd(locale)} />
+    </>
+  );
+}

@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "siteDescription": "Activesite designs and builds high-converting websites, web apps and mobile apps for small businesses, creators and founders. Based in Douala, Cameroon.",
+    "homeTitle": "Web design agency for small businesses | Activesite",
+    "homeDescription": "High-converting websites, web apps and funnels for small businesses, creators and founders. Built fast in Douala, Cameroon, for clients worldwide.",
+    "ogTagline": "Websites that turn visitors into paying clients."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main",
+    "footerNav": "Footer",
+    "breadcrumb": "Breadcrumb",
+    "language": "Language",
+    "newTab": "(opens in a new tab)",
+    "logoHome": "Activesite home"
+  },
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "allServices": "All services",
+    "groups": {
+      "design": "Design",
+      "build": "Build",
+      "grow": "Grow"
+    },
+    "groupLines": {
+      "design": "Look credible and get remembered",
+      "build": "Websites, stores and products that convert",
+      "grow": "Bring traffic, leads and sales"
+    },
+    "menuFoot": "Not sure what you need? We will tell you on a free call."
+  },
+  "cta": {
+    "book": "Book a free call",
+    "bookLong": "Book my free strategy call",
+    "whatsapp": "Chat on WhatsApp",
+    "plan": "Get my website plan",
+    "resultsLike": "Get results like this",
+    "seeResults": "See the results",
+    "readStory": "Read the case study",
+    "explore": "See what is included",
+    "allWork": "See all work",
+    "aboutFounder": "Read the founder’s message",
+    "backHome": "Back to home",
+    "continueWhatsapp": "Continue on WhatsApp"
+  },
+  "objections": {
+    "free": "Free 30-minute call, no obligation",
+    "response": "Reply [[PLACEHOLDER: response time, e.g. within 24 hours]]",
+    "launch": "Launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]",
+    "guarantee": "Outcome guarantee: [[PLACEHOLDER: guarantee terms]]"
+  },
+  "pricing": "Every project is scoped to your goals — get a tailored plan on a free call.",
+  "whatsapp": {
+    "tooltip": "Chat with us",
+    "label": "Chat with Activesite on WhatsApp",
+    "message": "Hi Activesite, I’m interested in {topic}.",
+    "defaultTopic": "a new website",
+    "pageTopic": "your services (from {page})"
+  },
+  "langSuggest": {
+    "text": "This site is also available in French.",
+    "switch": "Voir en français",
+    "dismiss": "Stay in English"
+  },
+  "footer": {
+    "positioning": "Websites, apps and funnels that turn visitors into clients. Built in Douala, for businesses everywhere.",
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "cookies": "Cookie Policy",
+    "cookieSettings": "Cookie settings",
+    "rights": "All rights reserved.",
+    "follow": "Follow Activesite"
+  },
+  "newsletter": {
+    "title": "Get more clients from your website",
+    "body": "One practical email a month on conversion, SEO and AI search. Plus our free guide: [[PLACEHOLDER: lead magnet title, e.g. The 12-point website conversion checklist]].",
+    "label": "Email address",
+    "placeholder": "you@company.com",
+    "button": "Send me the checklist",
+    "sending": "Subscribing…",
+    "success": "Check your inbox to confirm your subscription.",
+    "error": "We could not subscribe you. Check the address and try again.",
+    "note": "No spam. Unsubscribe in one click."
+  },
+  "cookie": {
+    "title": "Cookies on Activesite",
+    "body": "We use necessary cookies to run the site. With your consent, we also use analytics and marketing cookies to measure and improve our ads.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "preferences": "Preferences",
+    "save": "Save my choices",
+    "necessary": "Necessary",
+    "necessaryBody": "Required for the site to work, such as remembering your language and cookie choice.",
+    "analytics": "Analytics",
+    "analyticsBody": "Google Analytics helps us understand which pages help visitors.",
+    "marketing": "Marketing",
+    "marketingBody": "Meta and TikTok pixels measure our ads and show you relevant offers.",
+    "alwaysOn": "Always on",
+    "policy": "Read the cookie policy"
+  },
+  "home": {
+    "hero": {
+      "titleStart": "Websites that turn visitors into paying",
+      "titleEmphasis": "clients.",
+      "sub": "For small businesses, creators and founders who want a website that brings leads and sales, not just compliments.",
+      "trust": "[[PLACEHOLDER: e.g. 40+ projects delivered]] · [[PLACEHOLDER: e.g. 4.9/5 client rating]]"
+    },
+    "logos": {
+      "label": "Trusted by growing businesses"
+    },
+    "problem": {
+      "title": "Every week without a website that converts costs you clients.",
+      "items": [
+        {
+          "title": "No website, no trust",
+          "body": "Clients search before they buy. If they cannot find you, they pick the competitor they can."
+        },
+        {
+          "title": "A website that only looks good",
+          "body": "Visitors arrive, look around and leave. You keep paying for hosting and ads that bring nothing back."
+        },
+        {
+          "title": "Agencies that talk features",
+          "body": "Slow timelines, vague updates and talk of plugins. Nobody asks how many clients you need."
+        }
+      ],
+      "solution": "We start from the number of clients you need, then design, build and grow the website that brings them."
+    },
+    "results": {
+      "title": "Results first. Then we talk design.",
+      "sub": "Every project is measured by what it brings in.",
+      "placeholderNote": "Case studies are being prepared. Figures shown are placeholders until approved by each client."
+    },
+    "services": {
+      "title": "One partner to design, build and grow.",
+      "sub": "Pick one service or the full journey. Each is measured by the outcome it delivers."
+    },
+    "process": {
+      "title": "From first call to first client.",
+      "sub": "Six clear steps. You always know what happens next.",
+      "time": "Typical time to launch: [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]",
+      "steps": [
+        { "name": "Discover", "body": "A free call to understand your business, clients and the results you need." },
+        { "name": "Strategy", "body": "We set measurable goals and plan the pages, offer and path to conversion." },
+        { "name": "Design", "body": "You see your site before it is built. We refine it until it feels right." },
+        { "name": "Build", "body": "Fast, secure, mobile-first development with tracking on every action." },
+        { "name": "Launch", "body": "We test everything, go live and connect your domain, email and analytics." },
+        { "name": "Grow", "body": "We review the numbers, improve what converts and scale what works." }
+      ]
+    },
+    "stats": {
+      "title": "Numbers we are accountable for.",
+      "items": [
+        { "value": "[[PLACEHOLDER: projects delivered]]", "label": "Projects delivered" },
+        { "value": "[[PLACEHOLDER: client satisfaction, e.g. 98%]]", "label": "Client satisfaction" },
+        { "value": "[[PLACEHOLDER: average launch time]]", "label": "Average time to launch" },
+        { "value": "[[PLACEHOLDER: leads generated for clients]]", "label": "Leads generated for clients" }
+      ]
+    },
+    "why": {
+      "title": "Why businesses choose Activesite.",
+      "items": [
+        { "title": "Goals before pixels", "body": "We agree on the leads, sales or sign-ups you need before we design anything." },
+        { "title": "Fast to launch", "body": "Clear scope, weekly updates and a fixed timeline. Most sites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]." },
+        { "title": "A measurable guarantee", "body": "We commit to a growth outcome in writing: [[PLACEHOLDER: guarantee terms]]." },
+        { "title": "One partner, start to finish", "body": "Brand, website, funnels and ads under one roof. No finger-pointing between suppliers." }
+      ]
+    },
+    "testimonials": {
+      "title": "What clients say about the results.",
+      "items": [
+        { "quote": "[[PLACEHOLDER: client quote about the result they got]]", "name": "[[PLACEHOLDER: client name]]", "role": "[[PLACEHOLDER: role, company]]", "result": "[[PLACEHOLDER: result, e.g. +X% leads]]" },
+        { "quote": "[[PLACEHOLDER: client quote about speed or process]]", "name": "[[PLACEHOLDER: client name]]", "role": "[[PLACEHOLDER: role, company]]", "result": "[[PLACEHOLDER: result, e.g. launched in X weeks]]" },
+        { "quote": "[[PLACEHOLDER: client quote about sales or growth]]", "name": "[[PLACEHOLDER: client name]]", "role": "[[PLACEHOLDER: role, company]]", "result": "[[PLACEHOLDER: result, e.g. X sales in Y weeks]]" }
+      ]
+    },
+    "founder": {
+      "quote": "I started Activesite because too many good businesses stay invisible online. We build websites that earn their place by bringing in clients, and we measure ourselves by your results.",
+      "name": "Tanwi Kalson",
+      "role": "Founder, Activesite"
+    },
+    "local": {
+      "title": "A web design agency in Douala, working worldwide.",
+      "body": "We are based in Douala and work with businesses across Cameroon, from Douala to Yaoundé, as well as clients in France, the United Kingdom and the United States. Meet us in person or on a video call, in English or French."
+    },
+    "faq": {
+      "title": "Questions before you book.",
+      "items": [
+        { "q": "How much does a website cost?", "a": "Every project is scoped to your goals — get a tailored plan on a free call. You receive a clear written proposal before any commitment." },
+        { "q": "How long does it take to launch?", "a": "Most websites launch in [[PLACEHOLDER: typical launch time, e.g. 3–6 weeks]]. Larger stores and SaaS products follow a timeline we agree on the call." },
+        { "q": "Will I own my website?", "a": "Yes. Once the project is paid, you own the design, content, code and domain. We hand over every login." },
+        { "q": "How many revisions are included?", "a": "Each phase includes [[PLACEHOLDER: number of revision rounds]] rounds of revisions. We review designs with you before any development starts." },
+        { "q": "Do you support the site after launch?", "a": "Yes. We offer hosting, maintenance and growth support, so your site stays fast, secure and improving." },
+        { "q": "Do you work with clients outside Cameroon?", "a": "Yes. We work with clients in France, the UK and the US by video call, in English or French." },
+        { "q": "How does payment work?", "a": "Projects are paid in stages: [[PLACEHOLDER: payment terms, e.g. deposit, milestone, launch]]. We accept [[PLACEHOLDER: accepted payment methods]]." },
+        { "q": "What is your outcome guarantee?", "a": "We commit to a measurable growth outcome agreed before we start: [[PLACEHOLDER: guarantee terms]]." }
+      ]
+    },
+    "final": {
+      "title": "Ready for a website that brings you clients?",
+      "body": "Book a free 30-minute strategy call. You leave with a clear plan, whether or not we work together."
+    }
+  },
+  "servicesHub": {
+    "title": "Services that grow your business.",
+    "sub": "Design, build and growth services, each measured by the result it brings.",
+    "metaTitle": "Website, app and growth services | Activesite",
+    "metaDescription": "Brand identity, websites, ecommerce, SaaS, funnels, SEO and ads. Every Activesite service is built around a measurable business outcome.",
+    "notSure": "Not sure where to start?",
+    "notSureBody": "Tell us your goal on a free call. We recommend the smallest set of services that gets you there."
+  },
+  "service": {
+    "whoFor": "Who it is for",
+    "problems": "Problems it solves",
+    "outcomes": "Outcomes you can expect",
+    "outcomesNote": "Figures marked as placeholders will be replaced with verified client results.",
+    "included": "What is included",
+    "process": "How we work",
+    "caseStudy": "Related case study",
+    "faq": "Questions about {service}",
+    "related": "Related services",
+    "ctaTitle": "Let’s plan your {service} project.",
+    "ctaBody": "Book a free strategy call. You leave with a clear plan and timeline."
+  },
+  "work": {
+    "title": "Work measured in results.",
+    "sub": "Each case study starts with the number that mattered to the client.",
+    "metaTitle": "Case studies and results | Activesite",
+    "metaDescription": "Activesite case studies: websites, stores and products measured by the leads, sales and growth they delivered.",
+    "client": "Client",
+    "industry": "Industry",
+    "services": "Services",
+    "timeline": "Timeline",
+    "challenge": "The challenge",
+    "solution": "Strategy and solution",
+    "results": "Results",
+    "visuals": "Inside the project",
+    "quote": "Client feedback",
+    "ctaTitle": "Want results like this?",
+    "ctaBody": "Book a free call and we will map the fastest path to your own result."
+  },
+  "about": {
+    "metaTitle": "About Activesite, web agency in Douala | Activesite",
+    "metaDescription": "Activesite is a software company in Douala, Cameroon. We design and build websites and apps that help businesses win clients and scale.",
+    "title": "We build software that wins you clients.",
+    "mission": "Activesite is a full-service software company. We design and build websites, web apps and mobile apps that help businesses generate leads, win clients and scale faster.",
+    "partner": "We are a technical and strategic partner for two kinds of people: founders and creators turning ideas into software products, and business owners using software to win clients and grow.",
+    "howTitle": "How we work",
+    "how": [
+      { "title": "Goal-first", "body": "Every project starts with the result you need: leads, sales or sign-ups. Design and code serve that goal." },
+      { "title": "Fast", "body": "Small, focused scope and weekly progress. You see working pages early, not after months." },
+      { "title": "Measurable", "body": "We track every important action and commit to an outcome in writing." }
+    ],
+    "founderTitle": "A message from our founder",
+    "founderBody": [
+      "When I started Activesite, I kept meeting talented business owners who were invisible online. Their competitors were not better. They were simply easier to find and easier to trust.",
+      "I also met owners who had paid for websites that looked fine but brought nothing back. The agency had delivered pages. Nobody had asked how many clients the business needed.",
+      "That is the gap we close. Before we design anything, we agree on the result you want: more enquiries, more sales or a product people pay for. Then we build quickly, measure honestly and keep improving what works.",
+      "We are based in Douala and proud of it. We work with clients across Cameroon and abroad, in English and French, with the same standard everywhere.",
+      "If you are ready to grow, I would be glad to hear about your business. Book a call, and let’s see what your website could bring you."
+    ],
+    "founderSign": "Tanwi Kalson",
+    "founderRole": "Founder, Activesite",
+    "portrait": "[[PLACEHOLDER: founder portrait photo]]",
+    "valuesTitle": "What we value",
+    "values": [
+      { "title": "Clarity", "body": "Plain language, honest timelines and no hidden surprises." },
+      { "title": "Ownership", "body": "We act like it is our own business on the line." },
+      { "title": "Craft", "body": "Fast, accessible, carefully made work we are proud to sign." },
+      { "title": "Respect", "body": "Your time, budget and ideas are treated with care." }
+    ],
+    "marketsTitle": "Markets we serve",
+    "marketsBody": "We are based in Douala and work with businesses across Cameroon, including Yaoundé, and with clients in France, the United Kingdom and the United States.",
+    "markets": ["Douala & Yaoundé, Cameroon", "France", "United Kingdom", "United States"],
+    "socialTitle": "Follow our work"
+  },
+  "contact": {
+    "metaTitle": "Contact Activesite: book a free strategy call",
+    "metaDescription": "Book a free 30-minute strategy call with Activesite, send a message or chat on WhatsApp. Based in Douala, Cameroon, working worldwide.",
+    "title": "Let’s talk about your next client.",
+    "sub": "Book a free 30-minute strategy call. You will leave with a clear plan, whether or not we work together.",
+    "bookTitle": "Book your free strategy call",
+    "bookNote": "Pick a time that suits you. Calls run on Google Meet in English or French.",
+    "bookFallback": "Online booking is being set up. Message us on WhatsApp and we will schedule your call.",
+    "bookLoading": "Loading the calendar…",
+    "formTitle": "Prefer to write?",
+    "formSub": "Tell us about your project. We reply [[PLACEHOLDER: response time, e.g. within 24 hours]].",
+    "whatsappTitle": "WhatsApp",
+    "whatsappBody": "The fastest way to reach us.",
+    "emailTitle": "Email",
+    "emailBody": "For detailed briefs and documents.",
+    "locationTitle": "Douala, Cameroon",
+    "locationBody": "Meetings in Douala by appointment. Video calls worldwide.",
+    "mapCta": "Open in Google Maps",
+    "responseTitle": "Our response promise",
+    "responseBody": "Every message gets a personal reply [[PLACEHOLDER: response time, e.g. within 24 hours]], Monday to Saturday.",
+    "faqTitle": "Before you get in touch",
+    "faq": [
+      { "q": "Is the strategy call really free?", "a": "Yes. It is 30 minutes, with no obligation. You leave with practical next steps." },
+      { "q": "What should I prepare for the call?", "a": "Your goals, your current website if you have one, and examples of sites you like." },
+      { "q": "Do you work in French?", "a": "Yes. We work in English and French with every client." }
+    ]
+  },
+  "form": {
+    "name": "Full name",
+    "email": "Email",
+    "whatsapp": "WhatsApp number",
+    "whatsappHint": "Optional. Include the country code, e.g. +237.",
+    "company": "Company",
+    "service": "Service of interest",
+    "servicePlaceholder": "Choose a service",
+    "serviceUnsure": "Not sure yet",
+    "timeline": "Project timeline",
+    "timelinePlaceholder": "When do you want to launch?",
+    "timelines": {
+      "asap": "As soon as possible",
+      "1-3": "In 1–3 months",
+      "3-6": "In 3–6 months",
+      "exploring": "Just exploring"
+    },
+    "message": "Your project",
+    "messageHint": "Your goals, current situation and any deadlines.",
+    "consent": "I agree that Activesite may use my details to reply to this request, as described in the",
+    "consentLink": "Privacy Policy",
+    "marketing": "Send me occasional tips and news by email. Unsubscribe anytime.",
+    "required": "Required",
+    "optional": "Optional",
+    "submit": "Send my project details",
+    "sending": "Sending…",
+    "successTitle": "Thank you. Your message is on its way.",
+    "successBody": "We will reply [[PLACEHOLDER: response time, e.g. within 24 hours]]. Want a faster answer? Continue on WhatsApp.",
+    "waSummary": "Hi Activesite, I’m {name}. I just sent a request about {service}. {message}",
+    "errors": {
+      "name": "Enter your full name.",
+      "email": "Enter a valid email address, like name@company.com.",
+      "whatsapp": "Enter a valid number with country code, like +237 6 51 20 49 73.",
+      "message": "Tell us a little about your project (at least 10 characters).",
+      "consent": "Tick this box so we can reply to you.",
+      "turnstile": "Complete the security check, then send again.",
+      "rate": "Too many attempts. Wait a few minutes, then try again.",
+      "server": "Your message could not be sent. Email contact@activesite.cc or message us on WhatsApp."
+    },
+    "devNotice": "Email delivery is not configured in this environment. Your message was validated but not sent."
+  },
+  "blog": {
+    "metaTitle": "Blog: websites, conversion and AI search | Activesite",
+    "metaDescription": "Practical guides on websites, conversion, SEO, AI search, branding and growth for small businesses and founders.",
+    "title": "Ideas that bring you clients.",
+    "sub": "Practical guides on websites, conversion, search and growth.",
+    "all": "All",
+    "featured": "Featured",
+    "categories": {
+      "websites": "Websites",
+      "conversion": "Conversion",
+      "seo-ai": "SEO & AI search",
+      "branding": "Branding",
+      "growth": "Growth"
+    },
+    "minRead": "{minutes} min read",
+    "by": "By {author}",
+    "updated": "Updated {date}",
+    "toc": "On this page",
+    "related": "Related articles",
+    "relatedService": "Related service",
+    "draft": "Draft",
+    "empty": "No articles in this category yet. See all articles.",
+    "rss": "RSS feed"
+  },
+  "thankYou": {
+    "metaTitle": "Thank you | Activesite",
+    "title": "You are booked. Thank you.",
+    "body": "A calendar invite is on its way to your inbox. Want to share details before the call? Send them on WhatsApp.",
+    "next": "What happens next",
+    "steps": [
+      "Check your inbox for the confirmation and video link.",
+      "Send any examples or documents on WhatsApp.",
+      "On the call, we agree on your goals and a clear plan."
+    ],
+    "waMessage": "Hi Activesite, I just booked a strategy call. Here is some context about my project:"
+  },
+  "notFound": {
+    "title": "This page does not exist.",
+    "body": "The link may be old or mistyped. Here are the pages most people look for.",
+    "links": "Popular pages"
+  },
+  "breadcrumbs": {
+    "home": "Home"
+  },
+  "styleguide": {
+    "title": "Styleguide"
+  }
+}
