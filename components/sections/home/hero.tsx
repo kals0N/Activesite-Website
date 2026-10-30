@@ -13,7 +13,7 @@ export async function Hero() {
     >
       <div className="container-site relative">
         <div className="grid-site items-end gap-y-10">
-          <div className="relative z-10 col-span-4 md:col-span-8 lg:col-span-9">
+          <div className="relative z-10 col-span-4 md:col-span-8 lg:col-span-10 xl:col-span-7">
             <h1 id="hero-title" className="hero-title font-display text-display">
               {t('titleStart')} <em className="italic">{t('titleEmphasis')}</em>
             </h1>

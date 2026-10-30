@@ -38,7 +38,7 @@ export function HeroVisual() {
     <div
       ref={ref}
       aria-hidden
-      className="hero-follow pointer-events-none relative mx-auto mt-4 h-[22rem] w-full max-w-[34rem] md:absolute md:top-24 md:-right-24 md:mt-0 md:h-[36rem] md:w-[36rem] md:max-w-none lg:top-20 lg:-right-16 lg:h-[46rem] lg:w-[46rem] xl:right-[max(-4rem,calc((100vw-1360px)/2-4rem))]"
+      className="hero-follow pointer-events-none relative mx-auto mt-4 h-[22rem] w-full max-w-[34rem] md:mt-10 md:h-[30rem] md:max-w-[30rem] xl:absolute xl:top-20 xl:right-[max(-4rem,calc((100vw-1360px)/2-4rem))] xl:mt-0 xl:h-[44rem] xl:w-[44rem] xl:max-w-none"
       style={{ '--d': 1, '--px': 0, '--py': 0 } as React.CSSProperties}
     >
       {/* Gradient mesh */}
