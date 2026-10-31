@@ -40,15 +40,14 @@ export default async function WorkPage({ params }: Props) {
       />
       <section aria-label={t('nav.work')} className="pb-[clamp(64px,10vw,160px)]">
         <div className="container-site">
-          <ul className="grid gap-5 md:grid-cols-2">
+          <ul className="grid gap-5 md:grid-cols-3">
             {studies.map((s, i) => (
-              <li key={s.key} className={i === 0 ? 'md:col-span-2' : ''}>
+              <li key={s.key}>
                 <CaseStudyCard
                   study={s}
                   href={caseStudyPaths(s.key)[locale]}
                   readLabel={t('cta.readStory')}
-                  tone="light"
-                  size={i === 0 ? 'lg' : 'md'}
+                  measuresLabel={t('work.results')}
                   index={i}
                 />
               </li>

@@ -9,7 +9,6 @@ import { buildMetadata } from '@/lib/seo';
 import { creativeWorkLd } from '@/lib/jsonld';
 import { caseStudyPaths, pathFor, servicePaths } from '@/lib/routes';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
-import { DeviceFrame } from '@/components/ui/device-frame';
 import { JsonLd } from '@/components/ui/json-ld';
 import { Mdx } from '@/components/ui/mdx';
 import { Ph } from '@/components/ui/ph';
@@ -116,12 +115,6 @@ export default async function CaseStudyPage({ params }: Props) {
               </div>
             </dl>
           </div>
-          <div
-            className="rounded-panel mt-14 aspect-[4/3] overflow-hidden sm:aspect-[16/9]"
-            style={{ viewTransitionName: `case-${study.key}` }}
-          >
-            <DeviceFrame tone={study.tone} label={study.client} />
-          </div>
         </div>
       </section>
 
@@ -130,26 +123,6 @@ export default async function CaseStudyPage({ params }: Props) {
           <article className="prose-site mx-auto lg:mx-0 lg:ml-[calc(100%/12*4)]">
             <Mdx source={study.body} />
           </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="visuals-title" className="pb-[clamp(64px,10vw,160px)]">
-        <div className="container-site">
-          <h2 id="visuals-title" className="font-display text-h2">
-            {tw('visuals')}
-          </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {(['navy', 'blue'] as const).map((tone, i) => (
-              <div
-                key={tone}
-                data-reveal
-                style={{ '--i': i } as React.CSSProperties}
-                className="rounded-panel aspect-[4/3] overflow-hidden"
-              >
-                <DeviceFrame tone={tone} />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

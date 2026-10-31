@@ -205,6 +205,7 @@ export default async function ServicePage({ params }: Props) {
                 study={study}
                 href={caseStudyPaths(study.key)[locale]}
                 readLabel={t('cta.readStory')}
+                measuresLabel={t('work.results')}
                 tone="light"
               />
             </div>

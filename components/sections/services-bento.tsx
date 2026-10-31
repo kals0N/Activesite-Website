@@ -27,7 +27,7 @@ export async function ServicesBento({ headingLevel = 'h3' }: { headingLevel?: 'h
           data-reveal
           style={{ '--i': gi } as React.CSSProperties}
           className={cn(
-            'rounded-panel border-border border p-6 sm:p-8',
+            'rounded-panel border-border flex flex-col border p-6 sm:p-8',
             group === 'build' && 'bg-surface lg:col-span-7',
             group === 'design' && 'bg-surface-warm lg:col-span-5',
             group === 'grow' && 'bg-surface-warm lg:col-span-12',
@@ -40,7 +40,7 @@ export async function ServicesBento({ headingLevel = 'h3' }: { headingLevel?: 'h
           <ul
             className={cn(
               'mt-6 grid gap-2',
-              group === 'build' && 'sm:grid-cols-2',
+              group === 'build' && 'flex-1 auto-rows-fr sm:grid-cols-2',
               group === 'grow' && 'sm:grid-cols-2 xl:grid-cols-4',
             )}
           >

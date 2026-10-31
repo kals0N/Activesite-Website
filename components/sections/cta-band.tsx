@@ -29,7 +29,10 @@ export async function CtaBand({
   ];
 
   return (
-    <section aria-labelledby={`cta-${location}`} className="section-y">
+    <section
+      aria-labelledby={`cta-${location}`}
+      className="pt-[clamp(32px,5vw,64px)] pb-[clamp(64px,10vw,160px)]"
+    >
       <div className="container-site">
         <div
           data-reveal

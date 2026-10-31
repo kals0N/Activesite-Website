@@ -30,21 +30,16 @@ export async function Results() {
             {t('cta.allWork')}
           </Button>
         </div>
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-12">
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
           {studies.map((s, i) => (
-            <div
+            <CaseStudyCard
               key={s.key}
-              className={i === 0 ? 'md:col-span-2 lg:col-span-7 lg:row-span-2' : 'lg:col-span-5'}
-            >
-              <CaseStudyCard
-                study={s}
-                href={caseStudyPaths(s.key)[locale]}
-                readLabel={t('cta.readStory')}
-                size={i === 0 ? 'lg' : 'md'}
-                index={i}
-                tone="light"
-              />
-            </div>
+              study={s}
+              href={caseStudyPaths(s.key)[locale]}
+              readLabel={t('cta.readStory')}
+              measuresLabel={t('work.results')}
+              index={i}
+            />
           ))}
         </div>
         <p className="text-small text-ink-muted mt-8">{t('home.results.placeholderNote')}</p>
